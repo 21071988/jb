@@ -1,0 +1,212 @@
+@bl:#13100D;
+@w:#ffffff;
+@bc1:#423b3b;
+@hc:#90D7D2;
+@red:#EA2C32;
+@m1:10px;
+@m:20px;
+@m2:40px;
+@m3:80px;
+@m4:160px;
+@m250:250px;
+
+body{
+	min-height: 0;
+	min-width: 0;
+	.trans4;
+	.thefont;
+}
+body, p{
+	margin:0;
+	padding: 0;
+}
+img{
+	.w100;
+}
+.num{
+	.thefontNumbers;
+}
+.f2{
+	font-size: 2rem;
+}
+.f{
+	font-size: 18px;
+}
+.f15{
+	font-size:1.5rem;
+}
+.fm{
+	font-size: 1.2rem;
+}
+.hc{
+	color:@hc;
+	.trans4;
+}
+.white{
+	color:#ffffff;
+}
+.w100{
+	width: 100%;
+}
+.bold{
+	font-weight: 600;
+}
+.w80{
+	width: 80%;
+	margin: 0 auto;
+}
+.positionA{
+	position:absolute;
+}
+.column{
+	display:flex;
+	flex-direction: column;
+}
+.flex{
+	display: flex;
+}
+
+.allcenter{
+	justify-content: center;
+	align-items:center;
+	display: flex;
+}
+
+.green__input{
+	border-bottom:2px solid @hc !important;
+	color:@hc;
+}
+.red__input{
+	border-bottom:2px solid @red !important;
+	color:@red;
+}
+
+.thefont{
+	font-family: 'garden.ttf';
+	text-transform: none;
+	.f;
+}
+.trans4{
+	transition: .4s;
+}
+.thefontNumbers{
+	font-family: 'diamond.ttf';
+	font-size:32px;
+}
+@font-face{
+font-family: 'garden.ttf';
+src: url('../fonts/garden.ttf');
+font-weight: normal;
+font-style: normal;
+}
+@font-face{
+	font-family: 'diamond.ttf';
+	src: url('../fonts/diamond.otf');
+	font-weight: normal;
+	font-style: normal;
+	}
+.leftW{
+	width: 250px;
+}
+
+button{
+	background: none;
+	border: none;
+	.thefont;
+	font-size: 1.8em;
+	padding:0;
+}
+input{
+	.thefont;
+}
+h1{
+	text-align: center;
+}
+a{
+	text-decoration: none;
+	color:@bl;
+	width: fit-content;
+	.trans4;
+	&:hover{
+		cursor: pointer;
+	}
+}
+
+.test{
+	min-height: 50vh;
+	width: 50vw;
+	a{
+		position: relative;
+	}
+}
+
+.catalog__Btn__Border{
+	position: absolute;
+	width: 100px;
+	overflow: visible;
+}
+
+#catalogBtn{
+	z-index:100;
+}
+
+.svg__catalog__btn{
+  stroke-dasharray: 1443;
+  stroke-dashoffset: 1443;
+	animation: dash 1s linear forwards;
+	fill:white;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.wrapper__catalog{
+	display: grid;
+	grid-template-columns: 200px 1fr;
+}
+.catalog__menu__categories{
+	.column;
+	margin-left:@m2;
+	a{
+		margin-bottom:@m;
+	}
+}
+.wrapper__catalog{
+	padding-top:@m3;
+}
+.catalog__filter{
+	margin-bottom:@m;
+	svg{
+		width: 10px;
+	}
+}
+
+.catalog__pages{
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-gap:@m3 @m2;
+	padding:@m @m2 0 0;
+}
+.catalog__item__name{
+	.f15;
+	margin:15px 0;
+}
+
+.catalog__item__price{
+	.f2;
+	color:#848484;
+}
+
+.catalog__item__price__and__like{
+	.flex;
+	justify-content: space-between;
+	svg{
+		width: 30px;
+	}
+}
+// .c1{
+// 	margin-bottom:40px;
+// }
