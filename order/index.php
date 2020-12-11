@@ -3,58 +3,78 @@
   
   <form action="/sendorder.php" method='post'>
 
-  <div class="order__data order__block">
-    <h1>оформление заказа</h1>
-    <h2>общие данные</h2>
-    <label for="order__data__lastname" >Фамилия</label>
-    <input type="text" name='order__data__lastname' class='required'>
-    <p class='error__sign'>заполните это поле, пожалуйста</p>
-    
-    <label for="order__data__name">имя</label>
-    <input type="text" name='order__data__name' class='required'>
-    <p class='error__sign'>заполните это поле, пожалуйста</p>
+    <div class="order__h1">
+      <div></div>
+      <h1>оформление заказа</h1>
+      <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/giraffe.php");?>
+    </div>
+    <div class="order__data order__block">    
+        <h2>Ваши данные</h2>
+        <label for="order__data__lastname" >Фамилия</label>
+        <input type="text" name='order__data__lastname' class='required'>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
+        <p class='error__sign'>заполните это поле, пожалуйста</p>
+        
+        <label for="order__data__name">Имя</label>
+        <input type="text" name='order__data__name' class='required'>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
+        <p class='error__sign'>заполните это поле, пожалуйста</p>
 
-    <label for="order__data__phone">телефон</label>
-    <input type="text" name='order__data__phone' class='required' id='lk__phone'>
-    <p class='error__sign'>заполните это поле, пожалуйста</p>
+        <label for="order__data__phone">Телефон</label>
+        <input type="text" name='order__data__phone' class='required' id='lk__phone'>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
+        <p class='error__sign'>заполните это поле, пожалуйста</p>
 
-    <label for="order__data__email">email</label>
-    <input type="text" name='order__data__email' class='required'>
-    <p class='error__sign'>заполните это поле, пожалуйста</p>
+        <label for="order__data__email">Email</label>
+        <input type="text" name='order__data__email' class='required'>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
+        <p class='error__sign'>заполните это поле, пожалуйста</p>
   </div>
 
 
 
   <div class="delivery__type order__block">
-    <h2>Способ доставки</h2>
-    <div class="delivery__type__menu">
-      <a class='active'>Доставка</a>
-      <a >Самовывоз</a>
-    </div>
+  <h2> Доставка </h2>
+    <div class="order__type__h2">
+    <a class='active'>Доставка</a> 
+      <div class='delivery__type__choosing'>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
+        <h3>Способ доставки</h3>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
+      </div>
+    <a>Самовывоз</a>
+    </div>        
+
     <div class="delivery__data">
       <div class="delivery__delivery order__block delivery__type__data">
-        <label for="order__data__city">город</label>
+        <label for="order__data__city">Город</label>
         <input type="text" name='order__data__city' class='required'>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
         <p class='error__sign'>заполните это поле, пожалуйста</p>
 
-        <label for="order__data__street">улица</label>
+        <label for="order__data__street">Улица</label>
         <input type="text" name='order__data__street' class='required'>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
         <p class='error__sign'>заполните это поле, пожалуйста</p>
 
-        <label for="order__data__index">индекс</label>
+        <label for="order__data__index">Индекс</label>
         <input type="text" name='order__data__index' class='required'>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
         <p class='error__sign'>заполните это поле, пожалуйста</p>
 
-        <label for="order__data__house">дом</label>
+        <label for="order__data__house">Дом</label>
         <input type="text" name='order__data__house' class='required'>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
         <p class='error__sign'>заполните это поле, пожалуйста</p>
 
-        <label for="order__data__app">квартира/офис</label>
+        <label for="order__data__app">Квартира/офис</label>
         <input type="text" name='order__data__app' class='required'>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
         <p class='error__sign'>заполните это поле, пожалуйста</p>
         
-        <label for="order__data__comment">комментарий</label>
+        <label for="order__data__comment">Комментарий</label>
         <input type="text" name='order__data__comment'>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
       </div>
       <div class="delivery__pickup order__block delivery__type__data">
         <p class='order__block__bold'>
@@ -72,12 +92,15 @@
   </div>
     <div class="payment__type order__block">
         <h2>способ оплаты</h2>
-        <div>
-          <input type='radio' name='payment__method' value='payment__method__online'>онлайн на сайте</input> 
-        </div>
-        <div>
-          <input type='radio'id='paymentInShop' name='payment__method' value="payment__method__shop">при получении в магазине</input>
-        </div>
+        <div class="order__type__h2">
+          <a class='active'>на сайте</a> 
+            <div class='delivery__type__choosing'>
+              <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
+              <h3>способ оплаты</h3>
+              <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
+            </div>
+          <a>в магазине</a>
+    </div> 
     </div>
 
     <div class="checking__order__block">

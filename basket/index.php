@@ -1,106 +1,129 @@
 <?php require($_SERVER["DOCUMENT_ROOT"]."/header.php");?>
-<div class="wrapper__catalog wrapper__basket">
-  <div class="left__part">
+<div class="basket__wrapper">
 
-  </div>
-  <div class="right__part">
-    <h1>Корзина</h1>
-    <div class="catalog__pages">
-        
-        <div class="catalog__item">
-            <div class='img__wrap'>
-              <img src="/images/catalog/1.jpg" alt="">
-              <div class="sale__sign">25%</div>
+    <div class="bakset__h1">
+      <h1>Корзина</h1>
+      <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbasket.php");?>
+    </div>
+    <div class="basket__items">
+      <div>
+        <div class="bakset__items__names">
+          <div class="half">
+            <span>Что берем</span>
+          </div>
+          <div class="half second__half">
+            <div>
+              <span>Кол-во</span>
             </div>
-            <p>Название товара номер один</p>
-            <span data-price='50' class='old__price'>12&nbsp;384Р</span>
-            <span data-price='50' class='sale__price'>9&nbsp;185Р</span>
-            <div class="item__quantity">
-              <span>Кол-во:</span>
-              <span id='minus'>-</span>
-              <span id='item__quantity'>1</span>
-              <input id='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
-              <span id='plus'>+</span>
+            <div class="big__half"> 
+              <span>Всего</span>
             </div>
-            <svg class='delete__item' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><defs><style>.minus{fill:none;stroke:#13100D;stroke-miterlimit:10;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><circle class="minus" cx="22" cy="22" r="21.5"/><line class="minus" x1="5.79" y1="22" x2="37.51" y2="22"/></g></g></svg>
+            <div>
+              <span>Удалить</span>
+            </div>
+          </div>
         </div>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
+      </div>
 
-        <div class="catalog__item">
-            <div class='img__wrap'>
-              <img src="/images/catalog/1.jpg" alt="">
-              <div class="sale__sign">25%</div>
-            </div>
-            <p>Название товара номер один</p>
-            <span data-price='50' class='old__price'>12&nbsp;384Р</span>
-            <span data-price='50' class='sale__price'>9&nbsp;185Р</span>
-            <div class="item__quantity">
-              <span>Кол-во:</span>
-              <span id='minus'>-</span>
-              <span id='item__quantity'>1</span>
-              <input id='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
-              <span id='plus'>+</span>
-            </div>
-            <svg class='delete__item' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><defs><style>.minus{fill:none;stroke:#13100D;stroke-miterlimit:10;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><circle class="minus" cx="22" cy="22" r="21.5"/><line class="minus" x1="5.79" y1="22" x2="37.51" y2="22"/></g></g></svg>
+      <div class="bakset__items__check">
+        <div class="basket__item">
+          <div class="half">
+            <span class="basket__item__name">Распашонка на мальчика c очень длинным названием</span>
+            <img src="/images/catalog/justborn_vl_1604483192_1.jpg" alt="">
+          </div>
+          <div class="half second__half">
+                <div class="item__quantity__div">
+                        <span id='minus'>-</span>
+                        <span class='item__quantity' class='num'>1</span>
+                        <input id='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
+                        <span id='plus'>+</span>
+                </div>
+                <div class='big__half'>
+                  <span class="num item__sum" >1530Р</span>
+                </div>
+                <div>
+                  <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketdeletebtn.php");?>
+                </div>
+          </div>
         </div>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
 
-        <div class="catalog__item">
-            <div class='img__wrap'>
-              <img src="/images/catalog/1.jpg" alt="">
-              <div class="sale__sign">25%</div>
-            </div>
-            <p>Название товара номер один</p>
-            <span data-price='50' class='old__price'>12&nbsp;384Р</span>
-            <span data-price='50' class='sale__price'>9&nbsp;185Р</span>
-            <div class="item__quantity">
-              <span>Кол-во:</span>
-              <span id='minus'>-</span>
-              <span id='item__quantity'>1</span>
-              <input id='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
-              <span id='plus'>+</span>
-            </div>
-            <svg class='delete__item' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><defs><style>.minus{fill:none;stroke:#13100D;stroke-miterlimit:10;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><circle class="minus" cx="22" cy="22" r="21.5"/><line class="minus" x1="5.79" y1="22" x2="37.51" y2="22"/></g></g></svg>
+        <div class="basket__item">
+          <div class="half">
+            <span class="basket__item__name">Распашонка на мальчика c очень длинным названием</span>
+            <img src="/images/catalog/justborn_vl_1604483192_1.jpg" alt="">
+          </div>
+          <div class="half second__half">
+                <div class="item__quantity__div">
+                        <span id='minus'>-</span>
+                        <span class='item__quantity' class='num'>1</span>
+                        <input id='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
+                        <span id='plus'>+</span>
+                </div>
+                <div class='big__half'>
+                  <span class="num item__sum" >1530Р</span>
+                </div>
+                <div>
+                  <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketdeletebtn.php");?>
+                </div>
+          </div>
         </div>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
 
-        <div class="catalog__item">
-            <div class='img__wrap'>
-              <img src="/images/catalog/1.jpg" alt="">
-              <div class="sale__sign">25%</div>
-            </div>
-            <p>Название товара номер один</p>
-            <span data-price='50' class='old__price'>12&nbsp;384Р</span>
-            <span data-price='50' class='sale__price'>9&nbsp;185Р</span>
-            <div class="item__quantity">
-              <span>Кол-во:</span>
-              <span id='minus'>-</span>
-              <span id='item__quantity'>1</span>
-              <input id='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
-              <span id='plus'>+</span>
-            </div>
-            <svg class='delete__item' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><defs><style>.minus{fill:none;stroke:#13100D;stroke-miterlimit:10;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><circle class="minus" cx="22" cy="22" r="21.5"/><line class="minus" x1="5.79" y1="22" x2="37.51" y2="22"/></g></g></svg>
+        <div class="basket__item">
+          <div class="half">
+            <span class="basket__item__name">Распашонка на мальчика c очень длинным названием</span>
+            <img src="/images/catalog/justborn_vl_1604483192_1.jpg" alt="">
+          </div>
+          <div class="half second__half">
+                <div class="item__quantity__div">
+                        <span id='minus'>-</span>
+                        <span class='item__quantity' class='num'>1</span>
+                        <input id='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
+                        <span id='plus'>+</span>
+                </div>
+                <div class='big__half'>
+                  <span class="num item__sum" >1530Р</span>
+                </div>
+                <div>
+                  <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketdeletebtn.php");?>
+                </div>
+          </div>
         </div>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
+    </div>
 
     </div>
+        
+    
     <div class="basket__total">
-      <span>Итого:&nbsp;</span><span data-currentsum= '1000' id='currentSum'>1&nbsp;000Р</span> 
+    <form action="">
+        <div class='promo__div'>
+            <input type="text" name='promocodeValue' id='promocodeValue' placeholder='Введите промокод'>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
+            <button id='insert__promocode' type='submit'>
+            ввести промокод
+          </button>
+        </div>
+      </form>
+      <div class="total__div">
+        <div class="total">
+          <span>Итого:&nbsp;</span>
+          <span data-currentsum= '1000' id='currentSum' class='num'>1000Р</span> 
+        </div>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
+      </div>
+      
+      
     </div> 
 
-    <div class="promocode">
-      <form action="">
-        <div class='promo__div'>
-          <input type="text" name='promocodeValue' id='promocodeValue' >
-          <label for="promocodeValue">У вас есть промокод? Можете ввести его сюда</label>
-        </div>
-        <button id='insert__promocode' type='submit'>
-          ввести промокод
-        </button>
-      </form>
-    </div>
-    <div class='button__bottom'>
-      <div class="some"><button>Продолжить</button></div>
-      <div class="bottom__line"></div>
-    </div>
     
-  </div>
+
+
+    
+
   
 </div>
 
