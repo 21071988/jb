@@ -170,28 +170,10 @@ a{
 	}
 }
 
-.catalog__Btn__Border{
-	position: absolute;
-	width: 100px;
-	overflow: visible;
-}
-
 #catalogBtn{
 	z-index:100;
 }
 
-.svg__catalog__btn{
-  stroke-dasharray: 1443;
-  stroke-dashoffset: 1443;
-	animation: dash 1s linear forwards;
-	fill:white;
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 
 .wrapper__catalog{
 	display: grid;
@@ -295,7 +277,6 @@ a{
 	.flex;
 	.num;
 	.f2;
-	margin-bottom:@m2;
 }
 .lh{
 	line-height: 42px;
@@ -303,8 +284,11 @@ a{
 #item__color, .item__material span:last-child{
 	.f2;
 }
-#which__size, .item__material, .item__description{
-	margin-bottom:@m2;
+.item__material, .item__description{
+	margin-bottom:@m3;
+}
+.item__description{
+	width: 70%;
 }
 .header__icons{
 	padding-right:@m2;
@@ -362,8 +346,11 @@ header{
 	position: absolute;
 	width: 60px !important;
 	top:50%;
-left:50%;
-transform:translate(-50%, -50%);
+	left:50%;
+	transform:translate(-50%, -50%);
+.cls-1{
+	fill: #79cbd6;
+}
 }
 .catalog__item__heart{
 	.cls-1{
@@ -371,6 +358,8 @@ transform:translate(-50%, -50%);
 	}
 }
 #which__size{
+	margin-top:-20px;
+	margin-bottom:@m3;
 	.rel;
 	.flex;
 	align-items: flex-end;
@@ -400,6 +389,8 @@ transform:translate(-50%, -50%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-bottom:1px dashed @bl;
+	margin:5px 0px;
 }
 .size__choosing__label input{
 	position: absolute;
@@ -408,9 +399,8 @@ transform:translate(-50%, -50%);
 	z-index:100;
 }
 .size__choosing__label__first{
-	
 	position: relative;
-	z-index:2;
+	z-index:3;
 }
 
 .size__choosing__hidden__block{
@@ -425,7 +415,10 @@ transform:translate(-50%, -50%);
 	top:50%;
 	left:50%;
 	transform:translate(-50%, -50%);
-	z-index:1;
+	z-index:2;
+	.cls-1{
+		fill:@mc;
+	}
 }
 .size__choosing__div{
 	position: relative;
@@ -437,6 +430,9 @@ transform:translate(-50%, -50%);
 	cls-1{
 		fill:none !important;
 	}
+	.cls-2 {
+    fill: #272525 !important;
+}
 }
 .basket__wrapper{
 	padding:@m2 @m4;
@@ -565,8 +561,9 @@ transform:translate(-50%, -50%);
 	line-height: 10px;
 	.uppercase;
 	width: fit-content;
+	font-size: 1.5vw;
 	svg{
-		.w100;
+		width: auto;
 	}
 }
 .basket__btn__div{
@@ -577,22 +574,58 @@ transform:translate(-50%, -50%);
 		z-index: 2;
 		.uppercase;
 		margin-top:10px;
-		&:hover+.basketbtnborder .cls-1{
-			fill:@mc;
+		font-size: 2rem;
+	}
+	.svg__catalog__btn{
+		fill:white;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -18%);
+		&:hover{
+			animation: dashBig 2s linear forwards;
 		}
 	}
 	.basketbtnborder{
 		z-index: 1;
 		position: absolute;
-		width: 250px;
-		.cls-1{
-			.trans4;
-			&:hover{
-				fill:@mc;
-			}
+		width: 115px;
+		.trans4;
+		overflow: visible;
 		}
-		
+}
+	@keyframes dashBig {
+		to {
+			stroke-dashoffset: 0;
+			fill : #66c3d0;
+			opacity: 1;
+		}
 	}
+	@keyframes dashSmall {
+		to {
+			stroke-dashoffset: 0;
+			fill : #66c3d0;
+			opacity: 1;
+		}
+	}
+	
+	
+
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.small__ring{
+	stroke:@w;
+	stroke-dasharray: 873;
+			stroke-dashoffset: 873;
+			stroke-width: 4px;
+}
+.big__ring{
+	stroke-dasharray: 2492;
+		stroke-dashoffset: 0;
 }
 .order__wrapper{
 	padding:@m2 @m4;
@@ -674,4 +707,48 @@ transform:translate(-50%, -50%);
 }
 .delivery__pickup{
 	display: none;
+}
+.current__size{
+	.rel;
+}
+.other__sizes{
+	 background: #66c3d0;
+    border-radius: 10px;
+    border: 1px dashed;
+    z-index: 1;
+		position: absolute;
+		top:45px;
+		padding: 10px;
+		left:-10px;
+		.fs;
+		.w100;
+		display: none;
+		.active{
+			color:@w;
+		}
+}
+
+.showSizesBlock{
+	display: block;
+	animation: showSizesBlock .5s forwards;
+}
+@keyframes showSizesBlock{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+.current__size__text{
+	z-index:4;
+	.rel;	
+}
+
+.about__block{
+	align-items: baseline;
+	.whale{
+		width: 40px !important;
+		margin-left:@m1;
+	}
 }

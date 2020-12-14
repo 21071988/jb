@@ -33,10 +33,21 @@
         <div class="flex size__choosing__wrapper">
             <span href="" class='choose__size__link'>Выбрать размер:</span>       
             <div class="size__choosing__div">
-              <label class='size__choosing__label size__choosing__label__first active' for="xs">
-                <input type="radio" id="xs" name='size' value='xs' checked> 56 см / 1 месяц</input>
+              <div class="current__size">
+                <p class='current__size__text'>56см / 1 месяц</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class='item__size__div__back' viewBox="0 0 263.35 79.81"><defs><style>.cls-1{fill:#66c3d0;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><path class="cls-1" d="M2.15,31.13c-4.67,13.45-1.32,29.24,6,38,11.19,13.35,29.85,8.17,73,7,9.6-.26,44.06,1,113,3,40.76,1.2,55.95,2.08,64-9,7.68-10.56,6.44-28.62-1-41-5.62-9.37-14-14.11-20-17-24.65-11.83-44.74-9.48-88-10-26.88-.32-24.29-1.44-61-2-39.53-.6-58,.46-73,13C6,20.8,3,28.76,2.15,31.13Z"/></g></g></svg>
+              </div>
+              <div class="other__sizes">
+              <label class='size__choosing__label active' for="xs">
+                  <input type="radio" id="xs" name='size' value='xs' checked> 56 см / 1 месяц</input>
+                </label>
+              <label class='size__choosing__label' for="m">
+                <input type="radio" id="m" name='size' value='m' checked> 57 см / 1 месяц</input>
               </label>
-              <svg xmlns="http://www.w3.org/2000/svg" class='item__size__div__back' viewBox="0 0 263.35 79.81"><defs><style>.cls-1{fill:#66c3d0;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><path class="cls-1" d="M2.15,31.13c-4.67,13.45-1.32,29.24,6,38,11.19,13.35,29.85,8.17,73,7,9.6-.26,44.06,1,113,3,40.76,1.2,55.95,2.08,64-9,7.68-10.56,6.44-28.62-1-41-5.62-9.37-14-14.11-20-17-24.65-11.83-44.74-9.48-88-10-26.88-.32-24.29-1.44-61-2-39.53-.6-58,.46-73,13C6,20.8,3,28.76,2.15,31.13Z"/></g></g></svg>
+              <label class='size__choosing__label' for="l">
+                <input type="radio" id="l" name='size' value='l' checked> 58 см / 1 месяц</input>
+              </label>
+              </div>
            </div>
         </div>
 
@@ -54,11 +65,11 @@
               <span class='thefont lh'>Кол-во:</span>
                 <div class="item__quantity__div">
                   <svg class='item__quantity__div__back' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78.29 64.25"><defs><style>.cls-1{fill:#66c3d0;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><path class="cls-1" d="M30.84.94a43.48,43.48,0,0,1,18,0,35.41,35.41,0,0,1,16,7,34.56,34.56,0,0,1,11,17c1.25,3.94,5.33,16.82-1,27-8.64,13.88-30.27,12.54-39,12-9.4-.58-19.33-1.2-27-9-9.62-9.78-11.55-26.68-5-37,2.91-4.59,7.26-7.5,11-10A44.62,44.62,0,0,1,30.84.94Z"/></g></g></svg>
-                  <div class="rel">
-                    <span id='minus'>-</span>
-                    <span id='item__quantity'>1</span>
+                  <div class="rel flex">
+                    <span class='minus'>-</span>
+                    <span class='item__quantity'>1</span>
                     <input id='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
-                    <span id='plus'>+</span>
+                    <span class='plus'>+</span>
                 </div>
               </div>
             </div>
@@ -86,10 +97,13 @@
               и туманным владивостоком
             </div>
             
-            <p class='read__about'>
-              <a href="#" class='read__about'>Почитать про условия доставки и оплаты </a>
-              <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
-            </p>
+            <div class="about__block flex">
+              <p class='read__about'>
+                Почитать про условия доставки и оплаты
+                <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
+              </p>
+              <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/whale.php");?>
+              </div>
             <div class="basket__btn__div">
               <button id='to__basket'>В корзину</button>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>

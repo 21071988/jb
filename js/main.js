@@ -14,6 +14,11 @@ window.onload = ()=>{
       });
     }
    }
+
+   //changing classList class
+   function changeClass(id,className){
+      (id.classList.contains(className) ? id.classList.remove(className) : id.classList.add(className));
+}
   
   
   let catalogBtn = document.getElementById('catalogBtn');
@@ -24,7 +29,10 @@ window.onload = ()=>{
     });
   }  
   //getting svg length
-  // totalLength(document.querySelector('.svg__catalog__btn'));
+// function totalLength(){
+//     console.log((document.querySelector('.small__ring')).getTotalLength());
+//   }
+//   totalLength();
 
   //changing item amount in basket
   let minus = Array.from(document.querySelectorAll('.minus'));
@@ -43,11 +51,16 @@ window.onload = ()=>{
   				  let current__item__number = Number(minus[i].nextSibling.nextSibling.innerText);
   				  minus[i].nextSibling.nextSibling.innerText = current__item__number - 1;
   				  minus[i].parentNode.childNodes[7].value =  minus[i].nextSibling.nextSibling.innerText;
-            let needToMinus = Number(itemSum[i].dataset.price);
-            itemSum[i].innerText = needToMinus * Number(itemBasketQuantity[i].innerText);
-  				  currentSum = currentSum - needToMinus;
-  				  yourSum.setAttribute('data-currentsum', currentSum);
-  				  yourSum.innerText = currentSum + ' Р';
+            let hiddenInputQuantity = document.getElementById('item__quantity__input');
+            (hiddenInputQuantity ? hiddenInputQuantity.value= minus[i].nextSibling.nextSibling.innerText : 1);
+
+            if(itemSum.length>0){
+              let needToMinus = Number(itemSum[i].dataset.price);
+              itemSum[i].innerText = needToMinus * Number(itemBasketQuantity[i].innerText);
+              currentSum = currentSum - needToMinus;
+              yourSum.setAttribute('data-currentsum', currentSum);
+              yourSum.innerText = currentSum + ' Р';
+            }
             
   				  var minusId = minus[i].dataset.id;
   				  var quant = minus[i].parentNode.childNodes[7].value;
@@ -65,11 +78,17 @@ window.onload = ()=>{
   			  let current__item__number = Number(minus[i].nextSibling.nextSibling.innerText);
   			  minus[i].nextSibling.nextSibling.innerText = current__item__number + 1;
   			  minus[i].parentNode.childNodes[7].value =  minus[i].nextSibling.nextSibling.innerText;
-          let needToMinus = Number(itemSum[i].dataset.price);
-          itemSum[i].innerText = needToMinus * Number(itemBasketQuantity[i].innerText);
-  			  currentSum = currentSum +	needToMinus;
-  			  yourSum.setAttribute('data-currentsum', currentSum);
-  			  yourSum.innerText = currentSum + ' Р';
+
+          let hiddenInputQuantity = document.getElementById('item__quantity__input');
+            (hiddenInputQuantity ? hiddenInputQuantity.value= minus[i].nextSibling.nextSibling.innerText : 1);
+          if(itemSum.length>0){
+            let needToMinus = Number(itemSum[i].dataset.price);
+            itemSum[i].innerText = needToMinus * Number(itemBasketQuantity[i].innerText);
+            currentSum = currentSum +	needToMinus;
+            yourSum.setAttribute('data-currentsum', currentSum);
+            yourSum.innerText = currentSum + ' Р';
+          }
+          
   
   			  var minusId = minus[i].dataset.id;
   			  var quant = minus[i].parentNode.childNodes[7].value;
@@ -87,14 +106,18 @@ window.onload = ()=>{
   let deleteBasketBtn = Array.from(document.querySelectorAll('.basket__delete__btn'));
   let basketLines = Array.from(document.querySelectorAll('.green__line'));
   let itemToDelete = Array.from(document.querySelectorAll('.basket__item'));
-  for(let i=0;i<deleteBasketBtn.length;i++){
-    let needToMinus = Number(itemToDelete[i].parentNode.childNodes[5].dataset.price) * Number(minus[i].parentNode.childNodes[7].value);
+  for(let i=0;i<deleteBasketBtn.length;i++){ 
     deleteBasketBtn[i].addEventListener('click',()=>{
-      deleteBasketBtn[i].parentNode.parentNode.parentNode.remove()
+      let needToMinus = Number(itemSum[i].dataset.price) * Number(itemBasketQuantity[i].innerText);
+      // console.log(itemBasketQuantity[i].innerText);
+      console.log(needToMinus)
+      itemToDelete[i].remove()
       basketLines[i+1].remove()
-      currentSum = currentSum - needToMinus;
-    yourSum.setAttribute('data-currentsum', currentSum);
-    yourSum.innerText = currentSum + ' Р';
+      console.log(currentSum)
+      currentSum = currentSum - needToMinus
+      console.log(currentSum)
+      yourSum.setAttribute('data-currentsum', currentSum)
+      yourSum.innerText = currentSum + ' Р'
     })
     
     
@@ -109,11 +132,60 @@ window.onload = ()=>{
 // // Появление кнопки "ввести промокод"
 let promoValue = document.getElementById('promocodeValue');
 let promoBtn = document.getElementById('insert__promocode');
+let rings = Array.from(document.querySelectorAll('.svg__catalog__btn'));
 if(promoValue !=null){
-   promoValue.addEventListener('keydown', ()=>{(promoValue.value.length>=5 ? promoBtn.style.opacity = '1' : promoBtn.style.opacity = '0')});
+   promoValue.addEventListener('keydown', ()=>{(promoValue.value.length>=5 ? promoBtn.style.opacity = '1' : promoBtn.style.opacity = '0')})
+}
  
+//animation button rings
+let toBasket = document.querySelector('.basket__btn__div');
+let toBsketSign = document.getElementById('to__basket');
 
-  
+
+if(toBasket){
+  toBasket.addEventListener('mouseover',()=>{
+    // rings[0].style.stroke.dashoffset = '2492'
+    rings[0].style.animation = 'dashBig .5s linear forwards'
+    // rings[0].style.fill = '#66c3d0'
+    rings[0].style.stroke = '#ffffff'
+    rings[1].style.animation = 'dashSmall .5s linear forwards'
+    // rings[1].style.fill = '#66c3d0'
+    toBsketSign.style.color = '#ffffff'
+  });
+  toBasket.addEventListener('mouseleave',()=>{
+    rings[0].style.animation = 'none'
+    rings[0].style.fill = '#ffffff'
+    rings[1].style.animation = 'none'
+    rings[1].style.fill = '#ffffff'
+    rings[0].style.stroke = '#000000'
+    toBsketSign.style.color = '#000000'
+  });
+}
+
+let currentSize = document.querySelector('.current__size');
+let otherSizes = document.querySelector('.other__sizes');
+if(currentSize){
+  currentSize.addEventListener('click',()=>{
+    changeClass(otherSizes,'showSizesBlock')
+  });
+}
+document.addEventListener('click',function(e){
+  if(!e.target.classList.contains('current__size__text')){
+    if(otherSizes){
+      otherSizes.classList.remove('showSizesBlock');
+    }
+  }
+})
+
+let itemSize = Array.from(document.querySelectorAll('.size__choosing__label'));
+for(let i=0;i<itemSize.length;i++){
+  itemSize[i].addEventListener('change',function(){
+    var current = document.querySelector(".active");
+    console.log(current);
+    current.classList.remove('active');
+    itemSize[i].classList.add('active');
+  })
+}
 
 
 
@@ -521,85 +593,6 @@ if(promoValue !=null){
 //   }
 //  }
 
-
-	
-// if(minus.length>0){
-
-
-// 	for(let i=0;i<minus.length;i++){
-// 		  minus[i].addEventListener('click',()=>{
-// 			  if(Number(minus[i].nextSibling.nextSibling.innerText)>1){
-// 				  let current__item__number = Number(minus[i].nextSibling.nextSibling.innerText);
-// 				  minus[i].nextSibling.nextSibling.innerText = current__item__number - 1;
-// 				  minus[i].parentNode.childNodes[7].value =  minus[i].nextSibling.nextSibling.innerText;
-				  
-// 				  let needToMinus = Number(minus[i].parentNode.previousSibling.previousSibling.childNodes[5].dataset.price);
-// 				  currentSum = currentSum - needToMinus;
-// 				  yourSum.setAttribute('data-currentsum', currentSum);
-// 				  yourSum.innerText = currentSum + ' Р';
-				  
-// 				  var minusId = minus[i].dataset.id;
-// 				  var quant = minus[i].parentNode.childNodes[7].value;
-// 				  const http = new EasyHTTP;
-// 				  const url = 'http://ikra.slim.technology/ajax/countBasket.php?id='+`${minusId}`+'&q='+`${quant}`;
-// 				  http.get(url);
-				  
-				  
-
-// 			  }
-			
-// 		  });
-		  
-// 		  plus[i].addEventListener('click',()=>{
-// 			  let current__item__number = Number(minus[i].nextSibling.nextSibling.innerText);
-// 			  minus[i].nextSibling.nextSibling.innerText = current__item__number + 1;
-// 			  minus[i].parentNode.childNodes[7].value =  minus[i].nextSibling.nextSibling.innerText;
-			  
-// 			  let needToMinus = Number(minus[i].parentNode.previousSibling.previousSibling.childNodes[5].dataset.price);
-// 			  currentSum = currentSum +	 needToMinus;
-// 			  yourSum.setAttribute('data-currentsum', currentSum);
-// 			  yourSum.innerText = currentSum + ' Р';
-
-// 			  var minusId = minus[i].dataset.id;
-// 			  var quant = minus[i].parentNode.childNodes[7].value;
-// 			  const http = new EasyHTTP;
-// 				  const url = 'http://ikra.slim.technology/ajax/countBasket.php?id='+`${minusId}`+'&q='+`${quant}`;
-// 				  http.get(url);
-// 		  });
-		  
-		  
-// 	}
-// }
-
-
-
-  
-  
-  
-// //удаление непонравившихся товаров в корзине
-
-// let itemDel = document.querySelectorAll('.delete__item');
-// let itemToDelete = Array.from(itemDel);
-
-// for(let i = 0; i< itemToDelete.length; i++){
-//   itemToDelete[i].addEventListener('click',function(){
-//     let needToMinus = Number(itemToDelete[i].parentNode.childNodes[5].dataset.price) * Number(minus[i].parentNode.childNodes[7].value);
-//     itemToDelete[i].parentNode.remove();  
- 
-//     currentSum = currentSum - needToMinus;
-//     yourSum.setAttribute('data-currentsum', currentSum);
-//     yourSum.innerText = currentSum + ' Р';
-    
-    
-//    				  var minusId = itemToDelete[i].dataset.id;
-// 				  const http = new EasyHTTP;
-// 				  const url = 'http://ikra.slim.technology/ajax/deleteBasket.php?id='+`${minusId}`;
-// 				  http.get(url);
-				
-//   });
-				  
-				 
-// }
 
 // //reg block
 // let regAr = document.querySelectorAll('.reg__window__menu a');
@@ -1244,4 +1237,4 @@ if(promoValue !=null){
 //     } 
 // }
 
-}
+

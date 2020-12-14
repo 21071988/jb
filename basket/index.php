@@ -110,7 +110,7 @@
       <div class="total__div">
         <div class="total">
           <span>Итого:&nbsp;</span>
-          <span data-currentsum= '1000' id='currentSum' class='num'>1000Р</span> 
+          <span data-currentsum= '4590' id='currentSum' class='num'>4590Р</span> 
         </div>
         <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
         <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
