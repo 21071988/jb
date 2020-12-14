@@ -27,20 +27,20 @@
       </div>
 
       <div class="bakset__items__check">
-        <div class="basket__item">
+      <div class="basket__item">
           <div class="half">
             <span class="basket__item__name">Распашонка на мальчика c очень длинным названием</span>
             <img src="/images/catalog/justborn_vl_1604483192_1.jpg" alt="">
           </div>
           <div class="half second__half">
                 <div class="item__quantity__div">
-                        <span id='minus'>-</span>
+                        <span class='minus'>-</span>
                         <span class='item__quantity' class='num'>1</span>
-                        <input id='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
-                        <span id='plus'>+</span>
+                        <input class='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
+                        <span class='plus'>+</span>
                 </div>
                 <div class='big__half'>
-                  <span class="num item__sum" >1530Р</span>
+                  <span class="num item__sum" data-price='1530'>1530Р</span>
                 </div>
                 <div>
                   <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketdeletebtn.php");?>
@@ -56,13 +56,13 @@
           </div>
           <div class="half second__half">
                 <div class="item__quantity__div">
-                        <span id='minus'>-</span>
+                        <span class='minus'>-</span>
                         <span class='item__quantity' class='num'>1</span>
-                        <input id='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
-                        <span id='plus'>+</span>
+                        <input class='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
+                        <span class='plus'>+</span>
                 </div>
                 <div class='big__half'>
-                  <span class="num item__sum" >1530Р</span>
+                  <span class="num item__sum" data-price='1530'>1530Р</span>
                 </div>
                 <div>
                   <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketdeletebtn.php");?>
@@ -78,13 +78,13 @@
           </div>
           <div class="half second__half">
                 <div class="item__quantity__div">
-                        <span id='minus'>-</span>
+                        <span class='minus'>-</span>
                         <span class='item__quantity' class='num'>1</span>
-                        <input id='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
-                        <span id='plus'>+</span>
+                        <input class='item__quantity__input' name='itemQuantity' value='1' hidden></hidden>
+                        <span class='plus'>+</span>
                 </div>
                 <div class='big__half'>
-                  <span class="num item__sum" >1530Р</span>
+                  <span class="num item__sum" data-price='1530'>1530Р</span>
                 </div>
                 <div>
                   <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketdeletebtn.php");?>
@@ -114,10 +114,9 @@
         </div>
         <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
         <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
-      </div>
-      
-      
+      </div> 
     </div> 
+    
 
     
 
