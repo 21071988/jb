@@ -1,5 +1,11 @@
 <?php require($_SERVER["DOCUMENT_ROOT"]."/header.php");?>
 <div class="item__wrapper">
+<div class="about__delivery__popup">
+  <p>Вот тут огромный текст про то как мы доставляем
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum nesciunt minima, iusto provident esse molestiae tenetur cumque voluptas ut accusantium? Sint voluptas, voluptatum necessitatibus distinctio tempora quis voluptatem quas reiciendis magni aliquid laboriosam minima, blanditiis obcaecati. Eaque eum possimus consectetur!</p>
+</div>
+
+
 <div class='breadcrumbs'>
   <a href="/catalog">каталог</a>
     <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/smallbear.php");?>
@@ -7,17 +13,31 @@
 
 </div>
   <div class="item">
-    <div class="item__imgs" id='item__imgs'>
-    <a data-fancybox="gallery" href="/images/catalog/2.jpg"><img src="/images/catalog/justborn_vl_1604483192_1.jpg"></a>
-    <!-- <a data-fancybox="gallery" href="/images/catalog/3.jpg"><img src="/images/catalog/justborn_vl_1604882149_1.jpg"></a>
-    <a data-fancybox="gallery" href="/images/catalog/1.jpg"><img src="/images/catalog/justborn_vl_1603850319_1.jpg.jpg"></a>
-    <a data-fancybox="gallery" href="/images/catalog/2.jpg"><img src="/images/catalog/justborn_vl_1604483192_1.jpg"></a>
-    <a data-fancybox="gallery" href="/images/catalog/3.jpg"><img src="/images/catalog/justborn_vl_1604882149_1.jpg"></a>
-    <a data-fancybox="gallery" href="/images/catalog/1.jpg"><img src="/images/catalog/justborn_vl_1603850319_1.jpg.jpg"></a>
-    <a data-fancybox="gallery" href="/images/catalog/2.jpg"><img src="/images/catalog/justborn_vl_1604483192_1.jpg"></a>
-    <a data-fancybox="gallery" href="/images/catalog/3.jpg"><img src="/images/catalog/justborn_vl_1604882149_1.jpg"></a> -->
-        
-    </div>
+    
+  <div class='block'>
+  <div class='slider-for-item-card'>
+      <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+        <img src="/images/catalog/justborn_vl_1603850319_1.jpg">
+        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+  </div>
+  <div class='slider-nav-item-card'>
+        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+        <img src="/images/catalog/justborn_vl_1603850319_1.jpg">
+        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+  </div>
+  <div class="item__slider__arrows">
+     <div class="prev__item__card">
+     <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrowslider.php");?>
+     </div>
+     <div class="next__item__card">
+     <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrowslider.php");?>
+     </div>
+  </div>
+</div>
     <div class="item__props">
         <h1 class="item__name" >
         Baboo прорезыватель для зубов с охлаждающим наполнителем ягоды
@@ -39,13 +59,13 @@
               </div>
               <div class="other__sizes">
               <label class='size__choosing__label active' for="xs">
-                  <input type="radio" id="xs" name='size' value='xs' checked> 56 см / 1 месяц</input>
+                  <input type="radio" id="xs" name='size' value='56 см / 1 месяц' checked> 56 см / 1 месяц</input>
                 </label>
               <label class='size__choosing__label' for="m">
-                <input type="radio" id="m" name='size' value='m' checked> 57 см / 1 месяц</input>
+                <input type="radio" id="m" name='size' value='57 см / 1 месяц' checked> 57 см / 1 месяц</input>
               </label>
               <label class='size__choosing__label' for="l">
-                <input type="radio" id="l" name='size' value='l' checked> 58 см / 1 месяц</input>
+                <input type="radio" id="l" name='size' value='58 см / 1 месяц' checked> 58 см / 1 месяц</input>
               </label>
               </div>
            </div>
@@ -81,12 +101,12 @@
             </div>
 
             <div class="item__color">
-              <span>Цвет:</span>
+              <span class='item__color__n'>Цвет:</span>
               <span id='item__color'>Фиолетовый</span>
             </div>
 
             <div class="item__material">
-              <span>Материал:</span>
+              <span class='item__color__n'>Материал:</span>
               <span>Полиэстр</span>
             </div>
 
@@ -110,7 +130,9 @@
             </div>
 
           </form>
-
+          <!-- <div class="owl-carousel">
+      
+    </div> -->
         
 
        
