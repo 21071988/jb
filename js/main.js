@@ -256,51 +256,52 @@ let deliveryType = Array.from(document.querySelectorAll('.delivery__type__p'));
 let arrow = Array.from(document.querySelectorAll('.arrow'));
 let hiddenOrderDelInputs = Array.from(document.querySelectorAll('.delivery__type'));
 let hiddenOrderPayInputs = Array.from(document.querySelectorAll('.payment__type'));
+if(arrow.length>0){
+  arrow[0].classList.add('left__arrow__delivery');
+  arrow[1].classList.add('right__arrow__delivery');
+  arrow[2].classList.add('left__arrow');
+  arrow[3].classList.add('right__arrow');
 
-arrow[0].classList.add('left__arrow__delivery');
-arrow[1].classList.add('right__arrow__delivery');
-arrow[2].classList.add('left__arrow');
-arrow[3].classList.add('right__arrow');
-
-leftArrow = Array.from(document.querySelectorAll('.left__arrow .cls-1'));
-rightArrow = Array.from(document.querySelectorAll('.right__arrow .cls-1'));
-if(paymentType){
-  for(let i=0;i<2;i++){
-    paymentType[0].addEventListener('click',()=>{
-      paymentType[0].style.color = '#66c3d0'
-      paymentType[1].style.color = '#000000'
-      hiddenOrderPayInputs[0].checked = 'checked'
-      for(let j=0;j<leftArrow.length;j++){leftArrow[j].style.fill = '#66c3d0'}
-      for(let j=0;j<rightArrow.length;j++){rightArrow[j].style.fill = '#000000'}
-    })
-    paymentType[1].addEventListener('click',()=>{
-      paymentType[1].style.color = '#66c3d0'
-      paymentType[0].style.color = '#000000'
-      hiddenOrderPayInputs[1].checked = 'checked'
-      for(let j=0;j<rightArrow.length;j++){rightArrow[j].style.fill = '#66c3d0'}
-      for(let j=0;j<leftArrow.length;j++){leftArrow[j].style.fill = '#000000'}
-    })
+  leftArrow = Array.from(document.querySelectorAll('.left__arrow .cls-1'));
+  rightArrow = Array.from(document.querySelectorAll('.right__arrow .cls-1'));
+  if(paymentType){
+    for(let i=0;i<2;i++){
+      paymentType[0].addEventListener('click',()=>{
+        paymentType[0].style.color = '#66c3d0'
+        paymentType[1].style.color = '#000000'
+        hiddenOrderPayInputs[0].checked = 'checked'
+        for(let j=0;j<leftArrow.length;j++){leftArrow[j].style.fill = '#66c3d0'}
+        for(let j=0;j<rightArrow.length;j++){rightArrow[j].style.fill = '#000000'}
+      })
+      paymentType[1].addEventListener('click',()=>{
+        paymentType[1].style.color = '#66c3d0'
+        paymentType[0].style.color = '#000000'
+        hiddenOrderPayInputs[1].checked = 'checked'
+        for(let j=0;j<rightArrow.length;j++){rightArrow[j].style.fill = '#66c3d0'}
+        for(let j=0;j<leftArrow.length;j++){leftArrow[j].style.fill = '#000000'}
+      })
+    }
   }
-}
 
-let leftArrowDel = Array.from(document.querySelectorAll('.left__arrow__delivery .cls-1'));
-let rightArrowDel = Array.from(document.querySelectorAll('.right__arrow__delivery .cls-1'));
-if(paymentType){
-  for(let i=0;i<2;i++){
-    deliveryType[0].addEventListener('click',()=>{
-      deliveryType[0].style.color = '#66c3d0'
-      deliveryType[1].style.color = '#000000'
-      hiddenOrderDelInputs[0].checked = 'checked'
-      for(let j=0;j<leftArrowDel.length;j++){leftArrowDel[j].style.fill = '#66c3d0'}
-      for(let j=0;j<rightArrowDel.length;j++){rightArrowDel[j].style.fill = '#000000'}
-    })
-    deliveryType[1].addEventListener('click',()=>{
-      deliveryType[1].style.color = '#66c3d0'
-      deliveryType[0].style.color = '#000000'
-      hiddenOrderDelInputs[1].checked = 'checked'
-      for(let j=0;j<leftArrowDel.length;j++){rightArrowDel[j].style.fill = '#66c3d0'}
-      for(let j=0;j<rightArrowDel.length;j++){leftArrowDel[j].style.fill = '#000000'}
-    })
+  let leftArrowDel = Array.from(document.querySelectorAll('.left__arrow__delivery .cls-1'));
+  let rightArrowDel = Array.from(document.querySelectorAll('.right__arrow__delivery .cls-1'));
+  if(paymentType){
+    for(let i=0;i<2;i++){
+      deliveryType[0].addEventListener('click',()=>{
+        deliveryType[0].style.color = '#66c3d0'
+        deliveryType[1].style.color = '#000000'
+        hiddenOrderDelInputs[0].checked = 'checked'
+        for(let j=0;j<leftArrowDel.length;j++){leftArrowDel[j].style.fill = '#66c3d0'}
+        for(let j=0;j<rightArrowDel.length;j++){rightArrowDel[j].style.fill = '#000000'}
+      })
+      deliveryType[1].addEventListener('click',()=>{
+        deliveryType[1].style.color = '#66c3d0'
+        deliveryType[0].style.color = '#000000'
+        hiddenOrderDelInputs[1].checked = 'checked'
+        for(let j=0;j<leftArrowDel.length;j++){rightArrowDel[j].style.fill = '#66c3d0'}
+        for(let j=0;j<rightArrowDel.length;j++){leftArrowDel[j].style.fill = '#000000'}
+      })
+    }
   }
 }
 

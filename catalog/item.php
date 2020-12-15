@@ -16,18 +16,18 @@
     
   <div class='block'>
   <div class='slider-for-item-card'>
-      <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
-        <img src="/images/catalog/justborn_vl_1603850319_1.jpg">
-        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
-        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
-        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+        <img src="/images/catalog/IMG_5656-01.jpg">
+        <img src="/images/catalog/IMG_5618-01.jpg">
+        <img src="/images/catalog/IMG_5629-01.jpg">
+        <img src="/images/catalog/IMG_5631-01.jpg">
+        <img src="/images/catalog/IMG_5644-01.jpg">
   </div>
   <div class='slider-nav-item-card'>
-        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
-        <img src="/images/catalog/justborn_vl_1603850319_1.jpg">
-        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
-        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
-        <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+        <img src="/images/catalog/IMG_5656-01.jpg">
+        <img src="/images/catalog/IMG_5618-01.jpg">
+        <img src="/images/catalog/IMG_5629-01.jpg">
+        <img src="/images/catalog/IMG_5631-01.jpg">
+        <img src="/images/catalog/IMG_5644-01.jpg">
   </div>
   <div class="item__slider__arrows">
      <div class="prev__item__card">

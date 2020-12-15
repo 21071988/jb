@@ -36,9 +36,9 @@ body, p{
 h1{
 	.uppercase;
 }
-// img{
-// 	.w100;
-// }
+img{
+	.w100;
+}
 .num{
 	.thefontNumbers;
 }
@@ -911,4 +911,32 @@ header{
 }
 .payment__type__p, .delivery__type__p{
 	.uppercase;
+}
+
+.menu__btn{
+	width: 40px !important;
+	margin-left:@m1;
+	circle{
+		fill:@mc;
+	}
+	.lower__stick, .higher__stick{
+		&:hover{
+			fill:@mc !important;
+			transform: rotateZ(45deg);
+		}
+	}
+	.smaller__circle{
+		fill:@mc;
+		.trans4;
+		&:hover{
+			fill:@w;
+
+		}
+	}
+}
+.bigger__circle{
+	&:hover+.lower__stick{
+		fill:@mc !important;
+			transform: rotateZ(45deg);
+	}
 }
