@@ -36,13 +36,15 @@
   <div class="delivery__type order__block">
   <h2> Доставка </h2>
     <div class="order__type__h2">
-    <a class='active'>Доставка</a> 
+    <p class='active delivery__type__p'>Доставка</p> 
+    <input class='delivery__type' name='delivery__type' value='delivery__delivery' type='radio' hidden></hidden>
       <div class='delivery__type__choosing'>
         <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
         <h3>Способ доставки</h3>
         <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
       </div>
-    <a>Самовывоз</a>
+    <p class='active delivery__type__p'>Самовывоз</p> 
+    <input class='delivery__type' name='delivery__type' value='delivery__takeout' type='radio' hidden></hidden>
     </div>        
 
     <div class="delivery__data">
@@ -93,76 +95,144 @@
     <div class="payment__type order__block">
         <h2>способ оплаты</h2>
         <div class="order__type__h2">
-          <a class='active'>на сайте</a> 
+          <p class='active payment__type__p'>на сайте</p>
+          <input class='payment__type' name='payment__type' value='site__payment' type='radio' hidden></hidden>
             <div class='delivery__type__choosing'>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
               <h3>способ оплаты</h3>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
             </div>
-          <a>в магазине</a>
+          <p class='payment__type__p'>в магазине</p>
+          <input class='payment__type' name='payment__type' value='shop__payment' type='radio' hidden></hidden>
     </div> 
-    </div>
+</div>
 
     <div class="checking__order__block">
-      <h2>Проверяем заказ</h2>
-      <div class="checking__order__wrapper">
-      
-      <svg class='oal' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.09 49.41"><defs><style>.cls-1{fill:none;stroke:#13100d;stroke-miterlimit:10;stroke-width:3px;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><polyline class="cls-1" points="0.95 1.16 30.67 25.45 0.95 48.22"/></g></g></svg>
+       <div class='checking__order__block__sign'>
+       <div>
+          <h2>Проверяем заказ</h2>
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?> 
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?> 
+       </div>
+       <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/lamb.php");?> 
+       </div>
+       
         
         <div class="checking__order">
-          <div class="catalog__item">
-                <div class='img__wrap'>
-                  <img src="/images/catalog/1.jpg" alt="">
-                  <div class="sale__sign">25%</div>
+          <div class="order__item">
+                <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+                
+                <p class='order__item__name'>Название товара номер один</p>
+                
+                <div class='order__item__size'>
+                  <span>Размер:</span>
+                  <span class='num'>56 см</span>
                 </div>
-                <p>Название товара номер один</p>
-                <span class='old__price'>12&nbsp;384Р</span>
-                <span class='sale__price'>9&nbsp;185Р</span>
-          </div>
+                
+                <div class='order__item__quantity'>
+                  <span>Кол-во:</span>
+                  <span class='num'>3</span>
+                
+                </div>
+                <span class='order__price num'>1530Р</span>
+          </div>  
 
-          <div class="catalog__item">
-                <div class='img__wrap'>
-                  <img src="/images/catalog/1.jpg" alt="">
-                  <div class="sale__sign">25%</div>
+          <div class="order__item">
+                <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+                
+                <p class='order__item__name'>Название товара номер один</p>
+                
+                <div class='order__item__size'>
+                  <span>Размер:</span>
+                  <span class='num'>56 см</span>
                 </div>
-                <p>Название товара номер один</p>
-                <span class='old__price'>12&nbsp;384Р</span>
-                <span class='sale__price'>9&nbsp;185Р</span>
-          </div>
+                
+                <div class='order__item__quantity'>
+                  <span>Кол-во:</span>
+                  <span class='num'>3</span>
+                
+                </div>
+                <span class='order__price num'>1530Р</span>
+          </div>  
 
-          <div class="catalog__item">
-                <div class='img__wrap'>
-                  <img src="/images/catalog/1.jpg" alt="">
-                  <div class="sale__sign">25%</div>
+          <div class="order__item">
+                <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+                
+                <p class='order__item__name'>Название товара номер один</p>
+                
+                <div class='order__item__size'>
+                  <span>Размер:</span>
+                  <span class='num'>56 см</span>
                 </div>
-                <p>Название товара номер один</p>
-                <span class='old__price'>12&nbsp;384Р</span>
-                <span class='sale__price'>9&nbsp;185Р</span>
-          </div>
+                
+                <div class='order__item__quantity'>
+                  <span>Кол-во:</span>
+                  <span class='num'>3</span>
+                
+                </div>
+                <span class='order__price num'>1530Р</span>
+          </div>  
 
-          <div class="catalog__item">
-                <div class='img__wrap'>
-                  <img src="/images/catalog/1.jpg" alt="">
-                  <div class="sale__sign">25%</div>
+          <div class="order__item">
+                <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+                
+                <p class='order__item__name'>Название товара номер один</p>
+                
+                <div class='order__item__size'>
+                  <span>Размер:</span>
+                  <span class='num'>56 см</span>
                 </div>
-                <p>Название товара номер один</p>
-                <span class='old__price'>12&nbsp;384Р</span>
-                <span class='sale__price'>9&nbsp;185Р</span>
-          </div>
+                
+                <div class='order__item__quantity'>
+                  <span>Кол-во:</span>
+                  <span class='num'>3</span>
+                
+                </div>
+                <span class='order__price num'>1530Р</span>
+          </div>  
+
+          <div class="order__item">
+                <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+                
+                <p class='order__item__name'>Название товара номер один</p>
+                
+                <div class='order__item__size'>
+                  <span>Размер:</span>
+                  <span class='num'>56 см</span>
+                </div>
+                
+                <div class='order__item__quantity'>
+                  <span>Кол-во:</span>
+                  <span class='num'>3</span>
+                
+                </div>
+                <span class='order__price num'>1530Р</span>
+          </div>  
+
+          <div class="order__item">
+                <img src="/images/catalog/justborn_vl_1604882149_1.jpg">
+                
+                <p class='order__item__name'>Название товара номер один</p>
+                
+                <div class='order__item__size'>
+                  <span>Размер:</span>
+                  <span class='num'>56 см</span>
+                </div>
+                
+                <div class='order__item__quantity'>
+                  <span>Кол-во:</span>
+                  <span class='num'>3</span>
+                
+                </div>
+                <span class='order__price num'>1530Р</span>
+          </div>        
         </div>
-
-        <svg class='oar' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.09 49.41"><defs><style>.cls-1{fill:none;stroke:#13100d;stroke-miterlimit:10;stroke-width:3px;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><polyline class="cls-1" points="0.95 1.16 30.67 25.45 0.95 48.22"/></g></g></svg>
-      </div>
     </div>
 
-  </div>
-    <div class="button__bottom button__bottom__order">
-      <div class="some">
-        <button id='order__button' type='submit'>Оформить заказ</button>
-      </div>
-      <div class="bottom__line"></div>
-    </div>
-  
+  <div class="basket__btn__div">
+              <button id='to__basket' class='order__btn'>Оформить заказ</button>
+              <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>
+            </div>
   </form>
 </div>
 <?php require($_SERVER["DOCUMENT_ROOT"]."/footer.php");?>

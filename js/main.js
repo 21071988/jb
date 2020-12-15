@@ -189,30 +189,120 @@ for(let i=0;i<itemSize.length;i++){
 
 let readAboutTrigger = document.querySelector('.read__about');
 let readAboutBlock = document.querySelector('.about__delivery__popup');
-readAboutTrigger.addEventListener('click',()=>changeClass(readAboutBlock,'showPopUp'));
+if (readAboutTrigger) readAboutTrigger.addEventListener('click',()=>changeClass(readAboutBlock,'showPopUp'));
 
 
 //arrow cirlces in slider
 
 let sliderArrows = Array.from(document.querySelectorAll('.item__slider__arrows div'));
 let cirlces =Array.from(document.querySelectorAll('.cls-circle'));
-for(let i=0;i<2;i++){
-  sliderArrows[i].addEventListener('mouseover',()=>{
-    cirlces[i].classList.remove('removedash')
-    cirlces[i].classList.add('dash')})
-  sliderArrows[i].addEventListener('mouseleave',()=>{
-    
-    cirlces[i].classList.remove('dash')
-    cirlces[i].classList.add('removedash')
-    // cirlces[i].style.stroke.dashoffset = '0'
+if(cirlces.length>0){
+  for(let i=0;i<2;i++){
+    sliderArrows[i].addEventListener('mouseover',()=>{
+      cirlces[i].classList.remove('removedash')
+      cirlces[i].classList.add('dash')})
+    sliderArrows[i].addEventListener('mouseleave',()=>{
+      
+      cirlces[i].classList.remove('dash')
+      cirlces[i].classList.add('removedash')
+    })
+  };
+}
 
-})
+// //order label movement
+let orderInputs = Array.from(document.querySelectorAll('.order__wrapper input'));
 
-  
-};
+if(orderInputs.length>0){
+	for(let i = 0; i< 10; i++){
+		(orderInputs[i].value ?  orderInputs[i].previousSibling.previousSibling.style.transform = "translateY(0px)" : 1)
+		  orderInputs[i].onfocus = function(){
+		    orderInputs[i].previousSibling.previousSibling.style.transform = "translateY(0px)";
+		  }
+		
+		  orderInputs[i].onblur = function(){
+		     if(!orderInputs[i].value){
+		        orderInputs[i].previousSibling.previousSibling.style.transform = "translateY(22px)";
+		      }  else{
+		        orderInputs[i].classList.add('green__input');
+		      }
+		  }
+		
+		  orderInputs[i].addEventListener('keyup',function(){
+		    if(!orderInputs[i].value){
+		      orderInputs[i].previousSibling.previousSibling.style.transform = "translateY(22px)";
+		    }  else{
+		      orderInputs[i].previousSibling.previousSibling.style.transform = "translateY(0px)";
+		    }
+		  })
+		
+		  
+		  orderInputs[i].addEventListener('mouseover',function(){
+		    orderInputs[i].previousSibling.previousSibling.style.transform = "translateY(0px)";
+		  });
+		
+		  orderInputs[i].addEventListener('mouseleave',function(){
+		    if(!orderInputs[i].value){
+		      orderInputs[i].previousSibling.previousSibling.style.transform = "translateY(22px)";
+		    }  else{
+		      orderInputs[i].classList.add('green__input');
+		    }
+		  });
+		}
+}
 
+// order checkings
+let paymentType = Array.from(document.querySelectorAll('.payment__type__p'));
+let deliveryType = Array.from(document.querySelectorAll('.delivery__type__p'));
+let arrow = Array.from(document.querySelectorAll('.arrow'));
+let hiddenOrderDelInputs = Array.from(document.querySelectorAll('.delivery__type'));
+let hiddenOrderPayInputs = Array.from(document.querySelectorAll('.payment__type'));
 
+arrow[0].classList.add('left__arrow__delivery');
+arrow[1].classList.add('right__arrow__delivery');
+arrow[2].classList.add('left__arrow');
+arrow[3].classList.add('right__arrow');
 
+leftArrow = Array.from(document.querySelectorAll('.left__arrow .cls-1'));
+rightArrow = Array.from(document.querySelectorAll('.right__arrow .cls-1'));
+if(paymentType){
+  for(let i=0;i<2;i++){
+    paymentType[0].addEventListener('click',()=>{
+      paymentType[0].style.color = '#66c3d0'
+      paymentType[1].style.color = '#000000'
+      hiddenOrderPayInputs[0].checked = 'checked'
+      for(let j=0;j<leftArrow.length;j++){leftArrow[j].style.fill = '#66c3d0'}
+      for(let j=0;j<rightArrow.length;j++){rightArrow[j].style.fill = '#000000'}
+    })
+    paymentType[1].addEventListener('click',()=>{
+      paymentType[1].style.color = '#66c3d0'
+      paymentType[0].style.color = '#000000'
+      hiddenOrderPayInputs[1].checked = 'checked'
+      for(let j=0;j<rightArrow.length;j++){rightArrow[j].style.fill = '#66c3d0'}
+      for(let j=0;j<leftArrow.length;j++){leftArrow[j].style.fill = '#000000'}
+    })
+  }
+}
+
+let leftArrowDel = Array.from(document.querySelectorAll('.left__arrow__delivery .cls-1'));
+let rightArrowDel = Array.from(document.querySelectorAll('.right__arrow__delivery .cls-1'));
+if(paymentType){
+  for(let i=0;i<2;i++){
+    deliveryType[0].addEventListener('click',()=>{
+      deliveryType[0].style.color = '#66c3d0'
+      deliveryType[1].style.color = '#000000'
+      hiddenOrderDelInputs[0].checked = 'checked'
+      for(let j=0;j<leftArrowDel.length;j++){leftArrowDel[j].style.fill = '#66c3d0'}
+      for(let j=0;j<rightArrowDel.length;j++){rightArrowDel[j].style.fill = '#000000'}
+    })
+    deliveryType[1].addEventListener('click',()=>{
+      deliveryType[1].style.color = '#66c3d0'
+      deliveryType[0].style.color = '#000000'
+      hiddenOrderDelInputs[1].checked = 'checked'
+      for(let j=0;j<leftArrowDel.length;j++){rightArrowDel[j].style.fill = '#66c3d0'}
+      for(let j=0;j<rightArrowDel.length;j++){leftArrowDel[j].style.fill = '#000000'}
+    })
+  }
+}
 
 
 
