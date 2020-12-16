@@ -103,9 +103,10 @@ window.onload = ()=>{
   if(yourSum){
 	  var currentSum = Number(yourSum.dataset.currentsum);
   }
-  let deleteBasketBtn = Array.from(document.querySelectorAll('.basket__delete__btn'));
+  let deleteBasketBtn = Array.from(document.querySelectorAll('.basket__item .basket__delete__btn'));
   let basketLines = Array.from(document.querySelectorAll('.green__line'));
   let itemToDelete = Array.from(document.querySelectorAll('.basket__item'));
+  if(deleteBasketBtn.length>0){
   for(let i=0;i<deleteBasketBtn.length;i++){ 
     deleteBasketBtn[i].addEventListener('click',()=>{
       let needToMinus = Number(itemSum[i].dataset.price) * Number(itemBasketQuantity[i].innerText);
@@ -115,7 +116,7 @@ window.onload = ()=>{
       yourSum.setAttribute('data-currentsum', currentSum)
       yourSum.innerText = currentSum + ' Р'
     })
-    
+  }
     
     
 //    				  var minusId = itemToDelete[i].dataset.id;
@@ -253,7 +254,7 @@ if(orderInputs.length>0){
 // order checkings
 let paymentType = Array.from(document.querySelectorAll('.payment__type__p'));
 let deliveryType = Array.from(document.querySelectorAll('.delivery__type__p'));
-let arrow = Array.from(document.querySelectorAll('.arrow'));
+let arrow = Array.from(document.querySelectorAll('order__block .arrow'));
 let hiddenOrderDelInputs = Array.from(document.querySelectorAll('.delivery__type'));
 let hiddenOrderPayInputs = Array.from(document.querySelectorAll('.payment__type'));
 if(arrow.length>0){
@@ -261,10 +262,10 @@ if(arrow.length>0){
   arrow[1].classList.add('right__arrow__delivery');
   arrow[2].classList.add('left__arrow');
   arrow[3].classList.add('right__arrow');
-
-  leftArrow = Array.from(document.querySelectorAll('.left__arrow .cls-1'));
-  rightArrow = Array.from(document.querySelectorAll('.right__arrow .cls-1'));
-  if(paymentType){
+}
+let leftArrow = Array.from(document.querySelectorAll('.left__arrow .cls-1'));
+let rightArrow = Array.from(document.querySelectorAll('.right__arrow .cls-1'));
+  if(paymentType.length>0){
     for(let i=0;i<2;i++){
       paymentType[0].addEventListener('click',()=>{
         paymentType[0].style.color = '#66c3d0'
@@ -285,7 +286,7 @@ if(arrow.length>0){
 
   let leftArrowDel = Array.from(document.querySelectorAll('.left__arrow__delivery .cls-1'));
   let rightArrowDel = Array.from(document.querySelectorAll('.right__arrow__delivery .cls-1'));
-  if(paymentType){
+  if(paymentType.length>0){
     for(let i=0;i<2;i++){
       deliveryType[0].addEventListener('click',()=>{
         deliveryType[0].style.color = '#66c3d0'
@@ -303,8 +304,34 @@ if(arrow.length>0){
       })
     }
   }
-}
 
+
+//menu btn movement
+let menuBtn = document.querySelector('.menu__btn');
+let menuSticks = Array.from(document.querySelectorAll('.stick'));
+let smallerCircle = document.querySelector('.smaller__circle');
+let menu = document.querySelector('.sliding__menu');
+let menuClosingBtn = document.querySelector('.sliding__menu .basket__delete__btn');
+menuBtn.addEventListener('mouseenter',()=>{
+  menuSticks[0].classList.add('move__stick')
+  menuSticks[1].classList.add('move__stick')
+  smallerCircle.classList.add('w')
+  console.log(smallerCircle)
+
+});
+menuBtn.addEventListener('mouseleave',()=>{
+  menuSticks[0].classList.remove('move__stick')
+  menuSticks[1].classList.remove('move__stick')
+  smallerCircle.classList.remove('w')
+  smallerCircle.style.fill = '#66c3d0 !important'
+});
+
+menuBtn.addEventListener('click',()=>{menu.classList.add('sliding__menu__animation')});
+menuClosingBtn.addEventListener('click',()=>{
+  menu.classList.add('sliding__menu__animation__hide')
+  setTimeout(()=>menu.classList.remove('sliding__menu__animation'),500)
+  setTimeout(()=>menu.classList.remove('sliding__menu__animation__hide'),500)
+});
 
 
 

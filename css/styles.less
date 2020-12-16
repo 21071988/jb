@@ -22,6 +22,7 @@ body{
 	min-width: 0;
 	.trans4;
 	.thefont;
+	overflow-x: hidden;
 }
 .grey{
 	color:#848484;
@@ -318,6 +319,7 @@ header{
 	min-height: 100px;
 	.flex;
 	align-items: center;
+	.between;
 	.cls-1{
 		fill:#ffffff;
 		stroke:none !important;
@@ -329,29 +331,27 @@ header{
 		width: 70px;
 	}
 }
-.header__menu{
-	
-	ul{
-		.flex;
-		list-style: none;
-		li{
-			a{
-				.white;
-				margin-right: @m2;
-			}
-		}
-	}
-}
-.header__flex{
-	.flex;
-	justify-content: space-between;
-	.w100;
-}
 .item__quantity__div{
 	position: relative;
 	margin-left:@m;
 	span, input{
 		z-index:2;
+	}
+}
+.header__menu{
+	.column;
+	margin-left:@m3;
+	justify-content: center;
+	min-height: calc(100vh - @m2 * 2);
+	a{
+		.uppercase;
+		font-size: 4rem;;
+		margin-bottom:@m;
+		color:@w;
+		.trans4;
+		&:hover{
+			color:@bl;
+		}
 	}
 }
 .item__quantity__div__back{
@@ -366,7 +366,7 @@ header{
 }
 .catalog__item__heart{
 	.cls-1{
-		fill:#ef81a9;
+		fill:@red;
 	}
 }
 #which__size{
@@ -916,27 +916,86 @@ header{
 .menu__btn{
 	width: 40px !important;
 	margin-left:@m1;
+	.cls-2 {
+		fill: #ffffff;
+		stroke:none;
+	}	
 	circle{
 		fill:@mc;
+		
 	}
 	.lower__stick, .higher__stick{
-		&:hover{
-			fill:@mc !important;
-			transform: rotateZ(45deg);
-		}
+		z-index:2;
 	}
 	.smaller__circle{
 		fill:@mc;
 		.trans4;
-		&:hover{
-			fill:@w;
-
-		}
+		
 	}
 }
-.bigger__circle{
-	&:hover+.lower__stick{
-		fill:@mc !important;
+.w{
+	fill:@w !important;
+}
+.move__stick{
+	fill:@mc !important;
 			transform: rotateZ(45deg);
+			transform-origin: center;
+}
+
+.bigger__circle{
+	fill:@mc;
+}	
+
+.sliding__menu{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	position: absolute;
+	top:0;
+	left:100vw;
+	background:@mc;
+	z-index:5;
+	.basket__delete__btn{
+		width: @m2;
+		float:right;
+	}
+}
+.sliding__menu__wrapper{
+	margin:@m2;
+}
+.sliding__menu__animation{
+	animation: sliding__menu__animation .5s forwards ease-in;
+}
+.sliding__menu__animation__hide{
+	animation: sliding__menu__animation__hide .3s forwards ease-out;
+}
+@keyframes sliding__menu__animation{
+	60%{
+		left:90vw;
+	}
+	100%{
+		left:0;
+	}
+}
+
+@keyframes sliding__menu__animation__hide{
+	from{
+		left:0;
+	}
+	to{
+		left:100vw;
+	}
+}
+
+.heart{
+	.cls-1{
+		fill:@red;
+	}
+}
+header{
+	.heart{
+		.cls-1{
+			fill:@w;
+		}
 	}
 }
