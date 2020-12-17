@@ -317,7 +317,6 @@ menuBtn.addEventListener('mouseenter',()=>{
   menuSticks[0].classList.add('move__stick')
   menuSticks[1].classList.add('move__stick')
   smallerCircle.classList.add('w')
-  console.log(smallerCircle)
 
 });
 menuBtn.addEventListener('mouseleave',()=>{
@@ -333,6 +332,67 @@ menuClosingBtn.addEventListener('click',()=>{
   setTimeout(()=>menu.classList.remove('sliding__menu__animation'),500)
   setTimeout(()=>menu.classList.remove('sliding__menu__animation__hide'),500)
 });
+// //info block
+let textsDiv = document.querySelector('.info');
+let tabsArray = Array.from(document.querySelectorAll('.nav-link'));
+let textsArray = Array.from(document.querySelectorAll('.info__text p'));
+let infoHeader = document.querySelector('.info__header h1');
+let infoLine = document.querySelector('.info__menu .green__line');
+
+if(textsArray.length>1){
+	for(let i = 0; i< tabsArray.length; i++){
+	  let textsHeight = textsArray[3].clientHeight;
+	  textsDiv.style.height = textsHeight +'px';
+	  tabsArray[i].addEventListener('click',function(){
+	      let current = document.querySelector(".active");
+	      current.className = current.className.replace("active", "");
+	      this.className += " active";
+        infoHeader.innerText = tabsArray[i].innerText;
+	      for(let j = 0; j< textsArray.length; j++){
+	        if (j == i){
+	          textsArray[j].style.opacity = '1';
+	        }else{
+	          textsArray[j].style.opacity = '0';
+	        }
+        }
+        let margin = tabsArray[i].offsetTop + 'px';
+        let lineMargin = infoLine.offsetTop + 'px';
+        
+        infoLine.style.transform = `translateX(-100px)`;
+        setTimeout(()=>infoLine.style.transform = `translateX(-100px) translateY(${margin}) `,400)
+        setTimeout(()=>infoLine.style.transform = `translateX(0px) translateY(${margin}) `,800)
+	  });
+	}
+}
+
+// footer links animation
+let footerLink = document.querySelector('.footer__link');
+function changeFooterLink(link__class){
+  let footerPayment = document.querySelector(link__class);
+  let footerPaymentLetters = Array.from(document.querySelectorAll(`${link__class} .cls-2`));
+  let footerPaymentBack = document.querySelector(`${link__class} .cls-1-back`);  
+  
+  footerPayment.addEventListener('mouseenter',()=>{
+    footerLink.classList.remove('rotate__me__totally')
+    for(let i=0;i<footerPaymentLetters.length;i++){
+      footerPaymentLetters[i].style.fill = '#66c3d0'
+      footerPaymentBack.style.fill = '#ffffff'
+    }
+  })
+  footerPayment.addEventListener('mouseleave',()=>{
+    footerLink.classList.add('rotate__me__totally')
+    for(let i=0;i<footerPaymentLetters.length;i++){
+      footerPaymentLetters[i].style.fill = '#ffffff'
+      footerPaymentBack.style.fill = '#66c3d0'
+    }
+  })
+}
+
+changeFooterLink('.link__back__payment');
+changeFooterLink('.link__back__delivery');
+changeFooterLink('.link__back__oferta');
+changeFooterLink('.link__back__refund');
+
 
 
 

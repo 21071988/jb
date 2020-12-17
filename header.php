@@ -25,10 +25,10 @@
             <a href="/info/">
               о нас
             </a>
-            <a href="/brands">
+            <a href="/info">
               информация
             </a>
-            <a href="/about/">
+            <a href="/contacts/">
               контакты
             </a>
       </div>

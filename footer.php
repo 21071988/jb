@@ -38,6 +38,10 @@
         <a href="https://www.instagram.com/ikra.store/" target="blank">instagram</a>
       </div>
   </div> -->
+  <div class="footer__links">
+    <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/footerLink.php");?>
+    <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/footerDuck.php");?>
+  </div>
 </footer>
 
 
