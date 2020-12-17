@@ -254,10 +254,11 @@ if(orderInputs.length>0){
 // order checkings
 let paymentType = Array.from(document.querySelectorAll('.payment__type__p'));
 let deliveryType = Array.from(document.querySelectorAll('.delivery__type__p'));
-let arrow = Array.from(document.querySelectorAll('order__block .arrow'));
+let arrow = Array.from(document.querySelectorAll('.order__block .arrow'));
 let hiddenOrderDelInputs = Array.from(document.querySelectorAll('.delivery__type'));
 let hiddenOrderPayInputs = Array.from(document.querySelectorAll('.payment__type'));
 if(arrow.length>0){
+  console.log(123);
   arrow[0].classList.add('left__arrow__delivery');
   arrow[1].classList.add('right__arrow__delivery');
   arrow[2].classList.add('left__arrow');

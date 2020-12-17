@@ -786,7 +786,11 @@ header{
 	z-index:4;
 	.rel;	
 }
-
+.item__quantity__div__back{
+	.cls-1{
+		fill:@mc;
+	}
+}
 .about__block{
 	align-items: baseline;
 	.whale{
@@ -803,10 +807,10 @@ header{
 	min-height: 70vh;
 	padding:@m2;
 	width: 40vw;
-	z-index: 100;
+	z-index: 4;
 }
 .showPopUp{
-	animation:showPopUp 1s forwards ease-in;
+	animation:showPopUp .7s forwards ease-in;
 }
 @keyframes showPopUp{
 	70%{
@@ -986,7 +990,7 @@ header{
 		left:100vw;
 	}
 }
-
+// svg styles
 .heart{
 	.cls-1{
 		fill:@red;
@@ -998,4 +1002,12 @@ header{
 			fill:@w;
 		}
 	}
+}
+
+.cls-n{
+	fill:none;
+}
+.giraffe, .whale{
+	.cls-1{fill:#485a83;}
+	.cls-2{fill:#5f6f93;}
 }

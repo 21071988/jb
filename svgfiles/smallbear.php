@@ -2,4 +2,4 @@
 
 
 
-<!-- <style>.clsa-1{fill:#66c3d0;}.clsa-1,.clsa-2,.clsa-3,.clsa-4{fill-rule:evenodd;}.clsa-2{fill:#fefefe;}.clsa-3,.clsa-5{fill:#2b2a29;}.clsa-4{fill:#a75f4a;}</style> -->
+<style>.clsa-1{fill:#66c3d0;}.clsa-1,.clsa-2,.clsa-3,.clsa-4{fill-rule:evenodd;}.clsa-2{fill:#fefefe;}.clsa-3,.clsa-5{fill:#2b2a29;}.clsa-4{fill:#a75f4a;}</style>
