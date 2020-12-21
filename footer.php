@@ -38,9 +38,31 @@
         <a href="https://www.instagram.com/ikra.store/" target="blank">instagram</a>
       </div>
   </div> -->
-  <div class="footer__links">
-    <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/footerLink.php");?>
-    <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/footerDuck.php");?>
+  <div class="footer__part footer__part__left">
+    <div class='column phone__email'>
+      <a href="tel:79149605888">+7(914)-960-58-88</a>
+      <a href="mailto:jb@gmail.com">jb@gmail.com</a>
+    </div>
+    <a href="https://slim.technology/" class="slim" target="blank">дизайн и разработка slim.technology</a>
+  </div>
+  <div class="footer__part footer__part__center">
+    <div class="footer__icons">
+    <a href="https://wa.me/79149605888" target="blank">
+    <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/whatsapp.php");?>
+    </a>
+    <a href="https://www.instagram.com/justborn_vl/" target="blank">
+      <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/instagram.php");?>
+    </a>
+    <a href="/lk" target="blank">
+      <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/footerlk.php");?>
+    </a>
+    </div>
+  </div>
+  <div class="footer__part footer__part__right">
+    <div class="footer__links">
+      <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/footerLink.php");?>
+      <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/footerDuck.php");?>
+    </div>
   </div>
 </footer>
 
@@ -55,7 +77,7 @@
 
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.2/less.min.js" ></script>
-<script   src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"integrity="sha256-Ap4KLoCf1rXb52q+i3p0k2vjBsmownyBTE1EqlRiMwA=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> -->

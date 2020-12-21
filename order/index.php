@@ -229,10 +229,10 @@
         </div>
     </div>
 
-  <div class="basket__btn__div">
+        <div class="basket__btn__div">
               <button id='to__basket' class='order__btn'>Оформить заказ</button>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>
-            </div>
+        </div>
   </form>
 </div>
 <?php require($_SERVER["DOCUMENT_ROOT"]."/footer.php");?>

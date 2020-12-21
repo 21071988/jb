@@ -373,14 +373,12 @@ function changeFooterLink(link__class){
   let footerPaymentBack = document.querySelector(`${link__class} .cls-1-back`);  
   
   footerPayment.addEventListener('mouseenter',()=>{
-    footerLink.classList.remove('rotate__me__totally')
     for(let i=0;i<footerPaymentLetters.length;i++){
       footerPaymentLetters[i].style.fill = '#66c3d0'
       footerPaymentBack.style.fill = '#ffffff'
     }
   })
   footerPayment.addEventListener('mouseleave',()=>{
-    footerLink.classList.add('rotate__me__totally')
     for(let i=0;i<footerPaymentLetters.length;i++){
       footerPaymentLetters[i].style.fill = '#ffffff'
       footerPaymentBack.style.fill = '#66c3d0'
