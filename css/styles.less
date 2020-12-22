@@ -8,6 +8,7 @@
 @red:#ed6f9d;
 @blue:#598dd8;
 @blue2:#abedf4;
+@deepblue:#5f6f93;
 @m1:10px;
 @m:20px;
 @m2:40px;
@@ -38,6 +39,7 @@ body, p{
 }
 h1{
 	.uppercase;
+	.biggest__font;
 }
 img{
 	.w100;
@@ -56,6 +58,9 @@ img{
 }
 .f3{
 	font-size: 3rem;
+}
+.biggest__font{
+	font-size: 4.5rem;
 }
 .f15{
 	font-size:1.5rem;
@@ -150,7 +155,7 @@ button{
 	background: none;
 	border: none;
 	.thefont;
-	font-size: 1.8em;
+	font-size: 1.8rem;
 	padding:0;
 }
 input{
@@ -953,6 +958,7 @@ header{
 }	
 
 .sliding__menu{
+	display: none;
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
@@ -992,10 +998,96 @@ header{
 		left:100vw;
 	}
 }
+@keyframes birdGoes{
+	0%{
+		transform: translateX(-2vw);
+	}
+	25%{
+		transform: translateX(31vw);
+	}
+	26%{
+		transform: translateX(31vw) rotateZ(90deg);
+	}
+	50%{
+		transform: translateX(31vw) translateY(34vw) rotateZ(90deg);
+	}
+	51%{
+		transform: translateX(31vw) translateY(34vw) rotateZ(180deg);
+	}
+	
+	75%{
+		transform: translateX(-3vw) translateY(34vw) rotateZ(180deg);
+	}
+	76%{
+		transform: translateX(-3vw) translateY(34vw) rotateZ(270deg);
+	}
+	90%{
+		transform: translateX(-3vw) translateY(0) rotateZ(270deg);
+	}
+	100%{
+		transform:translateX(-3vw) translateY(0);
+	}
+}
+@keyframes wing{
+	50%{
+		transform: translateY(0px) rotateZ(5deg);
+	}
+	100%{
+		transform: translateY(0px) rotateZ(0deg);
+	}
+}
+.wing{
+	animation:wing 4s linear infinite;
+	transform-origin: right;
+	
+}
 // svg styles
+.bird{
+	width: 40px;
+	animation:birdGoes 90s linear infinite;
+	transform: translateX(-3vw);
+	.cls-1, .cls-2{
+		fill:@deepblue;
+	}
+}
+
 .heart{
 	.cls-1{
 		fill:@red;
+	}
+}
+.circus__elephant{
+	transform: translateX(-20px) translateY(4px);
+	.cls-1{
+		fill:@deepblue;
+	}
+	.cls-2{
+		fill:@deepblue;
+	}
+	.cls-3{
+		fill:@deepblue;
+	}
+}
+.about__heart{
+	.cls-1{
+		fill:@red;
+	}
+}
+.call__a__bird{
+	cls-1{
+		fill:@bl;
+	}
+}
+.ball{
+	.cls-1{
+		fill:@w;
+	}
+	.cls-2{
+		fill:@red;
+	}
+	.cls-3{
+		fill:none;
+		stroke:@red;
 	}
 }
 header{
@@ -1011,7 +1103,7 @@ header{
 	}
 	.cls-2{
 		fill:none;
-		stroke:@mc;
+		stroke:@mc;	
 	}
 }
 
@@ -1190,8 +1282,12 @@ footer{
 }
 
 .lets__talk{
-	padding:@m3 20% @m;
+	padding:@m3 20%;
 	background: @green3;
+	min-height: calc(100vh - 100px);
+	h1{
+		.biggest__font;
+	}
 	.basket__btn__div{
 		margin-bottom: @m2;
 	}
@@ -1217,9 +1313,300 @@ footer{
 	}
 }
 .popular__instagram{
-	padding:@m2 20%;
+	padding:@m3 20%;
 	background: @blue2;
 	h2{
 		margin-bottom:0;
+		margin-top:0;
+	}
+}
+.white__block__main{
+	padding:@m2 20%;
+	h2{
+		margin-bottom:0;
+	}
+}
+.popular__slider__wrapper{
+	margin-top:@m;
+	.arrow{
+		width: 60px;
+		.cls-1{
+			fill:@bl;
+		}
+	}
+}
+.slider__wrapper{
+	.rel;
+	.prev__item__card , .next__item__card{
+		position: absolute;
+		top:50%;
+	}
+	.prev__item__card{
+		left:-80px;
+	}
+	.next__item__card{
+		right:-80px;
+	}
+}
+
+.main__popular .c1{
+	margin:5px;
+}
+.instagram__slider{
+	display: grid;
+	grid-gap:@m;
+	grid-template-columns: repeat(3,1fr);
+	margin-top:@m;
+}
+.main__about__wrapper{
+	h2{
+		.biggest__font;
+		text-align: center;
+		margin:@m4;
+	}
+}
+.main__about{
+	width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 160px 20px;
+    padding: 0 10% 250px;
+    background-image: url(/images/svg/mainback.svg);
+    background-repeat: no-repeat;
+    background-size: 70%;
+}
+.about__us{
+	text-align: center;
+	h3{
+		.f3;
+		margin-bottom: 0;
+	}
+}
+.slider__main{
+	height: calc(100vh - 100px);
+	overflow: hidden;
+	.allcenter;
+}
+.lk__wrapper{
+	width: 80%;
+	padding:@m4 10%;
+	h1{
+		padding-left:@m;
+	}
+}
+
+.personal__data{
+	form{
+		.flex;
+	}
+	.form__part{
+		flex:1;
+		.column;
+		padding:@m;
+		input{
+			border:none;
+			z-index: 2;
+    height: 25px;
+    background: none;
+		}
+		.green__line{
+			margin-bottom:@m;
+			overflow: visible;
+			.cls-1{
+				stroke-width: 0px;
+			}
+		}
+	}
+}
+.lk__prop{
+	.fs;
+}
+.lk__footer{
+	.flex;
+	margin-top:@m3;
+	padding:0;
+	div{
+		flex:1;
+	}
+}
+.update__data{
+	margin-left:@m2;
+}
+
+.form__part__h2{
+	.flex;
+	h2{
+		.uppercase;
+		margin:0 0 @m2 10px;
+	}
+	svg{
+		height: 25px;	
+	}
+}
+
+#error__validation{
+	font-size:12px;
+	margin-top:-15px;
+	opacity: 0;
+	color:@red;
+}
+#logout{
+	.column;
+	.uppercase;
+	.f2;
+	.green__line{
+		width: 30%;
+    overflow: visible;
+		margin-bottom: 5px;
+		stroke:@red;
+		fill:@red;
+	}
+}
+
+.logout__icon{
+	width: 20px;
+	.cls-1{
+		fill:@mc;
+	}
+	overflow:visible;
+}
+.rotate__me__totally{
+	.cls-1{
+		fill:@mc;
+	}
+}
+#submit__lk__form{
+	.f2;
+	.uppercase;
+}
+
+.about__wrapper{
+	padding:@m3 @m4;
+	.bearhead{
+		width: 10%;
+	}
+	h1{
+		font-size: 12vw;
+		margin:0;
+	}
+	.giraffe{
+		width: 20%;
+		margin-left:40%;
+	}
+	.call__a__bird{
+		width: 220px;
+	}
+}
+.about__first{
+	.flex;
+	align-items: center;
+}
+.about__first__text{
+	.column;
+	flex:2;
+	margin-right:@m3;
+}
+.about__first__img{
+	flex:1;
+}
+.elephant__goes{
+	.w100;
+	.column;
+	margin-top:@m2;
+	animation:elephant 10s linear infinite;
+	div{
+		.allcenter;
+		.column;
+		width: fit-content;
+	}
+	.circus__elephant{
+		width: 120px;
+		z-index: 2;
+		margin-left:60px;
+		// animation:turn 10s linear infinite;
+		transform-origin: center;
+	}
+	.ball{
+		width: 60px;
+		z-index: 1;
+		animation:ball 10s linear infinite;
+	}
+}
+@keyframes turn{
+50%{
+	transform:rotateY(180deg);
+	
+}
+100%{
+	transform: rotateY(0);
+}
+}
+@keyframes elephant{
+	50%{
+		transform:translateX(90%);
+	}
+	100%{
+		transform:translateX(0);
+	}
+}
+@keyframes ball{
+	
+	50%{
+		transform: rotateZ(720deg);
+	}
+	100%{
+		transform: rotateZ(0deg);
+	}
+}
+.about__second__sign{
+	float: right;
+	margin:@m3 0;
+	.column;
+	align-items: flex-end;
+	h2{
+		font-size: 10vw;
+		margin:0;
+	}
+}
+.about__second{
+	.flex;
+	.w100;
+}
+.about__third{
+	margin-top:@m4;
+	margin-bottom:@m3;
+	.column;
+	h2{
+		font-size: 12vw;
+		margin:0;
+		width: fit-content;
+	}
+}
+.about__second__img{
+	flex:1;
+	margin-right: @m2;
+	img{
+		width:30vw;
+	}
+}
+.about__second__text{
+	flex:2;
+	.column;
+	justify-content: space-around;
+	margin-left:@m3;
+}
+.about__third__top__sign{
+	.between;
+	padding-left:10px;
+	.about__heart{
+		width: 80px;
+	}
+}
+
+.callabird{
+	position: relative;
+	.allcenter;
+	svg{
+		position: absolute;
 	}
 }

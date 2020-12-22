@@ -22,7 +22,7 @@
             <a href="/catalog/">
               каталог
             </a>
-            <a href="/info/">
+            <a href="/about/">
               о нас
             </a>
             <a href="/info">
@@ -43,7 +43,7 @@
         <a href="/search">
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/searchicon.php");?>
         </a>
-        <a id='lk'>
+        <a href="/lk" id='lk'>
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/lk.php");?>
         </a>
         <a href="/likes">

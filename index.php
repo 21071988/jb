@@ -2,7 +2,7 @@
 <div class="main">
   <div class="slider__wrapper">
     <div class="slider__main">
-    
+      <img src="/images/main/mainslider.jpg" alt="">
     </div>
   </div>
   <div class="lets__talk">
@@ -27,20 +27,115 @@
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>
   </div>
   </div>
-  
+  <div class="white__block__main">
+        <div class="main__popular">
+          <h2>Популярное</h2>
+          <p>то что пришлось вам больше всего по душе</p>
+          <div class="popular__slider__wrapper slider__wrapper">
+            <div class='popular__slider'>
+                
+            <a href="/catalog/item.php" class='c1'>
+              <div class="catalog__item">
+                <div class='img__wrap'>
+                  <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+                  <!-- <div class="sale__sign">25%</div> -->
+                </div>
+                <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+                <div class="catalog__item__price__and__like">
+                  <div>
+                    <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+                    <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+                  </div>
+                  <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+                </div>
+              </div>
+            </a>
+
+            <a href="/catalog/item.php" class='c1'>
+              <div class="catalog__item">
+                <div class='img__wrap'>
+                  <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+                  <!-- <div class="sale__sign">25%</div> -->
+                </div>
+                <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+                <div class="catalog__item__price__and__like">
+                  <div>
+                    <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+                    <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+                  </div>
+                  <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+                </div>
+              </div>
+            </a>
+
+            <a href="/catalog/item.php" class='c1'>
+              <div class="catalog__item">
+                <div class='img__wrap'>
+                  <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+                  <!-- <div class="sale__sign">25%</div> -->
+                </div>
+                <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+                <div class="catalog__item__price__and__like">
+                  <div>
+                    <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+                    <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+                  </div>
+                  <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+                </div>
+              </div>
+            </a>
+
+            <a href="/catalog/item.php" class='c1'>
+              <div class="catalog__item">
+                <div class='img__wrap'>
+                  <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+                  <!-- <div class="sale__sign">25%</div> -->
+                </div>
+                <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+                <div class="catalog__item__price__and__like">
+                  <div>
+                    <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+                    <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+                  </div>
+                  <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="prev__item__card slider__arrow">
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrowslider.php");?>
+          </div>
+          <div class="next__item__card slider__arrow">
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrowslider.php");?>
+          </div>
+          </div>
+      </div>
+  </div>
   
   <div class="popular__instagram">
-    <div class="main__popular">
-    <h2>Популярное</h2>
-    <p>то что пришлось вам больше всего по душе</p>
-    <div class="popular__slider__wrapper">
-      
-    </div>
-    </div>
-
     <div class="main_instagram">
     <h2>В инстаграм</h2>
     <p>всё самое интересное и актуальное</p>
+    <div class="instagram__slider">
+      <a href="https://www.instagram.com/justborn_vl/">
+       <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+      </a>
+      <a href="https://www.instagram.com/justborn_vl/">
+       <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+      </a>
+      <a href="https://www.instagram.com/justborn_vl/">
+       <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+      </a>
+      <a href="https://www.instagram.com/justborn_vl/">
+       <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+      </a>
+      <a href="https://www.instagram.com/justborn_vl/">
+       <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+      </a>
+      <a href="https://www.instagram.com/justborn_vl/">
+       <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+      </a>
+    </div>
     </div>
   </div>
 

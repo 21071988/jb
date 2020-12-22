@@ -197,13 +197,25 @@ if (readAboutTrigger) readAboutTrigger.addEventListener('click',()=>changeClass(
 
 let sliderArrows = Array.from(document.querySelectorAll('.item__slider__arrows div'));
 let cirlces =Array.from(document.querySelectorAll('.cls-circle'));
-if(cirlces.length>0){
+if(sliderArrows.length>0){
   for(let i=0;i<2;i++){
     sliderArrows[i].addEventListener('mouseover',()=>{
       cirlces[i].classList.remove('removedash')
       cirlces[i].classList.add('dash')})
     sliderArrows[i].addEventListener('mouseleave',()=>{
-      
+      cirlces[i].classList.remove('dash')
+      cirlces[i].classList.add('removedash')
+    })
+  };
+}
+
+let newSliderArrows = Array.from(document.querySelectorAll('.slider__wrapper .slider__arrow'));
+if(newSliderArrows.length>0){
+  for(let i=0;i<2;i++){
+    newSliderArrows[i].addEventListener('mouseover',()=>{
+      cirlces[i].classList.remove('removedash')
+      cirlces[i].classList.add('dash')})
+      newSliderArrows[i].addEventListener('mouseleave',()=>{
       cirlces[i].classList.remove('dash')
       cirlces[i].classList.add('removedash')
     })
@@ -326,11 +338,16 @@ menuBtn.addEventListener('mouseleave',()=>{
   smallerCircle.style.fill = '#66c3d0 !important'
 });
 
-menuBtn.addEventListener('click',()=>{menu.classList.add('sliding__menu__animation')});
+menuBtn.addEventListener('click',()=>{
+  menu.classList.add('sliding__menu__animation')
+  menu.style.display = 'block'
+});
 menuClosingBtn.addEventListener('click',()=>{
   menu.classList.add('sliding__menu__animation__hide')
   setTimeout(()=>menu.classList.remove('sliding__menu__animation'),500)
   setTimeout(()=>menu.classList.remove('sliding__menu__animation__hide'),500)
+  setTimeout(()=>menu.style.display = 'none',700)
+  
 });
 // //info block
 let textsDiv = document.querySelector('.info');
@@ -391,6 +408,11 @@ changeFooterLink('.link__back__delivery');
 changeFooterLink('.link__back__oferta');
 changeFooterLink('.link__back__refund');
 
+let h2HappySign = document.querySelector('.about__third h2');
+let happyTop = document.querySelector('.about__third__top__sign');
+let w = h2HappySign.clientWidth+15;
+happyTop.style.width = `${w}px`;
+console.log(`width=${w}px`);
 
 
 
@@ -401,30 +423,57 @@ $(document).ready(function(){
   //item card slider
   
   setTimeout(function () {
-    $('.slider-for-item-card').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      fade: true,
-      asNavFor: '.slider-nav-item-card'
-    });
-    $('.slider-nav-item-card').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      asNavFor: '.slider-for-item-card',
-      dots: false,
-      centerMode: true,
-      focusOnSelect: true
-    });
-      },500);
+        $('.slider-for-item-card').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          fade: true,
+          asNavFor: '.slider-nav-item-card'
+        });
+        $('.slider-nav-item-card').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          asNavFor: '.slider-for-item-card',
+          dots: false,
+          centerMode: true,
+          focusOnSelect: true
+        });
+  },500);
       
-      $('.next__item__card').on('click', function() {
+      $('.popular__slider__wrapper .next__item__card').on('click', function() {
         $('.slider-nav-item-card').slick('slickNext');
       });
-      $('.prev__item__card').on('click', function() {
+      $('.popular__slider__wrapper .prev__item__card').on('click', function() {
         $('.slider-nav-item-card').slick('slickPrev');
       });
-});
+  
+      setTimeout(function () {
+        $('.popular__slider').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          arrows: false,
+        });
+      },500);
+
+      $('.next__item__card').on('click', function() {
+        $('.popular__slider').slick('slickNext');
+      });
+      $('.prev__item__card').on('click', function() {
+        $('.popular__slider').slick('slickPrev');
+      });
+
+
+      $('#submit__lk__form').click(function(){
+                $('#submit__lk__form').text("Данные обновлены");
+                $.post(
+                      '/personal/', 
+                      $("#lk__form").serialize(), // отправляемые данные          
+                  );
+                  return false;
+                });
+
+      // end of ready function
+    });
 
 
 

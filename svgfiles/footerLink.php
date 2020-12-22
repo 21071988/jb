@@ -1,4 +1,4 @@
-<svg class='footer__link rotate__me__totally' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.01 343.85"><defs><style>.cls-1{fill:#66c3d0;}.cls-2{fill:#fff;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1">
+<svg class='footer__link rotate__me__totally' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.01 343.85"><defs></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1">
 <a xlink:href="/info?text=oferta" class='link__back link__back__oferta'>
 <path class="cls-1-back" d="M282.12,303.93a171.15,171.15,0,0,1-119.89,39.63H162a171,171,0,0,1-98.44-38.44l.2-.22.26-.3,31.81-36.38q2.49,2,5.09,3.84a122.17,122.17,0,0,0,64,22.58q4.59.27,9.14.2a122.38,122.38,0,0,0,75.56-27.53l32.35,36.42Z"/>
 
