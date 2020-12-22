@@ -161,10 +161,13 @@ if(toBasket){
 
 let currentSize = document.querySelector('.current__size');
 let otherSizes = document.querySelector('.other__sizes');
+let ad = document.querySelector('.ad');
 if(currentSize){
   currentSize.addEventListener('click',()=>{
     changeClass(otherSizes,'showSizesBlock')
+    ad.classList.toggle('rotate__ad')
   });
+  
 }
 document.addEventListener('click',function(e){
   if((!e.target.classList.contains('current__size__text'))){
@@ -173,6 +176,8 @@ document.addEventListener('click',function(e){
     }
   }
 })
+
+
 
 let itemSize = Array.from(document.querySelectorAll('.size__choosing__label'));
 let cs = document.querySelector('.current__size__text');
@@ -192,6 +197,15 @@ let readAboutTrigger = document.querySelector('.read__about');
 let readAboutBlock = document.querySelector('.about__delivery__popup');
 if (readAboutTrigger) readAboutTrigger.addEventListener('click',()=>changeClass(readAboutBlock,'showPopUp'));
 
+document.addEventListener('click',function(e){
+  if(!e.target.classList.contains('about__delivery__popup') && !e.target.classList.contains('read__about')){
+    if(readAboutBlock.classList.contains('showPopUp')){
+        readAboutBlock.classList.add('hidePopup')
+        setTimeout(()=>readAboutBlock.classList.remove('showPopUp'),500)
+        setTimeout(()=>readAboutBlock.classList.remove('hidePopup'),500)
+    }
+  }
+})
 
 //arrow cirlces in slider
 
@@ -523,6 +537,13 @@ $(document).ready(function(){
       });
       $('.prev__item__card').on('click', function() {
         $('.popular__slider').slick('slickPrev');
+      });
+
+      $('.next__item__card').on('click', function() {
+        $('.slider-for-item-card').slick('slickNext');
+      });
+      $('.prev__item__card').on('click', function() {
+        $('.slider-for-item-card').slick('slickPrev');
       });
 
 

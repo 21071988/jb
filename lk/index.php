@@ -63,6 +63,14 @@
         <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
       </div>
     </div>
+    <div class="lk__promocodes">
+      <h2>Ваши промокоды:</h2>
+      <span>Промокод можно получить интернете-магазине за каждую покупку свыше 5000р</span>
+      <span class='num'>103921810239</span>
+      <span class='num'>103921810239</span>
+      <span class='num'>103921810239</span>
+      <span class='num'>103921810239</span>
+    </div>
     <div class="lk__footer">
       <div class="logout">
         <p id="logout">

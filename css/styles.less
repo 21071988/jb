@@ -462,7 +462,9 @@ header{
 	position: relative;
 	z-index:3;
 }
-
+.rotate__ad{
+	transform:rotateX(180deg);
+}
 .size__choosing__hidden__block{
 	display: none;
 }
@@ -471,7 +473,7 @@ header{
 }
 .item__size__div__back{
 	position: absolute;
-	width: 180px !important;
+	width: 200px !important;
 	top:50%;
 	left:50%;
 	transform:translate(-50%, -50%);
@@ -810,6 +812,7 @@ header{
 }
 .current__size{
 	.rel;
+	.flex;
 }
 .other__sizes{
 	 background: #66c3d0;
@@ -866,6 +869,9 @@ header{
 	padding:@m2;
 	width: 40vw;
 	z-index: 4;
+	-webkit-box-shadow: 4px 6px 8px 0px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 4px 6px 8px 0px rgba(34, 60, 80, 0.2);
+	box-shadow: 4px 6px 8px 0px rgba(34, 60, 80, 0.2);
 }
 .showPopUp{
 	animation:showPopUp .7s forwards ease-in;
@@ -884,7 +890,17 @@ header{
 		left:0;
 	}
 }
-
+.hidePopup{
+	animation:hidePopup .7s forwards ease-in;
+}
+@keyframes hidePopup{
+	0%{
+		left:0;
+	}
+	100%{
+		left:-1000px;
+	}
+}
 .block{
 	flex:1;
 	.slider-for-item-card{
@@ -919,6 +935,9 @@ header{
 .prev__item__card{
 	.arrow{
 		transform: rotateZ(180deg);
+		.cls-1{
+			fill:@bl;
+		}
 	}
 }
 .checking__order__block{
@@ -1093,6 +1112,10 @@ header{
 	
 }
 // svg styles
+.footer__link__duck{
+	cls-1{fill:#66c3d0;}
+	.cls-2{fill:#fff;}
+}
 .bird{
 	width: 40px;
 	animation:birdGoes 90s linear infinite;
@@ -1224,6 +1247,9 @@ footer{
 	background: @mc;
 	padding:@m2;
 	.flex;
+	.cls-2{
+		fill:@w;
+	}
 	.footer__link{
 		width: 200px;
 		position: absolute;
@@ -1399,7 +1425,10 @@ footer{
 		right:-80px;
 	}
 }
-
+.ad{
+	width: 15px !important;
+	z-index: 5;
+}
 .main__popular .c1{
 	margin:5px;
 }
@@ -1441,12 +1470,15 @@ footer{
 .lk__wrapper{
 	width: 80%;
 	padding:@m4 10%;
-	h1{
-		padding-left:@m;
+}
+.lk__promocodes{
+	.column;
+	span{
+		margin-bottom:10px;
 	}
 }
-
 .personal__data{
+	margin-left:-@m;
 	form{
 		.flex;
 	}

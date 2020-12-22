@@ -55,6 +55,7 @@
             <div class="size__choosing__div">
               <div class="current__size">
                 <p class='current__size__text'>56см / 1 месяц</p>
+                <svg class='ad' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.62 15.01"><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><polygon points="11.31 15.02 0 0.62 0.79 0 11.31 13.4 21.83 0 22.62 0.62 11.31 15.02"/></g></g></svg>
                 <svg xmlns="http://www.w3.org/2000/svg" class='item__size__div__back' viewBox="0 0 263.35 79.81"><defs></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><path class="cls-1" d="M2.15,31.13c-4.67,13.45-1.32,29.24,6,38,11.19,13.35,29.85,8.17,73,7,9.6-.26,44.06,1,113,3,40.76,1.2,55.95,2.08,64-9,7.68-10.56,6.44-28.62-1-41-5.62-9.37-14-14.11-20-17-24.65-11.83-44.74-9.48-88-10-26.88-.32-24.29-1.44-61-2-39.53-.6-58,.46-73,13C6,20.8,3,28.76,2.15,31.13Z"/></g></g></svg>
               </div>
               <div class="other__sizes">
@@ -295,7 +296,7 @@
       
   <svg class='mpr mpre' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.09 49.41"><defs><style>.cls-1{fill:none;stroke:#13100d;stroke-miterlimit:10;stroke-width:3px;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><polyline class="cls-1" points="0.95 1.16 30.67 25.45 0.95 48.22"/></g></g></svg>
 </div> -->
-
+</div>
 </div>
 
 <?php require($_SERVER["DOCUMENT_ROOT"]."/footer.php");?>
