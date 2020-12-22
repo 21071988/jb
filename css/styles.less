@@ -19,7 +19,9 @@
 	min-height: 0;
 	min-width: 0;
 	}
-
+.vi{
+	overflow: hidden;
+}
 body{
 	min-height: 0;
 	min-width: 0;
@@ -44,6 +46,7 @@ h1{
 img{
 	.w100;
 }
+img:focus{outline: none !important;}
 .num{
 	.thefontNumbers;
 }
@@ -501,16 +504,20 @@ header{
 		margin:0 @m1;
 	}
 }
+.center__a{
+	.flex;
+	align-items: center;
+}
 .half{
 	.flex;
 	align-items:center;
 	img{
 		width: 12vw;
-		margin-left:@m;
 	}
 }
 .basket__item__name{
 	.fs;
+	margin-left:@m;
 }
 .basket__items{
 	margin-bottom:@m3;
@@ -1175,6 +1182,7 @@ footer{
 	.flex;
 	.footer__link{
 		width: 200px;
+		position: absolute;
 		&:hover{
 			animation-play-state: paused; 
 		}
@@ -1211,7 +1219,6 @@ footer{
 }
 .footer__link__duck{
 	width: 200px;
-	transform: translateX(-210px);
 	.rel;
 	z-index:1;
 }
@@ -1274,7 +1281,7 @@ footer{
 }
 .footer__links{
 	.flex;
-	justify-content: flex-end;
+	justify-content: center;
 	align-items: center;
 }
 .footer__part__right{

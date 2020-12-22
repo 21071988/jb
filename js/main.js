@@ -325,10 +325,12 @@ let menuSticks = Array.from(document.querySelectorAll('.stick'));
 let smallerCircle = document.querySelector('.smaller__circle');
 let menu = document.querySelector('.sliding__menu');
 let menuClosingBtn = document.querySelector('.sliding__menu .basket__delete__btn');
+let body = document.querySelector('body');
 menuBtn.addEventListener('mouseenter',()=>{
   menuSticks[0].classList.add('move__stick')
   menuSticks[1].classList.add('move__stick')
   smallerCircle.classList.add('w')
+  
 
 });
 menuBtn.addEventListener('mouseleave',()=>{
@@ -341,12 +343,16 @@ menuBtn.addEventListener('mouseleave',()=>{
 menuBtn.addEventListener('click',()=>{
   menu.classList.add('sliding__menu__animation')
   menu.style.display = 'block'
+  body.classList.add('vi')
+
 });
 menuClosingBtn.addEventListener('click',()=>{
   menu.classList.add('sliding__menu__animation__hide')
   setTimeout(()=>menu.classList.remove('sliding__menu__animation'),500)
   setTimeout(()=>menu.classList.remove('sliding__menu__animation__hide'),500)
   setTimeout(()=>menu.style.display = 'none',700)
+  body.classList.remove('vi')
+  
   
 });
 // //info block

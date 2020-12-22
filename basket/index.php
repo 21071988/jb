@@ -29,8 +29,10 @@
       <div class="bakset__items__check">
       <div class="basket__item">
           <div class="half">
-            <span class="basket__item__name">Распашонка на мальчика c очень длинным названием</span>
-            <img src="/images/catalog/justborn_vl_1604483192_1.jpg" alt="">
+            <a href="/catalog/item.php" class='center__a'>
+             <img src="/images/catalog/justborn_vl_1604483192_1.jpg" alt="">
+              <span class="basket__item__name">Распашонка на мальчика c очень длинным названием</span>
+            </a>
           </div>
           <div class="half second__half">
                 <div class="item__quantity__div">
@@ -51,8 +53,10 @@
 
         <div class="basket__item">
           <div class="half">
-            <span class="basket__item__name">Распашонка на мальчика c очень длинным названием</span>
-            <img src="/images/catalog/justborn_vl_1604483192_1.jpg" alt="">
+            <a href="/catalog/item.php" class='center__a'>
+             <img src="/images/catalog/justborn_vl_1604483192_1.jpg" alt="">
+              <span class="basket__item__name">Распашонка на мальчика c очень длинным названием</span>
+            </a>
           </div>
           <div class="half second__half">
                 <div class="item__quantity__div">
@@ -73,8 +77,10 @@
 
         <div class="basket__item">
           <div class="half">
-            <span class="basket__item__name">Распашонка на мальчика c очень длинным названием</span>
-            <img src="/images/catalog/justborn_vl_1604483192_1.jpg" alt="">
+            <a href="/catalog/item.php" class='center__a'>
+             <img src="/images/catalog/justborn_vl_1604483192_1.jpg" alt="">
+              <span class="basket__item__name">Распашонка на мальчика c очень длинным названием</span>
+            </a>
           </div>
           <div class="half second__half">
                 <div class="item__quantity__div">
