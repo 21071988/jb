@@ -15,6 +15,10 @@
 </head>
 <body>
 <header>
+<div id="follower">
+  <div id="circle1"></div>
+  <div id="circle2"></div>
+</div>
 <div class="sliding__menu">
   <div class="sliding__menu__wrapper">
   <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketdeletebtn.php");?>

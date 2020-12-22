@@ -416,9 +416,66 @@ changeFooterLink('.link__back__refund');
 
 let h2HappySign = document.querySelector('.about__third h2');
 let happyTop = document.querySelector('.about__third__top__sign');
-let w = h2HappySign.clientWidth+15;
-happyTop.style.width = `${w}px`;
-console.log(`width=${w}px`);
+if(happyTop){
+  let w = h2HappySign.clientWidth+15;
+  happyTop.style.width = `${w}px`;
+  console.log(`width=${w}px`);
+}
+
+// mouse movement
+
+(function () {
+  var follower, init, mouseX, mouseY, positionElement, printout, timer;
+
+  follower = document.getElementById('follower');
+
+  printout = document.getElementById('printout');
+
+  mouseX = event => {
+    return event.clientX;
+  };
+
+  mouseY = event => {
+    return event.clientY;
+  };
+
+  positionElement = event => {
+    var mouse;
+    mouse = {
+      x: mouseX(event),
+      y: mouseY(event) };
+    follower.style.top = mouse.y + 40+ 'px';
+    return follower.style.left = mouse.x + 20 + 'px';
+    
+  };
+ 
+  timer = false;
+
+  window.onmousemove = init = event => {
+    var _event;
+    _event = event;
+    return timer = setTimeout(() => {
+      return positionElement(_event);
+    }, 1);
+  };
+
+}).call(this);
+
+let allLinks = Array.from(document.querySelectorAll('a'));
+let circle1 = document.getElementById('circle1');
+let circle2 = document.getElementById('circle2');
+if(allLinks){
+  for(let i=0;i<allLinks.length;i++){
+     allLinks[i].addEventListener('mouseenter',()=>{
+      circle1.style.background = '#5f6f93'
+      circle2.style.border = '2px solid #5f6f93'
+     setTimeout(()=>{
+      circle1.style.background = '#66c3d0'
+      circle2.style.border = '2px solid #66c3d0'
+     },1000)
+     })
+  }
+}
 
 
 
