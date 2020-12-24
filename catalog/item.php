@@ -131,9 +131,175 @@
             </div>
 
           </form>
-          <!-- <div class="owl-carousel">
-      
-    </div> -->
+        </div>
+      </div>
+
+<div class="interesting__sign">
+  <h2 class='interesting'>С ЭТИМ ТОВАРОМ МОЖЕТ ПОДОЙТИ:</h2>
+  <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/giraffe.php")?>
+
+</div>
+<div class="interesting__slider__full">
+    <div class="interesting__arrow__left ia">
+      <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrowslider.php")?>
+    </div>
+    <div class="interesting__arrow__right ia">
+      <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrowslider.php")?>
+    </div>
+  <div class="interesting__slider">
+
+  <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+
+  </div>
+  
+</div>
+
+<div class="interesting__sign">
+  <h2 class='interesting'>ВЫ СМОТРЕЛИ РАНЬШЕ:</h2>
+  <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/circus__elephant.php")?>
+
+</div>
+<div class="interesting__slider__full">
+    <div class="earlier__arrow__left ea">
+      <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrowslider.php")?>
+    </div>
+    <div class="earlier__arrow__right ea">
+      <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrowslider.php")?>
+    </div>
+  <div class="earlier__slider">
+
+  <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+
+  </div>
+  
+</div>
+
         
 
        
@@ -175,67 +341,9 @@
           </div>
         </div> 
             </div>-->
-  </div>
 
-  <!-- <h2 class='interesting'>с этим товаром смотрят</h2>
-<div class="interesting__slider__full">
 
-  <svg class='mpl mpli' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.09 49.41"><defs><style>.cls-1{fill:none;stroke:#13100d;stroke-miterlimit:10;stroke-width:3px;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><polyline class="cls-1" points="0.95 1.16 30.67 25.45 0.95 48.22"/></g></g></svg>
-
-  <div class="interesting__slider">
-  <a href="/catalog/item.php">
-      <div class="catalog__item">
-        <div class='img__wrap'>
-          <img src="/images/catalog/1.jpg" alt="">
-        </div>
-        <p>Название товара номер один</p>
-        <span class='sale__price'>9&nbsp;185Р</span>
-      </div>
-      </a>
-
-      <a href="/catalog/item.php">
-      <div class="catalog__item">
-        <div class='img__wrap'>
-          <img src="/images/catalog/1.jpg" alt="">
-        </div>
-        <p>Название товара номер один</p>
-        <span class='sale__price'>9&nbsp;185Р</span>
-      </div>
-      </a>
-
-      <a href="/catalog/item.php">
-      <div class="catalog__item">
-        <div class='img__wrap'>
-          <img src="/images/catalog/1.jpg" alt="">
-        </div>
-        <p>Название товара номер один</p>
-        <span class='sale__price'>9&nbsp;185Р</span>
-      </div>
-      </a>
-
-      <a href="/catalog/item.php">
-      <div class="catalog__item">
-        <div class='img__wrap'>
-          <img src="/images/catalog/1.jpg" alt="">
-        </div>
-        <p>Название товара номер один</p>
-        <span class='sale__price'>9&nbsp;185Р</span>
-      </div>
-      </a>
-
-      <a href="/catalog/item.php">
-      <div class="catalog__item">
-        <div class='img__wrap'>
-          <img src="/images/catalog/1.jpg" alt="">
-        </div>
-        <p>Название товара номер один</p>
-        <span class='sale__price'>9&nbsp;185Р</span>
-      </div>
-      </a>    
-    </div>
-        
-    <svg class='mpr mpri' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.09 49.41"><defs><style>.cls-1{fill:none;stroke:#13100d;stroke-miterlimit:10;stroke-width:3px;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><polyline class="cls-1" points="0.95 1.16 30.67 25.45 0.95 48.22"/></g></g></svg>
-</div>
+  <!--
 
 <h2 class='checked__earlier__sign'>вы смотрели ранее</h2>
 <div class="earlier__slider__full">
@@ -296,7 +404,6 @@
       
   <svg class='mpr mpre' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.09 49.41"><defs><style>.cls-1{fill:none;stroke:#13100d;stroke-miterlimit:10;stroke-width:3px;}</style></defs><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><polyline class="cls-1" points="0.95 1.16 30.67 25.45 0.95 48.22"/></g></g></svg>
 </div> -->
-</div>
 </div>
 
 <?php require($_SERVER["DOCUMENT_ROOT"]."/footer.php");?>

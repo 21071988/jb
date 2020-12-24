@@ -38,15 +38,29 @@
       </div>
   </div>
 </div>
+<div class="sliding__search">
+  <div class="sliding__menu__wrapper">
+  <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketdeletebtn.php");?>
+      <div class="search">
+        <form action="" method="get" class='flex'>
+        <div class='column'>
+          <input type="text">
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
+        </div>
+        <button>искать</button>
+    </form>
+      </div>
+  </div>
+</div>
   <div class='logo__div'>
       <a href="/index.php">
         <img src="/images/svg/logo.svg" alt="">
       </a>
   </div>
   <div class="header__icons">
-        <a href="/search">
+        <p>
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/searchicon.php");?>
-        </a>
+        </p>
         <a href="/lk" id='lk'>
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/lk.php");?>
         </a>

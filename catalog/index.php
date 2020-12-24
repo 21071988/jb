@@ -17,6 +17,7 @@
       <a href="">косметика</a>
       <a href="">уход</a>
     </div>
+    <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/catalog__img.php");?>
   </div>
   <div class="right__part">
     
@@ -44,6 +45,24 @@
         <span>Я-а</span>
       </div>
     </div>
+   
+      <div class="learn__about__wrapper">
+        <p id='learn__more__sign' class='learn__more__sign'>Узнать больше о бренде</p>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/ad.php");?>          
+      </div>
+      
+      <div class="learn__about">
+      <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketdeletebtn.php");?>
+        <h2>Название бренда</h2>
+        <div class="learn__about__block">
+          <img src="/images/catalog/IMG_5615-01.jpeg" alt="">
+          <p class="learn__about__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsa quam harum impedit quos, voluptatem aut, doloremque dolor in nam at nemo labore quaerat reiciendis ullam illum quo consequuntur. Corporis natus porro delectus ut nemo aut aperiam aspernatur fuga accusantium.
+          </p>
+        </div>
+      </div>
+
+
       <!-- <div class="top__menu__chooses">
       <form action="">    
         
@@ -197,10 +216,177 @@
           </div>
         </div>
       </a>
-      
 
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
 
-      
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+
+      <a href="/catalog/item.php" class='c1'>
+        <div class="catalog__item">
+          <div class='img__wrap'>
+            <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+            <!-- <div class="sale__sign">25%</div> -->
+          </div>
+          <p  class='catalog__item__name'>Название товара номер один очень длинное и не помещает на одну строку</p>
+          <div class="catalog__item__price__and__like">
+            <div>
+              <span class=' num catalog__item__price'>2&nbsp;384Р</span>
+              <!-- <span class='sale__price'>9&nbsp;185Р</span> -->
+            </div>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+          </div>
+        </div>
+      </a>
+
     </div>
     
   </div>

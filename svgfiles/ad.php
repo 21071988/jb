@@ -1,0 +1,1 @@
+<svg class='ad' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.62 15.01"><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><polygon points="11.31 15.02 0 0.62 0.79 0 11.31 13.4 21.83 0 22.62 0.62 11.31 15.02"/></g></g></svg>
