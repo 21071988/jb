@@ -390,7 +390,10 @@
     </div>
     
   </div>
-    <button data-page='2' id='showMore'>Показать еще</button>
+    <div class="basket__btn__div" id='showMore'>
+        <a id='to__basket' class='order__btn'>Показать еще</a>
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>
+    </div>
   </div>
 </div>
 

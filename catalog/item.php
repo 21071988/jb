@@ -46,7 +46,10 @@
           <p>
             <span class='item__art'>артикул</span><span class='grey num item__articule'>12387</span>
           </p>
-          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/catalogitemheart.php");?>
+          <div class="rel show__heart">
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/dreambox.php");?>
+          </div>
           </div>
         <span class="item__price num">5&nbsp;500Р</span>
         <form action="index.php" method='GET'>
@@ -94,12 +97,12 @@
                 </div>
               </div>
             </div>
-            <div id='which__size'>
+            <a id='which__size' href="#what__size__should">
               <p>Подобрать размер</p>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/ruler.php");?>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/giraffe.php");?>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
-            </div>
+            </a>
 
             <div class="item__color">
               <span class='item__color__n'>Цвет:</span>
@@ -133,6 +136,11 @@
           </form>
         </div>
       </div>
+
+<div id="what__size__should">
+
+</div>
+
 
 <div class="interesting__sign">
   <h2 class='interesting'>С ЭТИМ ТОВАРОМ МОЖЕТ ПОДОЙТИ:</h2>

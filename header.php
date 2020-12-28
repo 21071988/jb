@@ -64,7 +64,7 @@
         <a href="/lk" id='lk'>
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/lk.php");?>
         </a>
-        <a href="/likes">
+        <a href="/likes" class='likes__link'>
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/heart.php");?>
         </a>
         <a href="/basket" class='basket__link'>

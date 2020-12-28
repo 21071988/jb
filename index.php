@@ -25,7 +25,7 @@
     <div class="basket__btn__div">
               <a id='to__basket' class='order__btn'>В каталог</a>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>
-  </div>
+    </div>
   </div>
   <div class="white__block__main">
         <div class="main__popular">
@@ -114,28 +114,58 @@
   
   <div class="popular__instagram">
     <div class="main_instagram">
-    <h2>В инстаграм</h2>
-    <p>всё самое интересное и актуальное</p>
-    <div class="instagram__slider">
-      <a href="https://www.instagram.com/justborn_vl/">
-       <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
-      </a>
-      <a href="https://www.instagram.com/justborn_vl/">
-       <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
-      </a>
-      <a href="https://www.instagram.com/justborn_vl/">
-       <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
-      </a>
-      <a href="https://www.instagram.com/justborn_vl/">
-       <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
-      </a>
-      <a href="https://www.instagram.com/justborn_vl/">
-       <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
-      </a>
-      <a href="https://www.instagram.com/justborn_vl/">
-       <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
-      </a>
-    </div>
+      <h2 class='m25'>В инстаграм</h2>
+      <p class='m25'>всё самое интересное и актуальное</p>
+      <div class="instagram__block">
+        <div class="instagram__texts">
+            <div class="instagram__text">
+              <h3>Some text</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, minus sit. Commodi odio, sed nihil quibusdam accusantium dolorem labore beatae.</p>
+            </div>
+            <div class="instagram__text">
+              <h3>Some text</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, minus sit. Commodi odio, sed nihil quibusdam accusantium dolorem labore beatae.</p>
+            </div>
+            <div class="instagram__text">
+              <h3>Some text</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, minus sit. Commodi odio, sed nihil quibusdam accusantium dolorem labore beatae.</p>
+            </div>
+        </div>
+        <div class="instagram__slider">
+          <a href="https://www.instagram.com/justborn_vl/">
+          <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+          </a>
+          <a href="https://www.instagram.com/justborn_vl/">
+          <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+          </a>
+          <a href="https://www.instagram.com/justborn_vl/">
+          <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+          </a>
+          <a href="https://www.instagram.com/justborn_vl/">
+          <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+          </a>
+          <a href="https://www.instagram.com/justborn_vl/">
+          <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+          </a>
+          <a href="https://www.instagram.com/justborn_vl/">
+          <img src="/images/catalog/justborn_vl_1603850319_1.jpg" alt="">
+          </a>
+        </div>
+        <div class="instagram__texts">
+          <div class="instagram__text">
+            <h3>Some text</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, minus sit. Commodi odio, sed nihil quibusdam accusantium dolorem labore beatae.</p>
+          </div>
+          <div class="instagram__text">
+            <h3>Some text</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, minus sit. Commodi odio, sed nihil quibusdam accusantium dolorem labore beatae.</p>
+          </div>
+          <div class="instagram__text">
+            <h3>Some text</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, minus sit. Commodi odio, sed nihil quibusdam accusantium dolorem labore beatae.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

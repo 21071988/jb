@@ -38,6 +38,9 @@
         <a href="https://www.instagram.com/ikra.store/" target="blank">instagram</a>
       </div>
   </div> -->
+  <a class="connect__link" href="https://wa.me/79149605888" target="blank">
+  <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/connect.php");?>
+  </a>
   <div class="footer__part footer__part__left">
     <div class='column phone__email'>
       <a href="tel:79149605888">+7(914)-960-58-88</a>

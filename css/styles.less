@@ -24,7 +24,7 @@
   left: 50%;
 }
 #follower #circle1 {
-  position: absolute;
+  position: fixed;
   background:@mc;
   border-radius: 50%;
   height: 20px;
@@ -35,7 +35,7 @@
 	.trans4;
 }
 #follower #circle2 {
-	position: absolute;
+	position: fixed;
 	background: #fff;
 	border-radius: 50%;
 	height: 30px;
@@ -65,9 +65,9 @@ body{
 	overflow-x: hidden;
 	
 }
-// html{
-// 	cursor: none;	
-// }
+html{
+	scroll-behavior: smooth;
+}
 .grey{
 	color:#848484;
 }
@@ -78,12 +78,22 @@ body, p{
 	margin:0;
 	padding: 0;
 }
+p, span, h1, h2, h3, div{
+	&:hover{
+		cursor: default !important;
+	}
+}
 h1{
 	.uppercase;
 	.biggest__font;
 }
 img{
 	.w100;
+}
+a{
+	&:focus{
+		outline: none;
+	}
 }
 img:focus{outline: none !important;}
 .num{
@@ -313,13 +323,33 @@ a{
 	margin-bottom: 0;
 	.uppercase;	
 }
+
+.dreambox{
+	.trans4;
+	.positionA;
+	left: 130%;
+    width: 100px !important;
+		top: -100%;
+		opacity: 0;
+}
 .articul__and__like{
-	svg{
+	.heart{
 		width: 40px;
+		.cls-1{
+			.trans4;
+			&:hover{
+				fill:@mc;
+			}
+		}
 	}
 	justify-content: space-between;
 	.flex;
 	align-items: flex-start;
+}
+.filled__heart{
+	.cls-1{
+		fill:@mc !important;
+	}
 }
 .item__art{
 	.grey;
@@ -903,6 +933,17 @@ header{
 .hidePopup{
 	animation:hidePopup .7s forwards ease-in;
 }
+.showBasic{
+	animation: showBasic .5s forwards ease-in;
+}
+@keyframes showBasic{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
 @keyframes hidePopup{
 	0%{
 		left:0;
@@ -1194,6 +1235,7 @@ header{
 	.cls-5{stroke-dasharray:20.58 20.58;}
 	.cls-6{stroke-dasharray:20;}
 }
+
 .footer__link__duck{
 	cls-1{fill:#66c3d0;}
 	.cls-2{fill:#fff;}
@@ -1249,8 +1291,11 @@ header{
 header{
 	.heart{
 		.cls-1{
-			fill:@w;
+			fill:none;
 		}
+	}
+	.cls-2{
+		fill:@w;
 	}
 }
 .geo{
@@ -1279,6 +1324,12 @@ header{
 			.trans4;
 		}
 	}
+}
+#what__size__should{
+	width: 60vw;
+	min-height: 10vh;
+	background:@blue;
+	margin-top:300px;
 }
 .info__header{
 	margin-left:@mi;
@@ -1330,13 +1381,28 @@ header{
 		opacity: 1;
 	}
 }
-
+.dreambox{
+	.cls-1{fill:#1d1d1b;}
+}
+.connect__link{
+	.positionA;
+	top: -20%;
+	right: 12%;
+	.trans4;
+	&:hover{
+		transform: translateY(-7px);
+	}
+		svg{
+			width: 15vw;
+		}
+	}
 footer{
 	width: 100%;
 	min-height:35vh;
 	background: @mc;
 	padding:@m2;
 	.flex;
+	.rel;
 	.cls-2{
 		fill:@w;
 	}
@@ -1480,8 +1546,8 @@ footer{
 	}
 }
 .popular__instagram{
-	padding:@m3 20%;
 	background: @blue2;
+	padding:@m2 0;
 	h2{
 		margin-bottom:0;
 		margin-top:0;
@@ -1646,7 +1712,6 @@ footer{
 
 #error__validation{
 	font-size:12px;
-	margin-top:-15px;
 	opacity: 0;
 	color:@red;
 }
@@ -1920,4 +1985,120 @@ footer{
 		width: 80px;
 		transform:rotateY(180deg);
 	}
+}
+#showMore{
+	margin:@m3 auto @m4;
+}
+#payment__attention {
+	width: 60%;
+	margin:0 auto;
+	opacity: 0;
+	p{
+		text-align: center;
+		.uppercase;
+		color:@red;
+		.fs;
+		
+	}
+}
+.connect{
+	.cls-1{fill:#62bfa7;}.cls-2{fill:#fff;}
+}
+.instagram__block{
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+}
+.instagram__text{
+	opacity: 0;
+	h3{
+		.f15;
+		margin:0;
+	}
+	p{
+		.fs;
+	}
+}
+.instagram__text{
+	padding:@m;
+	opacity: 0;
+}
+.m25{
+	margin-left:25%;
+}
+.instagram__texts{
+	display:grid;
+	grid-template-rows: repeat(3,1fr);
+}
+.main_instagram{
+	.m25{
+		.uppercase;
+	}
+	h2{
+		.f3;
+	}
+}
+
+.reg__wrapper{
+	.allcenter;
+	min-height: 80vh;
+	.order__wrapper{
+		padding:0;
+		margin-bottom:0;
+	}
+}
+.reg__window__menu {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin:0;
+}
+
+.reg__form {
+  display: flex;
+  flex-direction: column;
+  transition: .4s;
+}
+.reg__form:last-child {
+  display: none;
+}
+.reg__form label {
+  transform: translateY(22px);
+  transition: .4s;
+}
+.reg__form input {
+  margin-bottom: 0;
+}
+.reg__window {
+  width: 15%;
+  min-width: 215px;
+}
+.reg__window button {
+  font-size: 1.5rem;
+}
+.reg__window hr {
+  margin: 4px 5px;
+  width: 1px;
+  background: black;
+  border: none;
+}
+.reg__window__form label {
+	font-size: 12px;
+}
+.reg__window__form{
+	input{
+		border:none;
+		z-index: 5;
+		background:none;
+	}
+}
+#error__validation_pas{
+	opacity: 0;
+}
+.auth__error__validation{
+	opacity: 0;
+	color:@red;
+	.fss;
+}
+.form__type{
+	.uppercase;
 }

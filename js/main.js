@@ -242,9 +242,8 @@ circleArrows(newSliderArrows,cirlces);
 
 // //order label movement
 let orderInputs = Array.from(document.querySelectorAll('.order__wrapper input'));
-
 if(orderInputs.length>0){
-	for(let i = 0; i< 10; i++){
+	for(let i = 0; i< orderInputs.length; i++){
 		(orderInputs[i].value ?  orderInputs[i].previousSibling.previousSibling.style.transform = "translateY(0px)" : 1)
 		  orderInputs[i].onfocus = function(){
 		    orderInputs[i].previousSibling.previousSibling.style.transform = "translateY(0px)";
@@ -281,6 +280,22 @@ if(orderInputs.length>0){
 		}
 }
 
+//reg email validation
+let regSbmBtn = document.getElementById('reg__btn');
+const regEmailError = document.getElementById('error__validation');
+if(regSbmBtn){
+  regSbmBtn.addEventListener('click', function(e){
+    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    var address = document.getElementById('lk__prop__email');
+        if(reg.test(address.value) == false) {
+          regEmailError.style.opacity = '1';
+          address.classList.remove('green__input');
+          address.classList.add('red__input');
+          e.preventDefault();
+          return false;
+        }
+});
+}
 // order checkings
 let paymentType = Array.from(document.querySelectorAll('.payment__type__p'));
 let deliveryType = Array.from(document.querySelectorAll('.delivery__type__p'));
@@ -460,8 +475,42 @@ if(AS.length>0){
     } 
   })
 }
+let heartLink = document.querySelector('.likes__link');
+if(heartLink) heartLink.childNodes[1].classList.add('go__heart');
+let likedHearts = Array.from(document.querySelectorAll('.liked__items .heart'));
+if(likedHearts.length>0) {
+  for(let i=0;i<likedHearts.length;i++){
+    likedHearts[i].classList.add('filled__heart')
+  }
+}
+//  //hearts
+let littleHeart = Array.from(document.querySelectorAll('.heart'));
+let heartHint = document.querySelector('.dreambox');
+let heartHintFill = littleHeart[0].childNodes[0].childNodes[0].childNodes[0];
+let heartShown = 0;
+if(littleHeart[1]){
+  littleHeart[1].addEventListener('mouseover',()=>{
+    if(heartShown==0){
+      heartHint.classList.add('showBasic');
+      heartShown = 1;
+    }
+  });
 
-
+  littleHeart[1].addEventListener('mouseleave',()=>{heartHint.classList.remove('showBasic')});
+      
+  for(let i=0;i<littleHeart.length;i++){
+    littleHeart[i].addEventListener('click',(e)=>{
+    changeClass(littleHeart[i],'filled__heart');
+    heartHintFill.style.fill = '#ed6f9d';
+    (littleHeart[i].classList.contains('go__heart') ? 1 : e.preventDefault());
+  });
+  }
+  //  const http = new EasyHTTP;
+  //  let heartId = littleHeart[i].parentNode.parentNode.parentNode.dataset.id;
+  //  const url = 'http://ikra.slim.technology/ajax/like.php?id='+`${heartId}`;
+  //   http.get(url);
+  
+}
 
 
 // footer links animation
@@ -525,6 +574,57 @@ if(orderBtn){
     
   });
 }
+// //reg block
+let regAr = document.querySelectorAll('.reg__window__menu a');
+let regFormAr = document.querySelectorAll('.reg__window__form form');
+
+reg = Array.from(regAr);
+regForm = Array.from(regFormAr);
+for(let i = 0; i< regAr.length; i++){
+  regAr[i].addEventListener('click',function(){
+	  var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+      for(let j = 0; j< regForm.length; j++){
+        if (j == i){
+          regForm[j].style.opacity = '1';
+          setTimeout(
+            ()=>regForm[j].style.display = 'flex'
+          ,500);
+        }else{
+          regForm[j].style.opacity = '0';
+          setTimeout(
+            ()=>regForm[j].style.display = 'none'
+          ,500);
+        }
+      }
+  });
+}
+
+//attention sign in order
+let attentionBtn = document.getElementById('pay__in__shop');
+let notattentionBtn = document.getElementById('pay__online');
+let attentionSign = document.getElementById('payment__attention');
+if(attentionSign){
+  attentionBtn.addEventListener('click',()=>attentionSign.classList.add('showSizesBlock'));
+  notattentionBtn.addEventListener('click',()=>(attentionSign.classList.contains('showSizesBlock') ? attentionSign.classList.remove('showSizesBlock') : 1));
+}
+
+
+//instagram text appearance
+let instImgs = Array.from(document.querySelectorAll('.instagram__slider a'));
+let instTexts = Array.from(document.querySelectorAll('.instagram__text'));
+  for(let i=0;i<instImgs.length;i++){
+    instImgs[i].addEventListener('mouseover',()=>{instTexts[i].classList.add('showBasic')})
+    instImgs[i].addEventListener('mouseleave',()=>{instTexts[i].classList.remove('showBasic')})    
+}
+
+
+
+
+
+
+
 //catalog image animation
 let ciPaths1 = Array.from(document.querySelectorAll('.catalog__img .cls-1'));
 let ciPaths2 = Array.from(document.querySelectorAll('.catalog__img .cls-2'));
@@ -548,6 +648,11 @@ if(ciPaths.length>0){
     }
   }) 
 }
+
+
+//scroll to what__size__should
+
+
 
 // mouse movement
 
@@ -579,12 +684,23 @@ if(ciPaths.length>0){
   timer = false;
 
   window.onmousemove = init = event => {
+    console.log(event);
     var _event;
     _event = event;
     return timer = setTimeout(() => {
       return positionElement(_event);
     }, 1);
   };
+  window.addEventListener('scroll',(event)=>{
+    
+    var _event2;
+    _event2 = event;
+    return timer = setTimeout(() => {
+      return positionElement(_event2);
+    }, 1);
+  });
+
+ 
 
 }).call(this);
 
@@ -714,6 +830,26 @@ $(document).ready(function(){
       $('.earlier__arrow__left').on('click', function() {
         $('.earlier__slider').slick('slickPrev');
       });
+
+
+      $(document).on('click', '#showMore', function(){
+        const page = $('#showMore').data('page');
+        const sectionid = $('#showMore').data('sectionid');
+        const type = $('#showMore').data('type');
+        const color = $('#showMore').data('color');
+        const size = $('#showMore').data('size');
+        const sort = $('#showMore').data('sort');
+        const url = '/ajax/items.php?PAGEN_1='+page+'&SECTION_ID='+sectionid+'&type='+type+'&color='+color+'&size='+size+'&sort='+sort;
+        $('#showMore').remove();
+        $.ajax({
+          url: url,
+        }).then(function(result){
+          
+          $('.catalog__pages:last').after(result);      
+        })
+      });
+
+      
       // end of ready function
     });
 
@@ -1050,21 +1186,7 @@ $(document).ready(function(){
 //     });
 // }
 	
-//  //hearts
-// let littleHeart = Array.from(document.querySelectorAll('.item-heart'));
-// let heartsFlow = Array.from(document.querySelectorAll('.cls-heart-2'));
-// for(let i=0;i<littleHeart.length;i++){
-//   littleHeart[i].addEventListener('click',(e)=>{
-//    changeClass(littleHeart[i],'black__Heart');
-//    changeClass(heartsFlow[1],'beating__heart__c');
-   
-//    (littleHeart[i].classList.contains('header__heart') ? 1 : e.preventDefault());
-//    const http = new EasyHTTP;
-//    let heartId = littleHeart[i].parentNode.parentNode.parentNode.dataset.id;
-//    const url = 'http://ikra.slim.technology/ajax/like.php?id='+`${heartId}`;
-//     http.get(url);
-//   });
-// }
+
 
 // //изменение количества добавляемых в корзину товаров
 

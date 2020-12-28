@@ -95,18 +95,20 @@
     <div class="payment__type order__block">
         <h2>способ оплаты</h2>
         <div class="order__type__h2">
-          <p class='active payment__type__p'>на сайте</p>
+          <p class='active payment__type__p' id='pay__online'>на сайте</p>
           <input class='payment__type' name='payment__type' value='site__payment' type='radio' hidden></hidden>
             <div class='delivery__type__choosing'>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
               <h3>способ оплаты</h3>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
             </div>
-          <p class='payment__type__p'>в магазине</p>
+          <p class='payment__type__p' id='pay__in__shop'>в магазине</p>
           <input class='payment__type' name='payment__type' value='shop__payment' type='radio' hidden></hidden>
     </div> 
 </div>
-
+<div id="payment__attention">
+  <p>"у вас есть 1 сутки чтобы забрать заказ в магазине. Через сутки он будет отменён."</p>
+</div>
     <div class="checking__order__block">
        <div class='checking__order__block__sign'>
        <div>
