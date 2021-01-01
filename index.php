@@ -23,7 +23,7 @@
      
     </div>
     <div class="basket__btn__div">
-              <a id='to__basket' class='order__btn'>В каталог</a>
+              <a id='to__basket' class='to__catalog order__btn' href="/catalog">В каталог</a>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>
     </div>
   </div>
