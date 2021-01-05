@@ -22,6 +22,43 @@
   <div class="right__part">
     
     <div class="top__catalog__menu">
+      <div class="catalog__filter2__popup">
+        <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketdeletebtn.php");?>
+        <div class="filter2__block">
+          <form action="">
+            <div class="fb">
+              <span>Наличие</span>
+              <div class="filter__options">
+                <label class='top__menu__choose__color possibly__active' for="yes"><input type="checkbox" id="yes" name='Availability' value='red' checked> да</label>
+                <label class='top__menu__choose__color possibly__active' for="no"><input type="checkbox" id="no" name='Availability' value='red'> нет</label>
+              </div>
+
+              <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
+            </div>
+            <div class="fb">
+              <span>Возраст</span>
+              <div class="filter__options">
+                <label class='top__menu__choose__color possibly__active' for="two"><input type="checkbox" id="two" name='age' value='red' checked> 2 года</label>
+                <label class='top__menu__choose__color possibly__active' for="three"><input type="checkbox" id="three" name='age' value='red'> 3 года</label>
+              </div>
+              <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
+              </div>
+            <div class="fb">
+              <span>Цвет</span>
+              <div class="filter__options">
+                <label class='top__menu__choose__color possibly__active' for="red"><input type="checkbox" id="red" name='age' value='red' checked> красный</label>
+                <label class='top__menu__choose__color possibly__active' for="green"><input type="checkbox" id="green" name='age' value='red'> Зеленый</label>
+              </div>
+              <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
+            </div>
+            <div class="basket__btn__div">
+              <a id='to__basket' class='order__btn'>Показать</a>
+              <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>
+          </div>
+          </form>
+          </div>
+      </div>
+
       <div class="catalog__filter catalog__filter2">
         <span>Наличие</span>
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
@@ -31,18 +68,18 @@
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
       </div>
       <div class="catalog__filter catalog__filter3">
-        <span>Сначала новые</span>
+        <a>Сначала новые</a>
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
-        <span>Сначала старые</span>
+        <a>Сначала старые</a>
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
-        <span>Цена по убыванию</span>
+        <a>Цена по убыванию</a>
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
-        <span>Цена по возрастанию</span>
+        <a>Цена по возрастанию</a>
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
         <span>Сортировка</span>
-        <span>А-я</span>
+        <a>А-я</a>
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>          
-        <span>Я-а</span>
+        <a>Я-а</a>
       </div>
     </div>
    

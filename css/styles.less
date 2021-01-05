@@ -948,6 +948,35 @@ header{
 	}
 }
 
+.showfilterPopUp{
+	animation:showfilterPopUp .7s forwards ease-in;
+}
+@keyframes showfilterPopUp{
+	70%{
+		right:20px;
+	}
+	80%{
+		right:-10px;
+	}
+	90%{
+		right:10px;
+	}
+	100%{
+		right:0;
+	}
+}
+.hideFilterPopup{
+	animation:hideFilterPopup .3s forwards ease-in;
+}
+@keyframes hideFilterPopup{
+	0%{
+		right:0;
+	}
+	100%{
+		right:-1000px;
+	}
+}
+
 .showBasic{
 	animation: showBasic .5s forwards ease-in;
 }
@@ -1457,7 +1486,9 @@ footer{
 .filled{
 	fill:@mc;
 }
-
+.catalog__filter3 .active{
+	background: @mc;
+}
 .footer__link{
 	
 	transform: rotateZ(0);
@@ -1896,6 +1927,9 @@ footer{
 		width: 80px;
 	}
 }
+.top__catalog__menu{
+	.rel;
+}
 
 .callabird{
 	position: relative;
@@ -1947,9 +1981,9 @@ footer{
 	width: 40vw;
 	min-height: 40vh;
 	z-index: 4;
-	-webkit-box-shadow: 4px 6px 8px 0px rgba(34, 60, 80, 0.2);
-	-moz-box-shadow: 4px 6px 8px 0px rgba(34, 60, 80, 0.2);
-	box-shadow: 4px 6px 8px 0px rgba(34, 60, 80, 0.2);
+	-webkit-box-shadow: 9px 9px 13px 0px rgba(102, 195, 208, 0.2);
+	-moz-box-shadow: 9px 9px 13px 0px rgba(102, 195, 208, 0.2);
+	box-shadow: 9px 9px 13px 0px rgba(102, 195, 208, 0.2);
 	top:40%;
 	h2{
 		margin:0 0 10px 0;
@@ -1965,7 +1999,65 @@ footer{
 .learn__less{
 	margin-top:@m1;
 }
-
+.catalog__filter2__popup{
+	.positionA;
+	top:100%;
+	right:-1000px;
+	min-width: 40vw;
+	padding:@m2;
+	.trans4;
+	background: @w;
+	.basket__delete__btn{
+		width: 20px;
+		float:right;
+	}
+}
+.active__filter{
+	background-color: @mc;
+	color:@w;
+}
+.possibly__active{
+	input{
+		position: absolute;
+    clip: rect(0,0,0,0);
+    pointer-events: none;
+	}
+}
+.filter__options{
+	.flex;
+	label{
+		margin-right:@m;
+		&:first-child{
+			margin-left:@m;
+		}
+	}
+}
+.possibly__active:not(:disabled):not(.disabled).active{
+	background-color:@bl !important;
+	border-color:@bl !important;
+	color:@mc !important;
+}
+.possibly__active{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.filter2__block{
+	.allcenter;
+	.column;
+	.basket__btn__div .basketbtnborder{
+		width: 70px;
+	}
+}
+.fb{
+	margin-bottom:@m;
+	.allcenter;
+	.column;
+	.bearhead{
+		width: 20px;
+		margin-top:@m2;
+	}
+}
 .interesting__slider ,.earlier__slider{
 	.c1{
 		margin:0 10px;

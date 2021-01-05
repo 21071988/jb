@@ -187,6 +187,23 @@ for(let i=0;i<itemSize.length;i++){
   })
 }
 
+
+//catalog filter3
+let filter3Choise = Array.from(document.querySelectorAll('.catalog__filter3 a'));
+for(let i=0;i<filter3Choise.length;i++){
+  filter3Choise[i].addEventListener('click',function(){
+    var current = document.querySelector(".active");
+    if(current){
+      current.classList.remove('active');
+      filter3Choise[i].classList.add('active');
+    }else{
+      filter3Choise[i].classList.add('active');
+    }
+    console.log(itemSize[i].childNodes[1].value);
+    cs.innerText = itemSize[i].childNodes[1].value;
+  })
+}
+
 //read about in item.php
 
 let readAboutTrigger = document.querySelector('.read__about');
@@ -201,6 +218,16 @@ if(readAboutBlock){
     }
   })
 }
+//filter popUp
+let filterTrigger = Array.from(document.querySelectorAll('.catalog__filter2 span'));
+let filter2 = document.querySelector('.catalog__filter2__popup');
+if (filterTrigger.length>0){
+  for(let i=0;i<filterTrigger.length;i++){
+    filterTrigger[i].addEventListener('click',()=>filter2.classList.add('showfilterPopUp'));
+  }
+} 
+let filter2ColsingBtn = document.querySelector('.catalog__filter2__popup .basket__delete__btn');
+filter2ColsingBtn.addEventListener('click',()=>hidingAmination(filter2, 'showfilterPopUp','hideFilterPopup',300))
 //arrow cirlces in slider
 
 
@@ -625,6 +652,16 @@ for(let i = 0; i< regAr.length; i++){
       }
   });
 }
+
+//filter choosings
+let labelCArray = Array.from(document.querySelectorAll('.possibly__active'));
+for(let i = 0; i< labelCArray.length; i++){
+  labelCArray[i].addEventListener('change',function(){
+        this.classList.toggle('active__filter');
+        // (window.innerWidth < 768 ? catalogShownBtnMobile.style.opacity = '1': 1);
+    });
+}
+
 //attention sign in order
 let attentionBtn = document.getElementById('pay__in__shop');
 let notattentionBtn = document.getElementById('pay__online');
