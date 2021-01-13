@@ -3,6 +3,10 @@
   <div class="slider__wrapper">
     <div class="slider__main">
       <img src="/images/main/mainslider.jpg" alt="">
+      <div class="basket__btn__div">
+              <a class='to__catalog order__btn' href="/catalog">В каталог</a>
+              <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>
+     </div>
     </div>
   </div>
   <div class="lets__talk">
@@ -12,10 +16,19 @@
       Вот тут небольшой текст, который сразу настраивает на положительное общение.
       Рассказываем о себе, объясняем, почему мы - больше чем просто магазин
       </p>
-      <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/giraffe.php")?>
+      <div class="giraffe__main">
+        <div class="vertical flowers__and__giraffe">
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/flower.php")?>
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/giraffe.php")?>
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/flower.php")?>
+        </div>
+        <div class="vertical">
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/lineM.php")?>
+        </div>
+      </div>
     </div>
     <div class="lets__talk__second">
-    <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/whale.php")?>
+    <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/whale__main.php")?>
       <p>
       Вот тут небольшой текст, который сразу настраивает на положительное общение.
       Рассказываем о себе, объясняем, почему мы - больше чем просто магазин
@@ -23,7 +36,7 @@
      
     </div>
     <div class="basket__btn__div">
-              <a id='to__basket' class='to__catalog order__btn' href="/catalog">В каталог</a>
+              <a id='to__basket' class='to__catalog order__btn' href="/catalog">Узнать о нас</a>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>
     </div>
   </div>

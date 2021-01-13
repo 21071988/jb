@@ -120,8 +120,13 @@
         </div>
         <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
         <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
-      </div> 
+      </div>  
     </div> 
+
+    <div class="basket__btn__div">
+              <a id='to__basket' class='to__catalog order__btn' href="/order">Оформить заказ</a>
+              <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>
+    </div>
     
 
     
