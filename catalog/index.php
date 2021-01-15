@@ -1,5 +1,5 @@
 <?php require($_SERVER["DOCUMENT_ROOT"]."/header.php");?>
-<div class="wrapper__catalog">
+<div class="wrapper__catalog mb">
   <div class="catalog__left__part">
     <div class="catalog__menu__categories">
       <a href="">футболки</a>

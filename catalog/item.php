@@ -1,5 +1,5 @@
 <?php require($_SERVER["DOCUMENT_ROOT"]."/header.php");?>
-<div class="item__wrapper">
+<div class="item__wrapper mb">
 <div class="about__delivery__popup">
 <div class='info__wrapper'>
     <div class="info__menu">
@@ -36,6 +36,14 @@
         <img src="/images/catalog/IMG_5629-01.jpg">
         <img src="/images/catalog/IMG_5631-01.jpg">
         <img src="/images/catalog/IMG_5644-01.jpg">
+  </div>
+  <div class="item__slider__arrows also__item__slider__arrows">
+     <div class="prev__item__card">
+     <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrowslider.php");?>
+     </div>
+     <div class="next__item__card">
+     <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrowslider.php");?>
+     </div>
   </div>
   <div class='slider-nav-item-card'>
         <img src="/images/catalog/IMG_5656-01.jpg">
@@ -143,7 +151,7 @@
               </p>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/whale.php");?>
               </div>
-            <div class="basket__btn__div">
+            <div class="basket__btn__div item__basket__btn">
               <button id='to__basket'>В корзину</button>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>
             </div>
@@ -153,7 +161,159 @@
       </div>
 
 <div id="what__size__should">
+<h2>Размерный ряд</h2>
+  <div class="all__sizes">
+    <div class="all__sizes__tabs">
+      <p>Боди, коконы</p>
+      <p>Комбинезоны</p>
+      <p>Майки, футболки,<br> распашонки</p>
+      <p>Штаны, леггинсы,<br> ползунки</p>
+    </div>
+    <div class="all__sizes__blocks">
+      <div class="all__sizes__1">
+        <div class='some__size'>
+          <div class="two__parts">
+            <img src="/images/sizes/боди длинный рукав.svg" alt="">
+          </div>
+          <div class="three__parts">
+          <h3>Боди с длинным рукавом</h3>
+          <table>
+          <tr>
+            <td>Размер (см)</td>
+            <td>56-62</td>
+            <td>62-68</td>
+            <td>68-74</td>
+            <td>74-80</td>
+            <td>68-74</td>
+            <td>74-80</td>
+          </tr>
+          <tr>
+            <td>Возраст</td>
+            <td>1-3</td>
+            <td>3-6</td>
+            <td>6-9</td>
+            <td>9-12</td>
+            <td>12-15</td>
+            <td>15-18</td>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>32</td>
+            <td>32</td>
+            <td>98</td>
+            <td>23</td>
+            <td>48</td>
+            <td>82</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>32</td>
+            <td>32</td>
+            <td>98</td>
+            <td>23</td>
+            <td>48</td>
+            <td>82</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>32</td>
+            <td>32</td>
+            <td>98</td>
+            <td>23</td>
+            <td>48</td>
+            <td>82</td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>32</td>
+            <td>32</td>
+            <td>98</td>
+            <td>23</td>
+            <td>48</td>
+            <td>82</td>
+          </tr>
+          </table>
+        </div>
+      </div>
 
+      <div class='some__size'>
+          <div class="two__parts">
+            <img src="/images/sizes/боди длинный рукав.svg" alt="">
+          </div>
+          <div class="three__parts">
+          <h3>Боди с длинным рукавом</h3>
+          <table>
+          <tr>
+            <td>Размер (см)</td>
+            <td>56-62</td>
+            <td>62-68</td>
+            <td>68-74</td>
+            <td>74-80</td>
+            <td>68-74</td>
+            <td>74-80</td>
+          </tr>
+          <tr>
+            <td>Возраст</td>
+            <td>1-3</td>
+            <td>3-6</td>
+            <td>6-9</td>
+            <td>9-12</td>
+            <td>12-15</td>
+            <td>15-18</td>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>32</td>
+            <td>32</td>
+            <td>98</td>
+            <td>23</td>
+            <td>48</td>
+            <td>82</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>32</td>
+            <td>32</td>
+            <td>98</td>
+            <td>23</td>
+            <td>48</td>
+            <td>82</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>32</td>
+            <td>32</td>
+            <td>98</td>
+            <td>23</td>
+            <td>48</td>
+            <td>82</td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>32</td>
+            <td>32</td>
+            <td>98</td>
+            <td>23</td>
+            <td>48</td>
+            <td>82</td>
+          </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+      
+      <div class="all__sizes__1">
+        Блок 2
+      </div>
+      <div class="all__sizes__1">
+        Блок 3
+      </div>
+      <div class="all__sizes__1">
+        Блок 4
+      </div>
+    </div>
+  </div>
 </div>
 
 

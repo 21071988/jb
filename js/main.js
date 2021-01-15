@@ -1,6 +1,10 @@
 
 
 window.onload = ()=>{
+  let green = '#66c3d0';
+  let red = '#ed6f9d';
+  let blue = '#598dd8';
+
     class EasyHTTP {
       async get(url, data) {
         const response = await fetch(url, {
@@ -102,6 +106,11 @@ window.onload = ()=>{
   let deleteBasketBtn = Array.from(document.querySelectorAll('.basket__item .basket__delete__btn'));
   let basketLines = Array.from(document.querySelectorAll('.green__line'));
   let itemToDelete = Array.from(document.querySelectorAll('.basket__item'));
+  let circle1 = document.getElementById('circle1');
+  let circle2 = document.getElementById('circle2');
+
+      
+     
   if(deleteBasketBtn.length>0){
   for(let i=0;i<deleteBasketBtn.length;i++){ 
     deleteBasketBtn[i].addEventListener('click',()=>{
@@ -111,6 +120,14 @@ window.onload = ()=>{
       currentSum = currentSum - needToMinus
       yourSum.setAttribute('data-currentsum', currentSum)
       yourSum.innerText = currentSum + ' Р'
+    })
+    deleteBasketBtn[i].addEventListener('mouseover',()=>{
+      circle1.style.background =`${red}`
+      circle2.style.border = `2px solid ${red}`
+    })
+    deleteBasketBtn[i].addEventListener('mouseleave',()=>{
+      circle1.style.background = `${green}`
+      circle2.style.border = `2px solid ${green}`
     })
   }
     
@@ -339,6 +356,8 @@ if(mainWhale){
   })
 }
 
+//item whale animation
+
 //reg email validation
 let regSbmBtn = document.getElementById('reg__btn');
 let regPas = document.getElementById('psw__validation');
@@ -526,8 +545,8 @@ let iw = document.querySelector('.info');
 if(textsArray.length>1){
 	for(let i = 0; i< tabsArray.length; i++){
     if(iw){
-      let textsHeight = textsArray[3].clientHeight;
-	    textsDiv.style.height = textsHeight +'px';
+      let textsHeight = textsArray[1].clientHeight;
+	    textsDiv.style.height = textsHeight + 400 + 'px';
     }
 	  tabsArray[i].addEventListener('click',function(){
 	      let current = document.querySelector(".active");
@@ -553,6 +572,38 @@ if(textsArray.length>1){
 	  });
 	}
 }
+
+//tabs in sizes
+
+let sizesTabs = document.querySelectorAll('.all__sizes__tabs p');
+let sizesBLock = document.querySelectorAll('.all__sizes__1');
+if(sizesTabs.length>1){
+	for(let i = 0; i< sizesTabs.length; i++){
+	  sizesTabs[i].addEventListener('click',function(){
+	      let current = document.querySelector(".active");
+	      current.className = current.className.replace("active", "");
+	      this.className += " active";
+        for(let j = 0; j< sizesBLock.length; j++){
+	        if (j == i){
+	          sizesBLock[j].style.opacity = '1';
+	        }else{
+	          sizesBLock[j].style.opacity = '0';
+	        }
+        }
+	  });
+	}
+}
+
+//sizes block height
+let sizeBLock = document.querySelectorAll('.all__sizes__1');
+let sizeBlockHeight = sizeBLock[0].clientHeight;
+let all__sizes__blocks = document.querySelector('.all__sizes__blocks');
+all__sizes__blocks.style.height = sizeBlockHeight + 'px';
+
+console.log(sizeBlockHeight);
+
+
+
 //about us appearance
 let AS = Array.from(document.querySelectorAll('.about__us'));
 if(AS.length>0){
@@ -602,7 +653,17 @@ if(littleHeart[1]){
   
 }
 
+//catalog card animations
 
+let whichS = document.getElementById('which__size');
+if(whichS){
+  let smallGiraffe = whichS.childNodes[5];
+  whichS.addEventListener('mouseover',()=>{
+    (smallGiraffe.classList.contains('pause')? smallGiraffe.classList.remove('pause') : 1)
+    smallGiraffe.classList.add('giraffe__moves')
+  });
+  whichS.addEventListener('mouseleave',()=>smallGiraffe.classList.add('pause'));
+}
 // footer links animation
 let footerLink = document.querySelector('.footer__link');
 function changeFooterLink(link__class){
@@ -753,75 +814,67 @@ if(ciPaths.length>0){
 }
 
 
-//scroll to what__size__should
+
+
+
 
 
 
 // mouse movement
+var $circle1 = $('#circle1');
+var $circle2 = $('#circle2');
 
-(function () {
-  var follower, init, mouseX, mouseY, positionElement, printout, timer;
-
-  follower = document.getElementById('follower');
-
-  printout = document.getElementById('printout');
-
-  mouseX = event => {
-    return event.clientX;
-  };
-
-  mouseY = event => {
-    return event.clientY;
-  };
-
-  positionElement = event => {
-    var mouse;
-    mouse = {
-      x: mouseX(event),
-      y: mouseY(event) };
-    follower.style.top = mouse.y + 40+ 'px';
-    return follower.style.left = mouse.x + 20 + 'px';
-    
-  };
- 
-  timer = false;
-
-  window.onmousemove = init = event => {
-    // console.log(event);
-    var _event;
-    _event = event;
-    return timer = setTimeout(() => {
-      return positionElement(_event);
-    }, 1);
-  };
-  window.addEventListener('scroll',(event)=>{
-    
-    var _event2;
-    _event2 = event;
-    return timer = setTimeout(() => {
-      return positionElement(_event2);
-    }, 1);
+function moveCircle(e) {
+  TweenLite.to($circle1, 0.3, {
+    css: {
+      left: e.pageX + 20 +'px',
+      top: e.pageY  + 20 +'px'
+    }
   });
+  TweenLite.to($circle2, 0.32, {
+    css: {
+      left: e.pageX + 20 +'px',
+      top: e.pageY  + 20 +'px'
+    }
+  });
+}
 
- 
 
-}).call(this);
+$(window).on('mousemove', moveCircle);
+
 
 let allLinks = Array.from(document.querySelectorAll('a'));
-let circle1 = document.getElementById('circle1');
-let circle2 = document.getElementById('circle2');
+
 if(allLinks){
   for(let i=0;i<allLinks.length;i++){
      allLinks[i].addEventListener('mouseenter',()=>{
-      circle1.style.background = '#5f6f93'
-      circle2.style.border = '2px solid #5f6f93'
-     setTimeout(()=>{
-      circle1.style.background = '#66c3d0'
-      circle2.style.border = '2px solid #66c3d0'
-     },1000)
+      circle1.style.background = `${blue}`
+      circle2.style.border = `8px solid ${blue}`
+      circle2.style.width = '40px'
+      circle2.style.height = '40px'
+     })
+     allLinks[i].addEventListener('mouseleave',()=>{
+      circle1.style.background = `${green}`
+      circle2.style.border = `2px solid ${green}`
+      circle2.style.width = '30px'
+      circle2.style.height = '30px'
      })
   }
 }
+
+let itemBasket = document.querySelector('.item__basket__btn');
+let iconBasketQuantity = document.querySelector('.hbq__quantity');
+if(itemBasket){
+  itemBasket.addEventListener('click',(e)=>{
+    iconBasketQuantity.innerText = parseInt(iconBasketQuantity.innerText) + 1;
+    toBsketSign.innerText = 'добавлено'
+    setTimeout(()=>toBsketSign.innerText = 'в корзину',2000)
+    e.preventDefault();
+  });
+}
+
+
+
 
 
 
@@ -1205,52 +1258,6 @@ $(document).ready(function(){
 // }
 // }
 
-
-
-
-// //info block
-// let fullUrl =  Array.from(document.location.href.split('text='));
-// let infoUrl = fullUrl[1];
-// let tabs = document.querySelectorAll('.nav-link');
-// let textsDiv = document.querySelectorAll('.info');
-// let texts = document.querySelectorAll('.info__text p');
-// tabsArray = Array.from(tabs);
-// textsArray = Array.from(texts);
-// if(infoUrl=='delivery'){
-// 			  tabsArray[0].classList.remove('active');
-// 			  tabsArray[1].classList.add('active');
-// 			  textsArray[0].style.opacity = '0';
-// 			  textsArray[2].style.opacity = '0';
-// 			  textsArray[1].style.opacity = '1';
-// }
-// if(infoUrl=='refund'){
-// 			  tabsArray[0].classList.remove('active');
-//   			  tabsArray[1].classList.remove('active');
-// 			  tabsArray[2].classList.add('active');
-// 			   textsArray[0].style.opacity = '0';
-// 			  textsArray[1].style.opacity = '0';
-// 			  textsArray[2].style.opacity = '1';
-// }
-// if(textsArray.length>1){
-// 	for(let i = 0; i< tabsArray.length; i++){
-// 	  let textsHeight = textsArray[3].clientHeight;
-// 	  textsDiv[0].style.height = textsHeight +'px';
-// 	  tabsArray[i].addEventListener('click',function(){
-		  
-// 	      var current = document.getElementsByClassName("active");
-// 	      current[0].className = current[0].className.replace("active", "");
-// 	      this.className += " active";
-	     
-// 	      for(let j = 0; j< textsArray.length; j++){
-// 	        if (j == i){
-// 	          textsArray[j].style.opacity = '1';
-// 	        }else{
-// 	          textsArray[j].style.opacity = '0';
-// 	        }
-// 	      }
-// 	  });
-// 	}
-// }
 
 
 // document.querySelectorAll('.js-price').forEach(node => {

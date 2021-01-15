@@ -1,5 +1,5 @@
 <?php require($_SERVER["DOCUMENT_ROOT"]."/header.php");?>
-  <div class="lk__wrapper">
+  <div class="lk__wrapper mb">
   <h1>Личный кабинет</h1>
     <div class="personal__data" >
     <form action="" id='lk__form'>

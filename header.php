@@ -15,10 +15,6 @@
 </head>
 <body>
 <header>
-<div id="follower">
-  <div id="circle1"></div>
-  <div id="circle2"></div>
-</div>
 <div class="sliding__menu">
   <div class="sliding__menu__wrapper">
   <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketdeletebtn.php");?>
@@ -57,6 +53,10 @@
         <img src="/images/svg/logo.svg" alt="">
       </a>
   </div>
+  <div id="follower">
+  <div id="circle1"></div>
+  <div id="circle2"></div>
+</div>
   <div class="header__icons">
         <p>
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/searchicon.php");?>
@@ -69,10 +69,17 @@
         </a>
         <a href="/basket" class='basket__link'>
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketicon.php");?>
+          <div class="hbq">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" >
+              <circle class='header__basket__quantity' cx="50" cy="50" r="40"/>
+            </svg>
+          <span class="hbq__quantity">1</span>
+          </div>
         </a>
         <a href="#">
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/menu.php");?>
         </a>
   </div>
   </div>
+  
 </header>

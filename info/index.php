@@ -1,5 +1,5 @@
 <?php require($_SERVER["DOCUMENT_ROOT"]."/header.php");?>
-<div class="info">
+<div class="info mb">
   <div class="info__header">
     <h1>Оплата</h1>
     <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/whale.php");?>

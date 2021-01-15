@@ -1,5 +1,5 @@
 <?php require($_SERVER["DOCUMENT_ROOT"]."/header.php");?>
-<div class="order__wrapper">
+<div class="order__wrapper mb">
   
   <form action="/sendorder.php" method='post'>
 

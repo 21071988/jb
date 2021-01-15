@@ -1,5 +1,5 @@
 <?php require($_SERVER["DOCUMENT_ROOT"]."/header.php");?>
-<div class="basket__wrapper">
+<div class="basket__wrapper mb">
 
     <div class="bakset__h1">
       <h1>Корзина</h1>

@@ -1,5 +1,5 @@
 <?php require($_SERVER["DOCUMENT_ROOT"]."/header.php");?>
-<div class="wrapper__catalog wrapper__basket">
+<div class="wrapper__catalog wrapper__basket mb">
   <div class="left__part">
 
   </div>

@@ -1,5 +1,5 @@
 <?php require($_SERVER["DOCUMENT_ROOT"]."/header.php");?>
-  <div class="reg__wrapper">
+  <div class="reg__wrapper mb">
     <div class="reg__window">
       <div class="reg__window__menu">
         <a  class="form__type">Регистрация</a>

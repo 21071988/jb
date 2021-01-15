@@ -1,5 +1,5 @@
 <?php require($_SERVER["DOCUMENT_ROOT"]."/header.php");?>
-<div class="about__wrapper">
+<div class="about__wrapper mb">
  
   <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
   

@@ -1,5 +1,5 @@
 <?php require($_SERVER["DOCUMENT_ROOT"]."/header.php");?>
-<div class="contacts">
+<div class="contacts mb">
   <div class="info__header">
     <h1>Где нас найти</h1>
     <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/geo.php");?>

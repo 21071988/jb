@@ -87,5 +87,6 @@
 <script src="/js/slick.min.js"></script>
 <script src="https://unpkg.com/imask"></script>
 <script src="/js/main.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/TweenMax.min.js'></script>
 </body>
 </html>
