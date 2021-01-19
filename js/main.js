@@ -82,12 +82,10 @@ window.onload = ()=>{
     };
     testImage.src = elemImage.src;
   }
-  console.log(document.location.href);
-  if(document.location.href.indexOf('images')>-1){
-    console.log('images')
-  }
-  var elemImg = document.getElementById('test');
-  watermarkImage(elemImg, '');
+  var elemImgs = document.querySelectorAll('img');
+  // for(let i=0;i<elemImgs.length;i++){
+  //    watermarkImage(elemImgs[i], '');
+  // }
 
   //changing item amount in basket
   let minus = Array.from(document.querySelectorAll('.minus'));
@@ -232,8 +230,8 @@ let otherSizes = document.querySelector('.other__sizes');
 let ad = document.querySelector('.ad');
 if(currentSize){
   currentSize.addEventListener('click',()=>{
-    // otherSizes.classList.toggle('showSizesBlock')
-    // ad.classList.toggle('rotate__ad')
+    otherSizes.classList.toggle('showSizesBlock')
+    ad.classList.toggle('rotate__ad')
   });
   ad.addEventListener('click',()=>{
     otherSizes.classList.add('showSizesBlock')
