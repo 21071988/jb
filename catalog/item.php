@@ -31,7 +31,7 @@
     
   <div class='block'>
   <div class='slider-for-item-card'>
-        <img src="/images/catalog/IMG_5656-01.jpg">
+        <img id='test' src="/images/catalog/IMG_5656-01.jpg">
         <img src="/images/catalog/IMG_5618-01.jpg">
         <img src="/images/catalog/IMG_5629-01.jpg">
         <img src="/images/catalog/IMG_5631-01.jpg">
