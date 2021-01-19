@@ -26,7 +26,7 @@
         <p class='error__sign'>заполните это поле, пожалуйста</p>
 
         <label for="order__data__email">Email</label>
-        <input type="text" name='order__data__email' class='required'>
+        <input type="text" name='order__data__email' class='required' id='order__email'>
         <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/longline.php");?>
         <p class='error__sign'>заполните это поле, пожалуйста</p>
   </div>

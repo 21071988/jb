@@ -3,10 +3,12 @@
   <div class="slider__wrapper">
     <div class="slider__main">
       <img src="/images/main/mainslider.jpg" alt="">
-      <div class="basket__btn__div">
+      <a href="/catalog">
+        <div class="basket__btn__div">
               <a class='to__catalog order__btn' href="/catalog">В каталог</a>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>
-     </div>
+        </div>
+     </a>
     </div>
   </div>
   <div class="lets__talk">

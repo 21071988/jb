@@ -34,6 +34,10 @@ window.onload = ()=>{
 //   }
 //   totalLength();
 
+//copy image protection
+  // window.addEventListener('contextmenu',(e)=>e.preventDefault());
+
+
   //changing item amount in basket
   let minus = Array.from(document.querySelectorAll('.minus'));
   let plus = Array.from(document.querySelectorAll('.plus'));
@@ -332,11 +336,11 @@ if(flowers.length>0){
     setTimeout(()=>flowers[1].classList.add('flower__moves2'),1000)
     giraffeM.classList.add('giraffe__moves')
   })
-  giraffeMain.addEventListener('mouseleave',()=>{
-    flowers[0].classList.remove('flower__moves')
-    setTimeout(()=>flowers[1].classList.remove('flower__moves2'),1000)
-    giraffeM.classList.remove('giraffe__moves')
-  })
+  // giraffeMain.addEventListener('mouseleave',()=>{
+  //   flowers[0].classList.remove('flower__moves')
+  //   setTimeout(()=>flowers[1].classList.remove('flower__moves2'),1000)
+  //   giraffeM.classList.remove('giraffe__moves')
+  // })
 }
 
 // main whale animation
@@ -414,7 +418,6 @@ let arrow = Array.from(document.querySelectorAll('.order__block .arrow'));
 let hiddenOrderDelInputs = Array.from(document.querySelectorAll('.delivery__type'));
 let hiddenOrderPayInputs = Array.from(document.querySelectorAll('.payment__type'));
 if(arrow.length>0){
-  console.log(123);
   arrow[0].classList.add('left__arrow__delivery');
   arrow[1].classList.add('right__arrow__delivery');
   arrow[2].classList.add('left__arrow');
@@ -541,6 +544,25 @@ let textsArray = Array.from(document.querySelectorAll('.info__text p'));
 let infoHeader = document.querySelector('.info__header h1');
 let infoLine = document.querySelector('.info__menu .green__line');
 let iw = document.querySelector('.info');
+let fullUrl =  Array.from(document.location.href.split('text='));
+let infoUrl = fullUrl[1];
+if(infoUrl=='delivery'){
+  tabsArray[0].classList.remove('active');
+  tabsArray[1].classList.add('active');
+  textsArray[0].style.opacity = '0';
+  textsArray[2].style.opacity = '0';
+  textsArray[1].style.opacity = '1';
+  infoHeader.innerText = tabsArray[1].innerText;
+}
+if(infoUrl=='refund'){
+  tabsArray[0].classList.remove('active');
+    tabsArray[1].classList.remove('active');
+  tabsArray[2].classList.add('active');
+   textsArray[0].style.opacity = '0';
+  textsArray[1].style.opacity = '0';
+  textsArray[2].style.opacity = '1';
+  infoHeader.innerText = tabsArray[2].innerText;
+}
 
 if(textsArray.length>1){
 	for(let i = 0; i< tabsArray.length; i++){
@@ -555,19 +577,12 @@ if(textsArray.length>1){
         if(iw){infoHeader.innerText = tabsArray[i].innerText;}
         for(let j = 0; j< textsArray.length; j++){
 	        if (j == i){
-	          textsArray[j].style.opacity = '1';
+            textsArray[j].style.opacity = '1';
+            tabsArray[j].style.color = 'red';
 	        }else{
-	          textsArray[j].style.opacity = '0';
+            textsArray[j].style.opacity = '0';
+            tabsArray[i].style.color = 'black';
 	        }
-        }
-        if(iw){
-          let margin = tabsArray[i].offsetTop + 'px';
-          let lineMargin = infoLine.offsetTop + 'px';
-          infoLine.style.transform = `translateX(-100px)`;
-          setTimeout(()=>infoLine.style.transform = `translateX(-100px) translateY(${margin}) `,400)
-          setTimeout(()=>infoLine.style.transform = `translateX(0px) translateY(${margin}) `,800)
-        }else{
-          infoLine.style.display='none';
         }
 	  });
 	}
@@ -595,14 +610,12 @@ if(sizesTabs.length>1){
 }
 
 //sizes block height
-let sizeBLock = document.querySelectorAll('.all__sizes__1');
-let sizeBlockHeight = sizeBLock[0].clientHeight;
-let all__sizes__blocks = document.querySelector('.all__sizes__blocks');
-all__sizes__blocks.style.height = sizeBlockHeight + 'px';
-
-console.log(sizeBlockHeight);
-
-
+// let sizeBLock = Array.from(document.querySelectorAll('.all__sizes__1'));
+// if(sizeBlock.length>0){
+//   let sizeBlockHeight = sizeBLock[0].clientHeight;
+//   let all__sizes__blocks = document.querySelector('.all__sizes__blocks');
+//   all__sizes__blocks.style.height = sizeBlockHeight + 'px';
+// }
 
 //about us appearance
 let AS = Array.from(document.querySelectorAll('.about__us'));
@@ -625,14 +638,27 @@ if(likedHearts.length>0) {
 }
 //hearts
 let littleHeart = Array.from(document.querySelectorAll('.heart'));
-let heartHint = document.querySelector('.dreambox');
+let heartHint = document.querySelector('.hint');
 let heartHintFill = littleHeart[0].childNodes[0].childNodes[0].childNodes[0];
-let heartShown = 0;
+
 if(littleHeart[1]){
-  littleHeart[1].addEventListener('mouseover',()=>{
-    if(heartShown==0){
+    littleHeart[1].addEventListener('mouseover',()=>{
+      
+    if(localStorage.getItem('hintShown')!=='1'){
+      heartCoord = littleHeart[1].getBoundingClientRect();
+      let hintL = heartCoord.left + 80 + 'px';
+      let hintT = heartCoord.top - 80 + 'px';
+      heartHint.style.top = hintT;
+      heartHint.style.left = hintL;
+      heartHint.style.display = 'block';
       heartHint.classList.add('showBasic');
-      heartShown = 1;
+      localStorage.setItem('hintShown','1')
+      setTimeout(()=>{
+        heartHint.classList.add('hideBasic');
+      },4000)
+      setTimeout(()=>{
+        heartHint.style.display = 'none';
+      },5000)
     }
   });
 
@@ -703,8 +729,19 @@ if(happyTop){
 let orderBtn = document.querySelector('.order__btn');
 let errorSign = Array.from(document.querySelectorAll('.error__sign'));
 
+
 if(orderBtn){
   orderBtn.addEventListener('click', function(e){
+    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    var address = document.getElementById('order__email');
+        if(reg.test(address.value) == false) {
+          console.log('uaaaauuu')
+          e.preventDefault();
+          return false;
+        }
+});
+  orderBtn.addEventListener('click', function(e){
+    
     let orderInputsReq = Array.from(document.querySelectorAll('.required'));
     for(let i=0;i<orderInputsReq.length;i++){
       if(!orderInputsReq[i].value){
@@ -714,8 +751,8 @@ if(orderBtn){
         let allErrors = Array.from(document.querySelectorAll('.error__shown'));
         window.scrollTo(0, allErrors[0].offsetTop-180);
         
-        
         e.preventDefault();
+        return false;
       }
       orderInputsReq[i].onblur = function(){
         if(orderInputsReq[i].value){
@@ -812,13 +849,15 @@ if(ciPaths.length>0){
     }
   }) 
 }
-
-
-
-
-
-
-
+//phone mask
+var element = document.getElementById('lk__phone');
+if(element){
+  var maskOptions = {
+    mask: '+{7}(000)000-00-00'
+  };
+  var mask = IMask(element, maskOptions);
+  
+}
 
 // mouse movement
 var $circle1 = $('#circle1');

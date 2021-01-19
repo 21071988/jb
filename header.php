@@ -15,6 +15,9 @@
 </head>
 <body>
 <header>
+
+<?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/hint.php");?>
+
 <div class="sliding__menu">
   <div class="sliding__menu__wrapper">
   <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketdeletebtn.php");?>
