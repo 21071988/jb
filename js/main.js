@@ -117,9 +117,9 @@ window.onload = ()=>{
             
   				  var minusId = minus[i].dataset.id;
   				  var quant = minus[i].parentNode.childNodes[7].value;
-  				  // const http = new EasyHTTP;
-  				  // const url = 'http://ikra.slim.technology/ajax/countBasket.php?id='+`${minusId}`+'&q='+`${quant}`;
-  				  // http.get(url);
+  				  const http = new EasyHTTP;
+  				  const url = 'http://ikra.slim.technology/ajax/countBasket.php?id='+`${minusId}`+'&q='+`${quant}`;
+  				  http.get(url);
             
             
   
@@ -145,9 +145,9 @@ window.onload = ()=>{
   
   			  var minusId = minus[i].dataset.id;
   			  var quant = minus[i].parentNode.childNodes[7].value;
-  			  // const http = new EasyHTTP;
-  				//   const url = 'http://ikra.slim.technology/ajax/countBasket.php?id='+`${minusId}`+'&q='+`${quant}`;
-  				//   http.get(url);
+  			  const http = new EasyHTTP;
+  				  const url = 'http://ikra.slim.technology/ajax/countBasket.php?id='+`${minusId}`+'&q='+`${quant}`;
+  				  http.get(url);
   		  });      
   	}
   }
@@ -165,23 +165,23 @@ window.onload = ()=>{
       
      
   if(deleteBasketBtn.length>0){
-  for(let i=0;i<deleteBasketBtn.length;i++){ 
-    deleteBasketBtn[i].addEventListener('click',()=>{
-      let needToMinus = Number(itemSum[i].dataset.price) * Number(itemBasketQuantity[i].innerText);
-      itemToDelete[i].remove()
-      basketLines[i+1].remove()
-      currentSum = currentSum - needToMinus
-      yourSum.setAttribute('data-currentsum', currentSum)
-      yourSum.innerText = currentSum + ' Р'
-    })
-    deleteBasketBtn[i].addEventListener('mouseover',()=>{
-      circle1.style.background =`${red}`
-      circle2.style.border = `2px solid ${red}`
-    })
-    deleteBasketBtn[i].addEventListener('mouseleave',()=>{
-      circle1.style.background = `${green}`
-      circle2.style.border = `2px solid ${green}`
-    })
+    for(let i=0;i<deleteBasketBtn.length;i++){ 
+      deleteBasketBtn[i].addEventListener('click',()=>{
+        let needToMinus = Number(itemSum[i].dataset.price) * Number(itemBasketQuantity[i].innerText);
+        itemToDelete[i].remove()
+        basketLines[i+1].remove()
+        currentSum = currentSum - needToMinus
+        yourSum.setAttribute('data-currentsum', currentSum)
+        yourSum.innerText = currentSum + ' Р'
+      })
+      deleteBasketBtn[i].addEventListener('mouseover',()=>{
+        circle1.style.background =`${red}`
+        circle2.style.border = `2px solid ${red}`
+      })
+      deleteBasketBtn[i].addEventListener('mouseleave',()=>{
+        circle1.style.background = `${green}`
+        circle2.style.border = `2px solid ${green}`
+      })
   }
     
     
@@ -261,6 +261,13 @@ for(let i=0;i<itemSize.length;i++){
   })
 }
 
+//basket http
+if(document.location.href.includes('catalog')){
+  to__basket.addEventListener('click',(e)=>{
+    console.log(33)
+    
+  })
+}
 
 //catalog filter3
 let filter3Choise = Array.from(document.querySelectorAll('.catalog__filter3 a'));
@@ -778,42 +785,42 @@ if(happyTop){
 let orderBtn = document.querySelector('.order__btn');
 let errorSign = Array.from(document.querySelectorAll('.error__sign'));
 
-
-if(orderBtn){
-  orderBtn.addEventListener('click', function(e){
-    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    var address = document.getElementById('order__email');
-        if(reg.test(address.value) == false) {
-          console.log('uaaaauuu')
+if(window.location.href.includes('order')){
+  if(orderBtn){
+    orderBtn.addEventListener('click', function(e){
+      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+      var address = document.getElementById('order__email');
+          if(reg.test(address.value) == false) {
+            e.preventDefault();
+            return false;
+          }
+  });
+    orderBtn.addEventListener('click', function(e){
+      
+      let orderInputsReq = Array.from(document.querySelectorAll('.required'));
+      for(let i=0;i<orderInputsReq.length;i++){
+        if(!orderInputsReq[i].value){
+          orderInputsReq[i].style.borderBottom = '1px solid #EA2C32';
+          errorSign[i].style.opacity = '1';
+          errorSign[i].classList.add('error__shown');
+          let allErrors = Array.from(document.querySelectorAll('.error__shown'));
+          window.scrollTo(0, allErrors[0].offsetTop-180);
+          
           e.preventDefault();
           return false;
         }
-});
-  orderBtn.addEventListener('click', function(e){
-    
-    let orderInputsReq = Array.from(document.querySelectorAll('.required'));
-    for(let i=0;i<orderInputsReq.length;i++){
-      if(!orderInputsReq[i].value){
-        orderInputsReq[i].style.borderBottom = '1px solid #EA2C32';
-        errorSign[i].style.opacity = '1';
-        errorSign[i].classList.add('error__shown');
-        let allErrors = Array.from(document.querySelectorAll('.error__shown'));
-        window.scrollTo(0, allErrors[0].offsetTop-180);
-        
-        e.preventDefault();
-        return false;
-      }
-      orderInputsReq[i].onblur = function(){
-        if(orderInputsReq[i].value){
-          orderInputsReq[i].style.borderBottom = '1px solid #13100D';
-          orderInputsReq[i].nextSibling.nextSibling.style.display = 'none';
-          errorSign[i].style.opacity = '0';
-          (errorSign[i].classList.contains('error__shown') ? errorSign[i].classList.remove('error__shown') : 1);
+        orderInputsReq[i].onblur = function(){
+          if(orderInputsReq[i].value){
+            orderInputsReq[i].style.borderBottom = '1px solid #13100D';
+            orderInputsReq[i].nextSibling.nextSibling.style.display = 'none';
+            errorSign[i].style.opacity = '0';
+            (errorSign[i].classList.contains('error__shown') ? errorSign[i].classList.remove('error__shown') : 1);
+          }
         }
       }
-    }
-    
-  });
+      
+    });
+  }
 }
 // //reg block
 let regAr = document.querySelectorAll('.reg__window__menu a');
