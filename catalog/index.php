@@ -68,18 +68,31 @@
           <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
       </div>
       <div class="catalog__filter catalog__filter3">
-        <a>Сначала новые</a>
-          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
-        <a>Сначала старые</a>
-          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
-        <a>Цена по убыванию</a>
-          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
-        <a>Цена по возрастанию</a>
-          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
-        <span>Сортировка</span>
-        <a>А-я</a>
-          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>          
-        <a>Я-а</a>
+      <form action="" method='POST'>
+        <div>
+          <label for='old__first'><input type='checkbox' name='age' value='old__first'>Сначала новые</input></label>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
+    
+          <label for='new__first'><input type='checkbox' name='age' value='new__first'>Сначала старые</input></label>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
+         
+          <label for='prices__top'><input type='checkbox' name='price' value='prices__top'>Цена по убыванию</input></label>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
+         
+          <label for='prices__bottom'><input type='checkbox' name='price' value='prices__bottom'>Цена по возрастанию</input></label>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>
+          <span>Сортировка</span>
+          
+          <label for='A_z'><input type='checkbox' name='alphabet' value='A_z'>А-я</input></label>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/bearhead.php");?>          
+          
+          <label for='Z_a'><input type='checkbox' name='alphabet' value='Z_a'>Я-а</input></label>
+        </div>  
+        <div class="basket__btn__div item__basket__btn">
+          <button id='to__basket'>Показать</button>
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/basketbtnborder.php")?>
+        </div>
+      </form>
       </div>
     </div>
    

@@ -72,21 +72,18 @@
       <span class='num'>103921810239</span>
     </div>
     <div class="lk__footer">
-      <div class="logout">
-        <p id="logout">
-          <a href="?logout=yes">
-          <span>Выйти</span>
-          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/logout.php");?>
-          
-          </a>
-          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
-          </p>
-      </div>
-      <div></div>
-      <div class="update__data">
+    <div class="update__data">
         <button id='submit__lk__form' type="submit">Обновить данные</button>
         <div id="answer__message"></div>
+    </div>
+    <div class="logout">
+          <a href="?logout=yes" id="logout">
+            <span>Выйти</span>
+            <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/logout.php");?>
+          </a>
       </div>
+      
+      
     </div>
     </form>
 

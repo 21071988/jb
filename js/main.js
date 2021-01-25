@@ -16,6 +16,8 @@ window.onload = ()=>{
         });
       }
     }  
+    
+    
   function hidingAmination(block, firstClassName,secondClassName,timing){
     block.classList.add(secondClassName)
     setTimeout(()=>block.classList.remove(firstClassName),timing)
@@ -87,6 +89,14 @@ window.onload = ()=>{
   //    watermarkImage(elemImgs[i], '');
   // }
 
+//size__choosing__div width
+  sizeBack = document.querySelector('.item__size__div__back');
+  sizeDiv = document.querySelector('.size__choosing__div');
+  if(sizeBack){
+    sizeDiv.style.width = `${sizeBack.clientWidth}+px`
+  }
+
+  
   //changing item amount in basket
   let minus = Array.from(document.querySelectorAll('.minus'));
   let plus = Array.from(document.querySelectorAll('.plus'));
@@ -96,16 +106,21 @@ window.onload = ()=>{
   if(yourSum){
     var currentSum = Number(yourSum.dataset.currentsum);
   }
-
+  
   if(minus.length>0){
+    
   	for(let i=0;i<minus.length;i++){
+      if(itemSum.length>0){
+        itemSum[i].innerText = Number(itemSum[i].dataset.price) * Number(itemBasketQuantity[i].innerText) + "Р";
+      }
   		  minus[i].addEventListener('click',()=>{
   			  if(Number(minus[i].nextSibling.nextSibling.innerText)>1){
   				  let current__item__number = Number(minus[i].nextSibling.nextSibling.innerText);
   				  minus[i].nextSibling.nextSibling.innerText = current__item__number - 1;
   				  minus[i].parentNode.childNodes[7].value =  minus[i].nextSibling.nextSibling.innerText;
-            let hiddenInputQuantity = document.getElementById('item__quantity__input');
-            (hiddenInputQuantity ? hiddenInputQuantity.value= minus[i].nextSibling.nextSibling.innerText : 1);
+           
+	                let hiddenInputQuantity = document.getElementById('item__quantity__input');
+     	            (hiddenInputQuantity ? hiddenInputQuantity.value= minus[i].nextSibling.nextSibling.innerText : 1);
 
             if(itemSum.length>0){
               let needToMinus = Number(itemSum[i].dataset.price);
@@ -114,13 +129,14 @@ window.onload = ()=>{
               yourSum.setAttribute('data-currentsum', currentSum);
               yourSum.innerText = currentSum + ' Р';
             }
-            
-  				  var minusId = minus[i].dataset.id;
-  				  var quant = minus[i].parentNode.childNodes[7].value;
-  				  const http = new EasyHTTP;
-  				  const url = 'http://ikra.slim.technology/ajax/countBasket.php?id='+`${minusId}`+'&q='+`${quant}`;
-  				  http.get(url);
-            
+          
+	          if(window.location.href.includes('cart')){ 
+	  				  var minusId = minus[i].dataset.id;
+	  				  var quant = minus[i].parentNode.childNodes[7].value;
+	  				  const http = new EasyHTTP;
+	  				  const url = 'http://jb.slim.technology/ajax/countBasket.php?id='+`${minusId}`+'&q='+`${quant}`;
+	  				  http.get(url);
+	          }
             
   
   			  }
@@ -142,12 +158,13 @@ window.onload = ()=>{
             yourSum.innerText = currentSum + ' Р';
           }
           
-  
+        if(window.location.href.includes('cart')){
   			  var minusId = minus[i].dataset.id;
   			  var quant = minus[i].parentNode.childNodes[7].value;
   			  const http = new EasyHTTP;
-  				  const url = 'http://ikra.slim.technology/ajax/countBasket.php?id='+`${minusId}`+'&q='+`${quant}`;
-  				  http.get(url);
+  			  const url = 'http://jb.slim.technology/ajax/countBasket.php?id='+`${minusId}`+'&q='+`${quant}`;
+  			  http.get(url);
+        }
   		  });      
   	}
   }
@@ -173,6 +190,12 @@ window.onload = ()=>{
         currentSum = currentSum - needToMinus
         yourSum.setAttribute('data-currentsum', currentSum)
         yourSum.innerText = currentSum + ' Р'
+        
+        var minusId = minus[i].dataset.id;
+        const http = new EasyHTTP;
+        const url = 'http://jb.slim.technology/ajax/deleteBasket.php?id='+`${minusId}`;
+
+        http.get(url);
       })
       deleteBasketBtn[i].addEventListener('mouseover',()=>{
         circle1.style.background =`${red}`
@@ -182,16 +205,12 @@ window.onload = ()=>{
         circle1.style.background = `${green}`
         circle2.style.border = `2px solid ${green}`
       })
+      
   }
+}
     
-    
-//    				  var minusId = itemToDelete[i].dataset.id;
-// 				  const http = new EasyHTTP;
-// 				  const url = 'http://ikra.slim.technology/ajax/deleteBasket.php?id='+`${minusId}`;
-// 				  http.get(url);
 				
-//   });
-  }
+
 // // Появление кнопки "ввести промокод"
 let promoValue = document.getElementById('promocodeValue');
 let promoBtn = document.getElementById('insert__promocode');
@@ -225,7 +244,7 @@ if(toBasket){
   }
 }
 
-let currentSize = document.querySelector('.size__choosing__div');
+let currentSize = document.querySelector('.current__size__text');
 let otherSizes = document.querySelector('.other__sizes');
 let ad = document.querySelector('.ad');
 if(currentSize){
@@ -234,18 +253,18 @@ if(currentSize){
     ad.classList.toggle('rotate__ad')
   });
   ad.addEventListener('click',()=>{
-    otherSizes.classList.add('showSizesBlock')
-    console.log(2)
+    otherSizes.classList.toggle('showSizesBlock')
   });
   
+  otherSizes.addEventListener('click',()=>otherSizes.classList.remove('showSizesBlock'));
 }
-document.addEventListener('click',function(e){
-  if((!e.target.classList.contains('current__size__text'))){
-    if(otherSizes){
-      otherSizes.classList.remove('showSizesBlock');
-    }
-  }
-})
+// document.addEventListener('click',function(e){
+//   if((!e.target.classList.contains('current__size__text'))){
+//     if(otherSizes.classList.contains('showSizesBlock')){
+//       otherSizes.classList.remove('showSizesBlock');
+//     }
+//   }
+// })
 
 
 
@@ -256,32 +275,16 @@ for(let i=0;i<itemSize.length;i++){
     var current = document.querySelector(".active");
     current.classList.remove('active');
     itemSize[i].classList.add('active');
-    console.log(itemSize[i].childNodes[1].value);
-    cs.innerText = itemSize[i].childNodes[1].value;
+    cs.innerText = itemSize[i].childNodes[1].dataset.val;
   })
 }
 
-//basket http
-if(document.location.href.includes('catalog')){
-  to__basket.addEventListener('click',(e)=>{
-    console.log(33)
-    
-  })
-}
 
 //catalog filter3
-let filter3Choise = Array.from(document.querySelectorAll('.catalog__filter3 a'));
+let filter3Choise = Array.from(document.querySelectorAll('.catalog__filter3 label'));
 for(let i=0;i<filter3Choise.length;i++){
   filter3Choise[i].addEventListener('click',function(){
-    var current = document.querySelector(".active");
-    if(current){
-      current.classList.remove('active');
-      filter3Choise[i].classList.add('active');
-    }else{
-      filter3Choise[i].classList.add('active');
-    }
-    console.log(itemSize[i].childNodes[1].value);
-    cs.innerText = itemSize[i].childNodes[1].value;
+  (filter3Choise[i].classList.contains('active') ? filter3Choise[i].classList.remove('active') : filter3Choise[i].classList.add('active'))
   })
 }
 
@@ -289,15 +292,23 @@ for(let i=0;i<filter3Choise.length;i++){
 
 let readAboutTrigger = document.querySelector('.read__about');
 let readAboutBlock = document.querySelector('.about__delivery__popup');
+let readAboutClosingBtn = document.querySelector('.about__delivery__popup .basket__delete__btn');
 if (readAboutTrigger) readAboutTrigger.addEventListener('click',()=>readAboutBlock.classList.toggle('showPopUp'));
 if(readAboutBlock){
   document.addEventListener('click',function(e){
     if(!e.target.classList.contains('about__delivery__popup') && !e.target.classList.contains('read__about') && !e.target.classList.contains('info__menu') && !e.target.classList.contains('nav-link')){
       if(readAboutBlock.classList.contains('showPopUp')){ 
-         hidingAmination(readAboutBlock, 'hidePopup','shoPopUp',1000);
+         readAboutBlock.classList.add('hidePopup');
+         hidingAmination(readAboutBlock, 'hidePopup','showPopUp',1000);
       }
     }
   })
+  readAboutClosingBtn.addEventListener('click',function(){
+    console.log(2);
+        readAboutBlock.classList.add('hidePopup');
+         hidingAmination(readAboutBlock, 'hidePopup','showPopUp',2000);
+  })
+  
 }
 //filter popUp
 let filterTrigger = Array.from(document.querySelectorAll('.catalog__filter2 span'));
@@ -699,7 +710,7 @@ let heartHintFill = littleHeart[0].childNodes[0].childNodes[0].childNodes[0];
 
 if(littleHeart[1]){
     littleHeart[1].addEventListener('mouseover',()=>{
-      
+  if(heartHint){
     if(localStorage.getItem('hintShown')!=='1'){
       heartCoord = littleHeart[1].getBoundingClientRect();
       let hintL = heartCoord.left + 80 + 'px';
@@ -716,25 +727,45 @@ if(littleHeart[1]){
         heartHint.style.display = 'none';
       },5000)
     }
+  }
   });
+  
+//убираем подсказку про сердечки
+if(window.location.href.includes('catalog')){
+  littleHeart[1].addEventListener('mouseleave',()=>{(heartHint ? heartHint.classList.remove('showBasic') : 1)});
+}
 
-  littleHeart[1].addEventListener('mouseleave',()=>{heartHint.classList.remove('showBasic')});
-      
+
+//работа страницы с лайками. добавление и удаление
   for(let i=0;i<littleHeart.length;i++){
+    
     littleHeart[i].addEventListener('click',(e)=>{
-    littleHeart[i].classList.toggle('filled__heart');
-    heartHintFill.style.fill = '#ed6f9d';
-    (littleHeart[i].classList.contains('go__heart') ? 1 : e.preventDefault());
+      
+      littleHeart[i].classList.toggle('filled__heart');
+      heartHintFill.style.fill = '#ed6f9d';
+      (littleHeart[i].classList.contains('go__heart') ? 1 : e.preventDefault());
+      
+      if(window.location.href.includes('likes')){
+        const http = new EasyHTTP;
+        let heartId = document.querySelector('.show__heart').dataset.id;
+        const url = 'http://jb.slim.technology/ajax/deletelike.php?id='+`${heartId}`;
+        http.get(url);
+        
+        console.log(heartId);
+        
+        let heartBlock = document.querySelector('.show__heart');
+        setTimeout(()=>{heartBlock.remove()},500);
+      }else{
+        const http = new EasyHTTP;
+         let heartId = document.querySelector('.show__heart').dataset.id;
+         const url = 'http://jb.slim.technology/ajax/like.php?id='+`${heartId}`;
+          http.get(url);
+      }
+    
     (e.target.classList.contains('heart') && !littleHeart[i].classList.contains('go__heart')  ? e.preventDefault(): 1);
   });
   }
-  //  const http = new EasyHTTP;
-  //  let heartId = littleHeart[i].parentNode.parentNode.parentNode.dataset.id;
-  //  const url = 'http://ikra.slim.technology/ajax/like.php?id='+`${heartId}`;
-  //   http.get(url);
-  
 }
-
 //catalog card animations
 
 let whichS = document.getElementById('which__size');
@@ -964,145 +995,13 @@ if(itemBasket){
     iconBasketQuantity.innerText = parseInt(iconBasketQuantity.innerText) + 1;
     toBsketSign.innerText = 'добавлено'
     setTimeout(()=>toBsketSign.innerText = 'в корзину',2000)
-    e.preventDefault();
   });
 }
 
-
-
-
-
-
-  //end of window onload function
 }
 
-$(document).ready(function(){
-  //item card slider
-  
-  setTimeout(function () {
-        $('.slider-for-item-card').slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          fade: true,
-          asNavFor: '.slider-nav-item-card'
-        });
-        $('.slider-nav-item-card').slick({
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          asNavFor: '.slider-for-item-card',
-          dots: false,
-          centerMode: true,
-          focusOnSelect: true
-        });
-  },500);
-      
-      $('.popular__slider__wrapper .next__item__card').on('click', function() {
-        $('.slider-nav-item-card').slick('slickNext');
-      });
-      $('.popular__slider__wrapper .prev__item__card').on('click', function() {
-        $('.slider-nav-item-card').slick('slickPrev');
-      });
-  
-      setTimeout(function () {
-        $('.popular__slider').slick({
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          arrows: false,
-        });
-      },500);
-
-      $('.next__item__card').on('click', function() {
-        $('.popular__slider').slick('slickNext');
-      });
-      $('.prev__item__card').on('click', function() {
-        $('.popular__slider').slick('slickPrev');
-      });
-
-      $('.next__item__card').on('click', function() {
-        $('.slider-for-item-card').slick('slickNext');
-      });
-      $('.prev__item__card').on('click', function() {
-        $('.slider-for-item-card').slick('slickPrev');
-      });
 
 
-      $('#submit__lk__form').click(function(){
-                $('#submit__lk__form').text("Данные обновлены");
-                $.post(
-                      '/personal/', 
-                      $("#lk__form").serialize(), // отправляемые данные          
-                  );
-                  return false;
-                });
-  // slider item card interesting
-    setTimeout(function () {
-        $('.interesting__slider').slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-          
-            responsive: [
-              {
-                breakpoint: 768,
-                settings: {
-                  slidesToShow: 2
-                }
-              } 
-            ]
-        }); 
-    },500);
-      $('.interesting__arrow__right').on('click', function() {
-        $('.interesting__slider').slick('slickNext');
-      });
-      $('.interesting__arrow__left').on('click', function() {
-        $('.interesting__slider').slick('slickPrev');
-      });
-
-      setTimeout(function () {
-        $('.earlier__slider').slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-          
-            responsive: [
-              {
-                breakpoint: 768,
-                settings: {
-                  slidesToShow: 2
-                }
-              } 
-            ]
-        }); 
-    },500);
-      $('.earlier__arrow__right').on('click', function() {
-        $('.earlier__slider').slick('slickNext');
-      });
-      $('.earlier__arrow__left').on('click', function() {
-        $('.earlier__slider').slick('slickPrev');
-      });
-
-
-      $(document).on('click', '#showMore', function(){
-        const page = $('#showMore').data('page');
-        const sectionid = $('#showMore').data('sectionid');
-        const type = $('#showMore').data('type');
-        const color = $('#showMore').data('color');
-        const size = $('#showMore').data('size');
-        const sort = $('#showMore').data('sort');
-        const url = '/ajax/items.php?PAGEN_1='+page+'&SECTION_ID='+sectionid+'&type='+type+'&color='+color+'&size='+size+'&sort='+sort;
-        $('#showMore').remove();
-        $.ajax({
-          url: url,
-        }).then(function(result){
-          
-          $('.catalog__pages:last').after(result);      
-        })
-      });
-
-      
-      // end of ready function
-    });
 
 
 
@@ -1398,23 +1297,7 @@ $(document).ready(function(){
 // 		});
 // 	 }
 	
-// // liked hearts
 
-// likedHeart = Array.from(document.querySelectorAll('.liked__hearts'));
-// likedItem = Array.from(document.querySelectorAll('.liked__item'));
-// if(likedHeart.length>0){
-// 	for(let i=0;i<likedHeart.length;i++){
-// 	  likedHeart[i].addEventListener('click',(e)=>{
-	   
-// 	   const http = new EasyHTTP;
-// 	   let heartId = likedHeart[i].dataset.id;
-// 	   const url = 'http://ikra.slim.technology/ajax/like.php?id='+`${heartId}`;
-// 	   http.get(url);
-// 	   likedItem[i].remove();
-	   
-// 	  });
-//     }
-// }
 
   
   

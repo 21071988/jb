@@ -75,7 +75,7 @@
           </div>
           </div>
         <span class="item__price num">5&nbsp;500Р</span>
-        <form action="index.php" method='GET'>
+        <form action="index.php" method='POST' class='js-add2cart'>
         <div class="flex size__choosing__wrapper">
             <span href="" class='choose__size__link'>Выбрать размер:</span>       
             <div class="size__choosing__div">
