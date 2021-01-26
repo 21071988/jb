@@ -49,7 +49,7 @@
 
   <div class="about__third">
     <div class="about__third__top__sign">
-      <h3>НАША ЗАДАЧА - ЧТОБ ДЕТИ И ИХ РОДИТЕЛИ</h3>
+      <h3>НАША ЗАДАЧА - ЧТОБ ДЕТИ И ИХ РОДИТЕЛИ БЫЛИ</h3>
       <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/aboutheart.php");?>
     </div>
     <h2>СЧАСТЛИВЫ</h2>

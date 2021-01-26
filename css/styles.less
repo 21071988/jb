@@ -1384,9 +1384,41 @@ header{
 		transform:translateX(-3vw) translateY(0);
 	}
 }
+
+@keyframes birdGoesMobile{
+	0%{
+		transform: translateX(-2vw);
+	}
+	25%{
+		transform: translateX(82vw);
+	}
+	26%{
+		transform: translateX(82vw) rotateZ(90deg);
+	}
+	50%{
+		transform: translateX(82vw) translateY(85vw) rotateZ(90deg);
+	}
+	51%{
+		transform: translateX(82vw) translateY(85vw) rotateZ(180deg);
+	}
+	
+	75%{
+		transform: translateX(-3vw) translateY(85vw) rotateZ(180deg);
+	}
+	76%{
+		transform: translateX(-3vw) translateY(85vw) rotateZ(270deg);
+	}
+	90%{
+		transform: translateX(-3vw) translateY(0) rotateZ(270deg);
+	}
+	100%{
+		transform:translateX(-3vw) translateY(0);
+	}
+}
+
 @keyframes wing{
 	50%{
-		transform: translateY(0px) rotateZ(5deg);
+		transform: translateY(0px) rotateZ(10deg);
 	}
 	100%{
 		transform: translateY(0px) rotateZ(0deg);
@@ -2566,13 +2598,18 @@ footer{
 .mt{
 	margin-top:@m;
 }
+.callabird{
+	display: none;
+}
 @media screen and(max-width:1000px){
 	.item__wrapper{
 		width: 96%;
+		overflow: hidden;
 	}
 	.info__text{
 		margin-right:@m3;
 		padding-right: 0;
+		width: calc(100% - 40px);
 		p{
 			.w100;
 		}
@@ -2611,6 +2648,7 @@ footer{
 	.giraffe__main{
 		width:50vw;
 		margin-top:@m;
+		margin:@m 0 0 14vw;
 	}
 	.lets__talk__second .whale{
 		width:50vw;
@@ -2942,5 +2980,124 @@ footer{
 }
 .interesting__slider__full, .interesting__slider__full{
 	width: 100vw;
+}
+.item__description{
+.w100;
+}
+.read__about{
+	font-size: 12px;
+}
+.item__description{
+	.fs;
+}
+#what__size__should{
+	margin:20px 0 0 0;
+}
+.three__parts h3{
+	margin-left:0;
+}
+.three__parts table{
+	margin-left:-20px;
+}
+.info__wrapper{
+	grid-template-columns: 1fr;
+}
+.info__menu{
+	flex-direction: row;
+	font-size: 12px;
+	justify-content: space-between;
+	margin:0 20px;
+}
+.info__wrapper a{
+	margin-left:0;
+}
+.info__text p{
+	left:20px;
+	.fss;
+}
+.info__header{
+	align-items: baseline;
+}
+.info__header svg{
+	width: 50px;
+}
+.about__wrapper{
+	padding:@m;
+	h1, h3{
+		margin:0;
+	}
+	h3{
+		font-size: 12vw;
+	}
+	h1{
+		font-size: 15vw !important;
+	}
+}
+.about__first, .about__second{
+	.column;
+}
+.about__first__text{
+	margin-right: 0;
+	margin-top:@m1;
+	.fs;
+}
+.elephant__goes{
+	margin:@m 0;
+}
+.about__second__sign{
+	h3{
+		font-size:8vw;
+	}
+	h2{
+		font-size: 15vw !important;
+	}
+}
+.about__second__sign{
+	align-items: flex-start;
+}
+.about__second__img{
+	margin-right:0;
+	img{
+		width: calc(100% - 40px);
+	}
+}
+.about__second__text, .about__second__text p{
+	margin-left: 0;
+	.fs;
+}
+ .about__second__text p {
+	width: 90%;
+	margin-left: 5%;
+}
+.about__second__img img{
+	width: 80%;
+	margin-left: 10%;
+}
+.about__second__text p{
+	margin-top:@m2;
+	text-align: right;
+}
+.about__third{
+	margin:@m2 0;
+}
+.about__third__top__sign{
+	width: 90% !important;
+	h3{
+		font-size: 8vw !important;
+	}
+}
+.about__third h2{
+	font-size: 15vw !important;
+	margin-left: 10px;
+}
+.bird{
+	animation: birdGoesMobile 40s linear infinite;
+}
+.elephant__goes{
+	div{
+		&:first-child{
+			margin-left:-18%;
+		}
+	}
 }
 }

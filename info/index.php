@@ -11,35 +11,13 @@
           <a class="nav-link">Возврат</a>
           <a class="nav-link">Оферта</a>
           <a class="nav-link">Уход</a>
-          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/line.php");?>
     </div>
     <div class="info__text">
       <p id="text1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod vero repudiandae animi quibusdam dicta blanditiis nobis laborum quos, soluta doloribus pariatur debitis placeat repellendus ipsam voluptatum officia sint asperiores iure obcaecati nostrum rem eos architecto? Eligendi explicabo cum quisquam ducimus.</p>
       <p id="text2">Второооооой consectetur adipisicing elit. Quod vero repudiandae animi quibusdam dicta blanditiis nobis laborum quos, soluta doloribus pariatur debitis placeat repellendus ipsam voluptatum officia sint asperiores iure obcaecati nostrum rem eos architecto? Eligendi explicabo cum quisquam ducimus.</p>
       <p id="text3">Это третий текст в списке.</p>
-      <p id="text4">ОПЛАТА
-ДОСТАВКА
-ВОЗВРАТ
-ОФЕРТА
-УХОД
-1. Онлайн-оплата на сайте
+      <p id="text4">
 
-Страница оплаты загрузится автоматически, сразу после подтверждения заказа.
-Введите данные карты. Необходимо указать:
-
-Владельца карты (указан на лицевой стороне банковской карты на английском языке заглавными буквами.
-Например: IVANOVA OLGA)
-
-Номер карты (указан на лицевой стороне банковской карты и состоит из 16-и цифр.
-Например: 4276 5000 3242 0000)
-
-Срок действия карты (указан на лицевой стороне банковской карты, вводится цифрами)
-
-CVV2 или CVC2 код карты (указан на обратной стороне банковской карты и состоит из трех цифр)
-
-Текст ДоставкаТекст ВозвратИнтернет-магазин «Just born» предлагает заключить настоящий договор на условиях оферты. Данное предложение действительно только для физических лиц.
-Интернет-магазин «Just born»  (далее «Магазин») продаёт, а покупатель покупает товары на сайте just-born.ru. Полный ассортимент товаров доступен в разделе «Каталог» сайта just-born.ru.
-Акцепт (принятие покупателем условий настоящего договора) происходит в момент оплаты им заказа.
 Описание товаров и их цену можно найти в разделе «Каталог» сайта just-born.ru. Характеристики каждой единицы товара могут незначительно отличаться от заявленных на сайте.
 Все расчеты между сторонами осуществляются в рублях. Возможна наличная или безналичная форма оплаты. По факту оплаты подтверждается оформлением кассового чека, который предоставляется Покупателю Магазином.
 Гарантия на продукцию предоставляется производителем. Вместе с товаром Магазин передаёт Покупателю весь комплект необходимых гарантийных документов.
