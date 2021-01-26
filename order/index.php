@@ -40,7 +40,7 @@
     <input class='delivery__type' name='delivery__type' value='delivery__delivery' type='radio' hidden></hidden>
       <div class='delivery__type__choosing'>
         <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
-        <h3>Способ доставки</h3>
+        <h3 class='hm'>Способ доставки</h3>
         <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
       </div>
     <p class='active delivery__type__p'>Самовывоз</p> 
@@ -93,13 +93,13 @@
     </div>
   </div>
     <div class="payment__type order__block">
-        <h2>способ оплаты</h2>
+        <h2 >способ оплаты</h2>
         <div class="order__type__h2">
           <p class='active payment__type__p' id='pay__online'>на сайте</p>
           <input class='payment__type' name='payment__type' value='site__payment' type='radio' hidden></hidden>
             <div class='delivery__type__choosing'>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
-              <h3>способ оплаты</h3>
+              <h3 class='hm'>способ оплаты</h3>
               <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/arrow.php");?> 
             </div>
           <p class='payment__type__p' id='pay__in__shop'>в магазине</p>

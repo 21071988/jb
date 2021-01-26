@@ -67,6 +67,7 @@
       <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/footerDuck.php");?>
     </div>
   </div>
+  <a href="https://slim.technology/" class="slim__mobile" target="blank">дизайн и разработка slim.technology</a>
 </footer>
 
 

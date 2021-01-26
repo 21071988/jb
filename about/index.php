@@ -55,7 +55,16 @@
     <h2>СЧАСТЛИВЫ</h2>
   </div>
 
-  <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/giraffe.php");?>
+  <div class="giraffe__main giraffe__about">
+        <div class="vertical flowers__and__giraffe">
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/flower.php")?>
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/giraffe.php")?>
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/flower.php")?>
+        </div>
+        <div class="vertical">
+          <?php require($_SERVER["DOCUMENT_ROOT"]."/svgfiles/lineM.php")?>
+        </div>
+      </div>
 
 </div>
 

@@ -284,7 +284,19 @@ for(let i=0;i<itemSize.length;i++){
 let filter3Choise = Array.from(document.querySelectorAll('.catalog__filter3 label'));
 for(let i=0;i<filter3Choise.length;i++){
   filter3Choise[i].addEventListener('click',function(){
-  (filter3Choise[i].classList.contains('active') ? filter3Choise[i].classList.remove('active') : filter3Choise[i].classList.add('active'))
+    
+    if(filter3Choise[i].childNodes[0].checked == false){
+      filter3Choise[i].classList.add('active')
+      filter3Choise[i].childNodes[0].checked = true;
+    }
+    else{
+      filter3Choise[i].childNodes[0].checked = false;
+      filter3Choise[i].classList.remove('active')
+    }
+    for(let j=0;j<filter3Choise.length;j++){
+      if(filter3Choise[j].childNodes[0].checked == false){filter3Choise[j].classList.remove('active')}
+    }
+  // (filter3Choise[i].childNodes[0].checked ? filter3Choise[i].classList.remove('active') : filter3Choise[i].classList.add('active'))
   })
 }
 
@@ -315,11 +327,17 @@ let filterTrigger = Array.from(document.querySelectorAll('.catalog__filter2 span
 let filter2 = document.querySelector('.catalog__filter2__popup');
 if (filterTrigger.length>0){
   for(let i=0;i<filterTrigger.length;i++){
-    filterTrigger[i].addEventListener('click',()=>filter2.classList.add('showfilterPopUp'));
+    filterTrigger[i].addEventListener('click',()=>{
+      if(window.clientWidth>800){filter2.classList.add('showfilterPopUp')}
+      else{filter2.classList.add('showfilterPopUpM')}
+    });
   }
 } 
 let filter2ColsingBtn = document.querySelector('.catalog__filter2__popup .basket__delete__btn');
-(filter2ColsingBtn ? filter2ColsingBtn.addEventListener('click',()=>hidingAmination(filter2, 'showfilterPopUp','hideFilterPopup',300)) : 1)
+(filter2ColsingBtn ? filter2ColsingBtn.addEventListener('click',()=>{
+  if(window.clientWidth>800){hidingAmination(filter2, 'showfilterPopUp','hideFilterPopup',300)}
+  else(hidingAmination(filter2, 'showfilterPopUpM','hideFilterPopupM',300))
+}) : 1)
 
 
 //arrow cirlces in slider
@@ -395,19 +413,30 @@ if(orderInputs.length>0){
 
 let flowers=Array.from(document.querySelectorAll('.flower'));
 let giraffeMain = document.querySelector('.lets__talk__first');
+let giraffeAbout = document.querySelector('.giraffe__about')
 let giraffeM = document.querySelector('.flowers__and__giraffe .giraffe');
+
 if(flowers.length>0){
-  flowers[0].style.transform='translateY(-15px)'
-  giraffeMain.addEventListener('mouseover',()=>{
-    flowers[0].classList.add('flower__moves')
-    setTimeout(()=>flowers[1].classList.add('flower__moves2'),1000)
-    giraffeM.classList.add('giraffe__moves')
-  })
-  // giraffeMain.addEventListener('mouseleave',()=>{
-  //   flowers[0].classList.remove('flower__moves')
-  //   setTimeout(()=>flowers[1].classList.remove('flower__moves2'),1000)
-  //   giraffeM.classList.remove('giraffe__moves')
-  // })
+  flowers[0].style.transform='translateY(-15px)';
+
+  if(window.location.href.includes('about')){   
+      flowers[0].classList.add('flower__moves')
+      setTimeout(()=>flowers[1].classList.add('flower__moves2'),1000)
+      giraffeM.classList.add('giraffe__moves')
+  }
+  
+  else{
+    giraffeMain.addEventListener('mouseover',()=>{
+      flowers[0].classList.add('flower__moves')
+      setTimeout(()=>flowers[1].classList.add('flower__moves2'),1000)
+      giraffeM.classList.add('giraffe__moves')
+    })
+    // giraffeMain.addEventListener('mouseleave',()=>{
+    //   flowers[0].classList.remove('flower__moves')
+    //   setTimeout(()=>flowers[1].classList.remove('flower__moves2'),1000)
+    //   giraffeM.classList.remove('giraffe__moves')
+    // })
+  }
 }
 
 // main whale animation
@@ -484,6 +513,7 @@ let deliveryType = Array.from(document.querySelectorAll('.delivery__type__p'));
 let arrow = Array.from(document.querySelectorAll('.order__block .arrow'));
 let hiddenOrderDelInputs = Array.from(document.querySelectorAll('.delivery__type'));
 let hiddenOrderPayInputs = Array.from(document.querySelectorAll('.payment__type'));
+let deliveryData = Array.from(document.querySelectorAll('.delivery__type__data'));
 if(arrow.length>0){
   arrow[0].classList.add('left__arrow__delivery');
   arrow[1].classList.add('right__arrow__delivery');
@@ -513,7 +543,10 @@ let rightArrow = Array.from(document.querySelectorAll('.right__arrow .cls-1'));
 
   let leftArrowDel = Array.from(document.querySelectorAll('.left__arrow__delivery .cls-1'));
   let rightArrowDel = Array.from(document.querySelectorAll('.right__arrow__delivery .cls-1'));
+  
   if(paymentType.length>0){
+    let ddHeight = deliveryData[0].clientHeight;
+
     for(let i=0;i<2;i++){
       deliveryType[0].addEventListener('click',()=>{
         deliveryType[0].style.color = '#66c3d0'
@@ -521,6 +554,8 @@ let rightArrow = Array.from(document.querySelectorAll('.right__arrow .cls-1'));
         hiddenOrderDelInputs[0].checked = 'checked'
         for(let j=0;j<leftArrowDel.length;j++){leftArrowDel[j].style.fill = '#66c3d0'}
         for(let j=0;j<rightArrowDel.length;j++){rightArrowDel[j].style.fill = '#000000'}
+        deliveryData[1].style.display = 'none'
+        deliveryData[0].style.display = 'flex'
       })
       deliveryType[1].addEventListener('click',()=>{
         deliveryType[1].style.color = '#66c3d0'
@@ -528,9 +563,13 @@ let rightArrow = Array.from(document.querySelectorAll('.right__arrow .cls-1'));
         hiddenOrderDelInputs[1].checked = 'checked'
         for(let j=0;j<leftArrowDel.length;j++){rightArrowDel[j].style.fill = '#66c3d0'}
         for(let j=0;j<rightArrowDel.length;j++){leftArrowDel[j].style.fill = '#000000'}
+        deliveryData[0].style.display = 'none'
+        deliveryData[1].style.display = 'block'
+        deliveryData[1].style.height =  ddHeight + 'px'
       })
     }
   }
+
 
 
 //menu btn movement
@@ -634,8 +673,8 @@ if(infoUrl=='refund'){
 if(textsArray.length>1){
 	for(let i = 0; i< tabsArray.length; i++){
     if(iw){
-      let textsHeight = textsArray[1].clientHeight;
-	    textsDiv.style.height = textsHeight + 400 + 'px';
+      let textsHeight = textsArray[3].clientHeight;
+	    textsDiv.style.height = textsHeight + 200 + 'px';
     }
 	  tabsArray[i].addEventListener('click',function(){
 	      let current = document.querySelector(".active");
@@ -808,7 +847,6 @@ let happyTop = document.querySelector('.about__third__top__sign');
 if(happyTop){
   let w = h2HappySign.clientWidth+15;
   happyTop.style.width = `${w}px`;
-  console.log(`width=${w}px`);
 }
 
 // //checking errors in order form
@@ -851,6 +889,16 @@ if(window.location.href.includes('order')){
       }
       
     });
+  }
+}
+
+//order mobile h2
+let hm = Array.from(document.querySelectorAll('.hm'));
+if(hm.length>0){
+  for(let i =0;i<hm.length;i++){
+    if(window.innerWidth < 900){
+      hm[i].innerText=''
+    }
   }
 }
 // //reg block
